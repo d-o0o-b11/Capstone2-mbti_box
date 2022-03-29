@@ -1,0 +1,27 @@
+.mytitle {
+  /*너비를 지정해줍니다.*/
+  width: 300px;
+  /*높이를 지정해줍니다.*/
+  height: 200px;
+  /*내용물의 색상을 지정해 줍니다.*/
+  /*내용물 중 text를 중앙에 정렬 시켜 줍니다.*/
+  text-align: center;
+
+  border-radius: 10px;
+  /*안쪽여백 패딩을 줍니다.*/
+  padding-top: 20px;
+}
+
+.wrap {
+  width: 400px;
+  /*양쪽여백을 최대로 넣는 것 입니다.*/
+  margin: auto;
+  margin-top: 100px;
+}
+.login-box {
+  margin-top: 20px;
+}
+
+.kast {
+  height: 60px;
+}

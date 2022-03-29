@@ -1,0 +1,88 @@
+.wrap {
+  width: 650px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.article {
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.size {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+img {
+  display: block;
+}
+
+.textpo {
+  text-align: center;
+  /* margin-left: 60px; */
+}
+
+.darkness {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background: #000000;
+  /* 추가된 부분 */
+  opacity: 0;
+  transition: all 0.6s linear;
+}
+
+.btn-plus {
+  position: absolute;
+  top: 70px;
+  left: 37%;
+  background: rgb(251, 235, 235);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  text-align: center;
+  /* 추가된 부분 */
+  opacity: 0;
+  transform: scale(2);
+  transition: all 0.3s linear;
+}
+
+.btn-plus span {
+  font-size: 2.3em;
+  color: #ffffff;
+  user-select: none;
+}
+
+/* 추가된 부분 */
+.img-wrapper:hover .darkness {
+  opacity: 0.4;
+}
+
+/* 추가된 부분 */
+.img-wrapper:hover .btn-plus {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.img-wrapper {
+  /*border: solid 1px;*/
+  position: relative;
+  cursor: pointer;
+  margin: auto 0;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  background: #ffffff;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 50px;
+  left: 50px;
+}

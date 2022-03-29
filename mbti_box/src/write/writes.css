@@ -1,0 +1,12 @@
+Img {
+  object-fit: cover;
+  width: 100%;
+}
+
+ImgArea {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}

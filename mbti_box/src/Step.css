@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+.hihi {
+  float: left;
+  width: 100px;
+  height: 50px;
+}
+
+.login {
+  margin-top: 10px;
+  margin-right: 20px;
+  float: right;
+}
+
+.sma {
+  margin-top: 5px;
+  width: 150px;
+  height: 40px;
+}
+
+.abc {
+  text-align: center;
+}
+
+.bann {
+  width: 1900px;
+  height: 300px;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+.header {
+  height: 50px;
+  background: #ccc;
+}
+
+.menu {
+  height: 50px;
+  background: rgb(255, 255, 255); /*매뉴줄 색*/
+}
+
+.footer {
+  /*ㄱㄷ*/
+  text-align: center;
+  color: black;
+  /*따라오는거 수정, 밑에 고정*/
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background-color: bisque;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.pak {
+  overflow: hidden;
+  margin-top: 150px;
+}
+
+.smallcon {
+  height: 100px;
+  width: 100px;
+
+  float: left;
+  margin: 0 40px;
+  padding: 20px;
+  border: 1px solid black;
+
+  background-color: darksalmon;
+}
+
+.middle {
+  background: rgb(94, 218, 121);
+}
+
+.board {
+  background-color: rgb(86, 199, 214);
+  height: 500px;
+}
+
+.footerblock {
+  height: 300px;
+  bottom: 0;
+  background-color: #ccc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  font-family: "Jua", sans-serif, "Times New Roman",
+    serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+}
+
+span {
+  font-size: 10pt;
+  font-family: "Jua", sans-serif, "Times New Roman",
+    serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+}
