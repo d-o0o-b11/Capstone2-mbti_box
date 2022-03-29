@@ -12,6 +12,7 @@ import Logout from "./login/logout.js"
 import Auth from "./login/Auth.js"
 import INTJ from "./board/INTJ.js"
 import Test from "./test"
+import PWfind from "./login/PWfind.js";
 import PostEditor from "./write/PostEditor.js"
 import WRITEINTJ from "./write/writeINTJ.js"
 import Profile from "./login/Profile.js";
@@ -138,6 +139,11 @@ console.log(props.check);
           <Route path="/PostEditor">
             <PostEditor/>
           </Route>
+
+          <Route path="/PWfind">
+            <PWfind></PWfind>
+          </Route>
+
 
         </Switch>
       </Container>

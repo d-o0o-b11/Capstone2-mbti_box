@@ -1,11 +1,3 @@
-// import React from "react"
-// import {Link, useHistory} from "react-router-dom";
-// import { useEffect } from "react";
-// import axios from "axios";
-// import qs from "qs";
-// import NaverLogin from "../login/naverlogin.js"
-// import "../login/login.css"
-// import kakaoimg from "../images/kakao.png"
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -13,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import {Link} from "react-router-dom";
+import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -21,28 +13,21 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const PWfind =()=>{
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const data = new FormData(event.currentTarget);
+    //     console.log({
+    //       email: data.get('email'),
+    //       password: data.get('password'),
+    //     });
+    //   };
 
 
-const Login = () => {
-  // const REST_API_KEY = "904930897775ba6799ec662e5a53d205";
-  // const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
-  // const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-  // const CLIENT_SECRET = "2rYlf0MWQZDwNHBN88GPGUvw5szohgSF";
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
-
-  return (
-    
-    <>
-
-      <Container component="main" maxWidth="xs">
+    return(
+        <>
+      {/* <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -90,43 +75,24 @@ const Login = () => {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link to="/PWfind">
+                <Link href="#" variant="body2">
                   비밀번호 찾기
                 </Link>
               </Grid>
-
               <Grid item>
-                <Link href="#">
+                <Link href="#" variant="body2">
                   회원가입
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-      </Container>
-    
+      </Container>     */}
+      <h3>안녕하세요</h3>
 
+        </>
+    );
 
-  
-      {/* <div className="wrap">
-        <div className="mytitle">
-          <h3>안녕하세요</h3>
-        </div>
-        
-      </div> */}
-        
-      
-        
-          {/* <a href={KAKAO_AUTH_URL}>
-            <img src={kakaoimg} className="kast"/>
-          </a>
-        
-      <NaverLogin></NaverLogin> */}
+}
 
-      
-
-    </>
-
-  );
-};
-export default Login
+export default PWfind
