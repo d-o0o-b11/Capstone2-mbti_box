@@ -56,7 +56,7 @@ const Login = () => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            <h3>Sign in</h3>
+            <h3>회원가입</h3>
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -79,6 +79,24 @@ const Login = () => {
               id="password"
               autoComplete="current-password"
             />
+            <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="email"
+                  name="email"
+                  autoComplete="email"
+            />
+            <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="nickname"
+                  label="nickname"
+                  name="nickname"
+                  autoComplete="nickname"
+            />
             
             <Button
               type="submit"
@@ -96,7 +114,7 @@ const Login = () => {
               </Grid>
 
               <Grid item>
-                <Link to="/Singup">
+                <Link href="#">
                   <h6>회원가입</h6>
                 </Link>
               </Grid>
@@ -106,22 +124,6 @@ const Login = () => {
       </Container>
     
 
-
-  
-      {/* <div className="wrap">
-        <div className="mytitle">
-          <h3>안녕하세요</h3>
-        </div>
-        
-      </div> */}
-        
-      
-        
-          {/* <a href={KAKAO_AUTH_URL}>
-            <img src={kakaoimg} className="kast"/>
-          </a>
-        
-      <NaverLogin></NaverLogin> */}
 
       
 
