@@ -18,7 +18,7 @@ const Menu = () => {
 
           <li><Link to="./PostEditor">게임</Link> </li>
           <li><a href="javascript:;">채팅</a> </li>
-          <li><Link to="./Profile" style={{ textDecoration: 'none' }}>문의(Profile)</Link></li>
+          <li><Link to="./Profile" style={{ textDecoration: 'none' }}>문의</Link></li>
 
         </ul>
       </div>

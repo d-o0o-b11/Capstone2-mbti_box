@@ -11,10 +11,8 @@ return(
 
         {<Test/> ? 
             (<>
-                <h6>확인중</h6>
-                <button>내정보</button>
+                
                 <Logo/>
-                <Profile/>
             </>
                 ) 
             : (

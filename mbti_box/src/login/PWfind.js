@@ -16,14 +16,22 @@ import { Row, Col } from "react-bootstrap";
 
 const PWfind =()=>{
 
-     const handleSubmit = (event) => {
+     const IDSubmit = (event) => {
          event.preventDefault();
          const data = new FormData(event.currentTarget);
          console.log({
-           email: data.get('email'),
-           password: data.get('password'),
+           email: data.get('email')
          });
        };
+
+      const pwSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        console.log({
+          userid: data.get('userid'),
+          email: data.get('email'),
+        });
+      };  
 
 
     return(
@@ -46,7 +54,7 @@ const PWfind =()=>{
               <Typography component="h1" variant="h5">
                 <h3>아이디 찾기</h3>
               </Typography>
-              <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+              <Box component="form" onSubmit={IDSubmit} noValidate sx={{ mt: 1 }}>
               {/* <TextField
                   margin="normal"
                   required
@@ -80,6 +88,7 @@ const PWfind =()=>{
             </Box>
           </Container>    
         </Col>
+
         <Col>
           <Container component="main" maxWidth="xs">
             <CssBaseline />
@@ -97,7 +106,7 @@ const PWfind =()=>{
               <Typography component="h1" variant="h5">
                 <h3>비밀번호 찾기</h3>
               </Typography>
-              <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+              <Box component="form" onSubmit={pwSubmit} noValidate sx={{ mt: 1 }}>
               <TextField
                   margin="normal"
                   required

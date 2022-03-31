@@ -23,7 +23,6 @@ const Logo = (props) => {
           
           <div className="login">
               <h6>
-                기본
                 <Link to="/login" style={{ textDecoration: 'none' }}>로그인/회원가입 </Link> 
               </h6>
           </div>

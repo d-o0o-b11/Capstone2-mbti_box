@@ -38,21 +38,19 @@ console.log(props.check);
     <BrowserRouter>
       <div className="App"> {/*추가*/ }
       <Container> {/*추가*/ }  
-
+      
         <Row>
           <Col className='box1' style={{ height: 50}}>
             <h2>
-            <Link to="/" style={{ textDecoration: 'none' }}>
+            <Link to="/" style={{ textDecoration: 'none', color:'black'}}>
                 MBTI_BOX
             </Link>
             </h2>
           </Col>
             
-          <Col></Col>
-          <Col></Col>
-          <Col></Col>
-          <Col></Col>
-          <Col></Col>
+          <Col><div className="menu">
+            <Menu></Menu>
+          </div></Col>
 
           <Col>
             <Logincheck/>
@@ -64,7 +62,7 @@ console.log(props.check);
 
         <Row className='logoBox' style={{ marginTop: 5, height: 50 }}>
           <div className="menu">
-            <Menu></Menu>
+            {/* <Menu></Menu> */}
           </div>
         </Row>
 
