@@ -48,9 +48,11 @@ console.log(props.check);
             </h2>
           </Col>
             
-          <Col><div className="menu">
-            <Menu></Menu>
-          </div></Col>
+          <Col>
+            <div className="menu">
+              <Menu></Menu>
+            </div>
+          </Col>
 
           <Col>
             <Logincheck/>

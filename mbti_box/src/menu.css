@@ -19,6 +19,7 @@ a {
 .menu {
   display: flex;
   flex-direction: row;
+  /* flex-grow:1; */
 }
 
 .menu > li {

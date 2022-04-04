@@ -1,5 +1,6 @@
 import React from "react";
 import "./Step.css";
+import Insta from "./images/insta.png"
 
 const Footer = () => {
   const thisYear = () => {
@@ -9,11 +10,15 @@ const Footer = () => {
 
   return (
     <div className="footer">
+          
+            <img src={Insta} className="pi picenter"/>
+          
+{/* 
             <nav>
                 <a href="https://www.naver.com/" target="_blank">Naver</a> |
                 <a href="https://www.daum.net/" tager="_blank">Daum</a>
             </nav>
-
+ */}
             <p>
                 <span>저자: 땡땡이</span><br/>
                 <span>이메일: 메일@메일</span><br/>

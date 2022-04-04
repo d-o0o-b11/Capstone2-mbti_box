@@ -112,3 +112,13 @@ span {
   font-family: "Jua", sans-serif, "Times New Roman",
     serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
 }
+
+.pi{
+  width: 5%;
+  height: 5%;
+}
+
+.picenter{
+  display: block; 
+  margin: 0px auto;
+}

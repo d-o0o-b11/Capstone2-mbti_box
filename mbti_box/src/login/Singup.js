@@ -1,76 +1,210 @@
-// import React from "react"
-// import {Link, useHistory} from "react-router-dom";
-// import { useEffect } from "react";
-// import axios from "axios";
-// import qs from "qs";
-// import NaverLogin from "../login/naverlogin.js"
-// import "../login/login.css"
-// import kakaoimg from "../images/kakao.png"
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import {Link} from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormLabel from '@mui/material/FormLabel';
-import { Row, Col } from "react-bootstrap";
+import PropTypes from 'prop-types';
+import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled';
+import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled';
+import PopperUnstyled from '@mui/base/PopperUnstyled';
+import OptionGroupUnstyled from '@mui/base/OptionGroupUnstyled';
+import { styled } from '@mui/system';
 
+const blue = {
+  100: '#DAECFF',
+  200: '#99CCF3',
+  400: '#3399FF',
+  500: '#007FFF',
+  600: '#0072E5',
+  900: '#003A75',
+};
+
+const grey = {
+  100: '#E7EBF0',
+  200: '#E0E3E7',
+  300: '#CDD2D7',
+  400: '#B2BAC2',
+  500: '#A0AAB4',
+  600: '#6F7E8C',
+  700: '#3E5060',
+  800: '#2D3843',
+  900: '#1A2027',
+};
+
+const StyledButton = styled('button')(
+  ({ theme }) => `
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  min-height: calc(1.5em + 22px);
+  min-width: 320px;
+  background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
+  border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
+  border-radius: 0.75em;
+  margin-top: 0.5em;
+  padding: 10px;
+  text-align: left;
+  line-height: 1.5;
+  color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
+
+  &:hover {
+    background: ${theme.palette.mode === 'dark' ? '' : grey[100]};
+    border-color: ${theme.palette.mode === 'dark' ? grey[700] : grey[400]};
+  }
+
+  &.${selectUnstyledClasses.focusVisible} {
+    outline: 3px solid ${theme.palette.mode === 'dark' ? blue[600] : blue[100]};
+  }
+
+  &.${selectUnstyledClasses.expanded} {
+    &::after {
+      content: '▴';
+    }
+  }
+
+  &::after {
+    content: '▾';
+    float: right;
+  }
+  `,
+);
+
+const StyledListbox = styled('ul')(
+  ({ theme }) => `
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  padding: 5px;
+  margin: 10px 0;
+  min-width: 320px;
+  background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
+  border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
+  border-radius: 0.75em;
+  color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
+  overflow: auto;
+  outline: 0px;
+  `,
+);
+
+const StyledOption = styled(OptionUnstyled)(
+  ({ theme }) => `
+  list-style: none;
+  padding: 8px;
+  border-radius: 0.45em;
+  cursor: default;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &.${optionUnstyledClasses.selected} {
+    background-color: ${theme.palette.mode === 'dark' ? blue[900] : blue[100]};
+    color: ${theme.palette.mode === 'dark' ? blue[100] : blue[900]};
+  }
+
+  &.${optionUnstyledClasses.highlighted} {
+    background-color: ${theme.palette.mode === 'dark' ? grey[800] : grey[100]};
+    color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
+  }
+
+  &.${optionUnstyledClasses.highlighted}.${optionUnstyledClasses.selected} {
+    background-color: ${theme.palette.mode === 'dark' ? blue[900] : blue[100]};
+    color: ${theme.palette.mode === 'dark' ? blue[100] : blue[900]};
+  }
+
+  &.${optionUnstyledClasses.disabled} {
+    color: ${theme.palette.mode === 'dark' ? grey[700] : grey[400]};
+  }
+
+  &:hover:not(.${optionUnstyledClasses.disabled}) {
+    background-color: ${theme.palette.mode === 'dark' ? grey[800] : grey[100]};
+    color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
+  }
+  `,
+);
+
+const StyledPopper = styled(PopperUnstyled)`
+  z-index: 1;
+`;
+
+const Paragraph = styled('p')(
+  ({ theme }) => `
+  font-family: IBM Plex Sans, sans-serif;
+  font-size: 0.875rem;
+  margin: 10px 0;
+  color: ${theme.palette.mode === 'dark' ? grey[400] : grey[700]};
+  `,
+);
+
+
+
+function CustomSelect(props) {
+  const components = {
+    Root: StyledButton,
+    Listbox: StyledListbox,
+    Popper: StyledPopper,
+    ...props.components,
+  };
+  return <SelectUnstyled {...props} components={components} />;
+}
+
+CustomSelect.propTypes = {
+  /**
+   * The components used for each slot inside the Select.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Listbox: PropTypes.elementType,
+    Popper: PropTypes.func,
+    Root: PropTypes.elementType,
+  }),
+};
 
 
 
 const Login = () => {
-  const [value, setValue] = React.useState('');
-  const [error, setError] = React.useState(false);
-  const [helperText, setHelperText] = React.useState('MBTI를 선택해주세요');
-
-  const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    setHelperText(' ');
-    setError(false);
-  };
-
-  const radioSubmit = (event) => {
-    event.preventDefault();
-
-    if (value === 'best') {
-      setHelperText('You got it!');
-      setError(false);
-    } else if (value === 'worst') {
-      setHelperText('Sorry, wrong answer!');
-      setError(true);
-    } else {
-      setHelperText('Please select an option.');
-      setError(true);
-    }
-  };
+  const [value, setValue] = React.useState("");
+  
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    if(data.get('userid')===""){
+      alert("아이디를 입력해주세요");
+    }
+    else if(data.get('password')===""){
+      alert("비밀번호를 입력해주세요");
+    }
+    else if(data.get('email')===""){
+      alert("이메일을 입력해주세요");
+    }
+    else if(data.get('nickname')===""){
+      alert("닉네임을 입력해주세요");
+    }
+    else if(value===""){
+      alert("MBTI를 선택해주세요");
+    }
+    else{
+      alert("회원가입 성공");
+    }
+
     console.log({
       userid: data.get('userid'),
       password: data.get('password'),
       email: data.get('email'),
       nickname: data.get('nickname'),
     });
-    console.log({value});
-    if(value===''){
-      setHelperText('Please select an option.');
-      setError(true);
-    }
+     console.log({value});
+    
 
   };
 
@@ -135,73 +269,42 @@ const Login = () => {
                   autoComplete="nickname"
             />
 
-            {/* <form onSubmit={radioSubmit}> */}
-              <FormControl sx={{ m: 1 }} error={error} variant="standard">
-                <FormLabel id="demo-error-radios">본인 MBTI</FormLabel>
-                <RadioGroup
-                  aria-labelledby="demo-error-radios"
-                  name="quiz"
-                  value={value}
-                  onChange={handleRadioChange}
-                >
-                  <Row>
-                    <Col>
-                      <FormControlLabel value="INTJ" control={<Radio size='small'/>} label="INTJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="INTP" control={<Radio size='small'/>} label="INTP" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ENTJ" control={<Radio size='small'/>} label="ENTJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ENTP" control={<Radio size='small'/>} label="ENTP" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="INFJ" control={<Radio />} label="INFJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="INFP" control={<Radio />} label="INFP" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ENFJ" control={<Radio />} label="ENFJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ENFP" control={<Radio />} label="ENFP" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ISTJ" control={<Radio />} label="ISTJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ISFJ" control={<Radio />} label="ISFJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ESTJ" control={<Radio />} label="ESTJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ESFJ" control={<Radio />} label="ESFJ" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ISTP" control={<Radio />} label="ISTP" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ISFP" control={<Radio />} label="ISFP" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ESTP" control={<Radio />} label="ESTP" />
-                    </Col>
-                    <Col>
-                      <FormControlLabel value="ESFP" control={<Radio />} label="ESFP" />
-                    </Col>
-                  </Row>
-                </RadioGroup>
-                <FormHelperText>{helperText}</FormHelperText>
+    <div>
+      <CustomSelect value={value} onChange={setValue}>
+        
+      <OptionGroupUnstyled label="IN♡♡">
+        <StyledOption value="INTJ">INTJ</StyledOption>
+        <StyledOption value="INTP">INTP</StyledOption>
+        <StyledOption value="INFJ">INFJ</StyledOption>
+        <StyledOption value="INFP">INFP</StyledOption>
+      </OptionGroupUnstyled>
+
+      <OptionGroupUnstyled label="IS♡♡">
+        <StyledOption value="ISTJ">ISTJ</StyledOption>
+        <StyledOption value="ISTP">ISTP</StyledOption>
+        <StyledOption value="ISFJ">ISFJ</StyledOption>
+        <StyledOption value="ISFP">ISFP</StyledOption>
+      </OptionGroupUnstyled>
+
+      <OptionGroupUnstyled label="EN♡♡">
+        <StyledOption value="ENTJ">ENTJ</StyledOption>
+        <StyledOption value="ENTP">ENTP</StyledOption>
+        <StyledOption value="ENFJ">ENFJ</StyledOption>
+        <StyledOption value="ENFP">ENFP</StyledOption>
+      </OptionGroupUnstyled>
+
+      <OptionGroupUnstyled label="ES♡♡">
+        <StyledOption value="ESTJ">ESTJ</StyledOption>
+        <StyledOption value="ESTP">ESTP</StyledOption>
+        <StyledOption value="ESFJ">ESFJ</StyledOption>
+        <StyledOption value="ESFP">ESFP</StyledOption>
+      </OptionGroupUnstyled>
+
+      </CustomSelect>
+
+      <Paragraph>본인 MBTI: {value}</Paragraph>
+    </div>
                 
-              </FormControl>
-            {/* </form> */}
-
-
-
 
 
             <Button
@@ -210,7 +313,7 @@ const Login = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              로그인
+              회원가입
             </Button>
             <Grid container>
               <Grid item xs>
