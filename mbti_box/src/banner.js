@@ -1,5 +1,6 @@
 import React from "react"
 import img1 from "./images/main.jpg"
+import img2 from "./images/banner.png"
 import "./Step.css"
 
 
@@ -11,7 +12,7 @@ const Banner = () => {
     
     
             <div className="abc">
-                <img src={img1}/>
+                <img src={img2}/>
             </div>
         
             

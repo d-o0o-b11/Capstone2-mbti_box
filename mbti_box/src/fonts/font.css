@@ -1,0 +1,23 @@
+
+@font-face { 
+    font-family: "gmarket"; 
+    src: url("../fonts/Gmarket.ttf");
+}
+
+span {
+    font-size: 10pt;
+    font-family: "gmarket", sans-serif, "Times New Roman",
+      serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+    font-size: 10pt;
+    font-family: "gmarket", sans-serif, "Times New Roman",
+      serif;
+}
