@@ -15,6 +15,7 @@ import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled'
 import PopperUnstyled from '@mui/base/PopperUnstyled';
 import OptionGroupUnstyled from '@mui/base/OptionGroupUnstyled';
 import { styled } from '@mui/system';
+import Axios from 'axios';
 
 const blue = {
   100: '#DAECFF',
@@ -172,7 +173,12 @@ CustomSelect.propTypes = {
 const Login = () => {
   const [value, setValue] = React.useState("");
   
-
+  const signAxios = () => {
+    Axios.get('/user/signup')
+    .then((Response)=>{
+        console.log(Response.data)
+    });
+}
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -195,8 +201,9 @@ const Login = () => {
     }
     else{
       alert("회원가입 성공");
+      signAxios();
     }
-
+    
     console.log({
       userid: data.get('userid'),
       password: data.get('password'),

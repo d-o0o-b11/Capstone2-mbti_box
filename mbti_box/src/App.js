@@ -7,6 +7,7 @@ import Menu from "./menu.js"
 import Board from "./board.js" 
 import Logincheck from "./logincheck.js" 
 import "./Step.css"
+import "./menu.css"
 import Login from "./login/login.js"
 import Logout from "./login/logout.js"
 import Auth from "./login/Auth.js"
@@ -20,7 +21,7 @@ import Profile from "./login/Profile.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch,Link } from "react-router-dom"
 import { Button, Card, Container, Row, Col, Image, ThemeProvider } from "react-bootstrap";
-
+import {Grid, Text} from "./elements"
 
 
 
@@ -34,27 +35,30 @@ console.log(props.check);
       <div className="App"> {/*추가*/ }
       <Container> {/*추가*/ }  
       
-        <Row>
-          <Col className='box1' style={{ height: 50}}>
+      <React.Fragment>
+        
+          <Grid is_flex padding="16px">
             <h1>
-            <Link to="/" style={{ textDecoration: 'none', color:'black'}}>
+            <Link to="/" style={{ textDecoration: 'none', color:'black'}} className="slogo">
                 MBTI_BOX
             </Link>
             </h1>
-          </Col>
-            
-          <Col>
-            <div className="menu">
-              <Menu></Menu>
-            </div>
-          </Col>
-
-          <Col>
-            <Logincheck/>
-            {/* {props.check===1 ? (<h6>true</h6>):(<Logo></Logo>)} */}
-          </Col>
           
-        </Row>
+            
+          
+            <Grid is_flex>
+              <Menu></Menu>
+            </Grid>
+          
+
+            <Grid is_flex>
+              <Logo/>
+              {/* {props.check===1 ? (<h6>true</h6>):(<Logo></Logo>)} */}
+            </Grid>
+          </Grid>
+          
+        
+      </React.Fragment>
 
         {/* marginTop: 5,  */}
         <Row className='logoBox' style={{height: 10 }}>
