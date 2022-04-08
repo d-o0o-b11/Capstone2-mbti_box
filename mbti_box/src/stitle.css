@@ -13,8 +13,9 @@
 
 .size {
   margin: 0 auto;
-  width: 200px;
-  height: 200px;
+  width: 100%; 
+  height: auto;
+
 }
 
 img {
@@ -23,7 +24,11 @@ img {
 
 .textpo {
   text-align: center;
-  /* margin-left: 60px; */
+  margin-left: 10px;
+}
+
+.sss{
+  font-size: 0.9vw;
 }
 
 .darkness {
@@ -43,8 +48,8 @@ img {
   top: 70px;
   left: 37%;
   background: rgb(251, 235, 235);
-  width: 55px;
-  height: 55px;
+  width: 50%; 
+  height: auto;
   border-radius: 50%;
   text-align: center;
   /* 추가된 부분 */
@@ -85,4 +90,79 @@ img {
   position: relative;
   top: 50px;
   left: 50px;
+}
+.column {
+  margin: 15px 15px 0;
+  padding: 0;
+}
+.column:last-child {
+  padding-bottom: 60px;
+}
+.column::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.column div {
+  position: relative;
+  float: left;
+  width: 100%; 
+  height: auto;
+  margin: 0 0 0 25px;
+  padding: 0;
+}
+.column div:first-child {
+  margin-left: 0;
+}
+.column div span {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  color: #444;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  opacity: 0;
+}
+figure {
+  margin: 0 auto;
+  width: 100%; 
+  height: auto;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
+figure:hover+span {
+  bottom: -36px;
+  opacity: 1;
+}
+
+
+.hover13 figure:hover img {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
 }

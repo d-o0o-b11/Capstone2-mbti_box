@@ -1,5 +1,6 @@
 import React from "react"
 import Stitle from "./stitle"
+import Mostitle from "./mostitle"
 import Footer from "./footer.js"
 import Logo from "./logo.js"
 import Banner from "./banner.js"
@@ -22,12 +23,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch,Link } from "react-router-dom"
 import { Button, Card, Container, Row, Col, Image, ThemeProvider } from "react-bootstrap";
 import {Grid, Text} from "./elements"
+import { useMediaQuery } from "react-responsive"
 
 
 
 const App = (props) => {
 console.log(props.check);
 {/*console.log(props.name);*/}
+
+const isMobile = useMediaQuery({
+  query : "(max-width:767px)"
+});
+
   return (
     <>
 
@@ -37,25 +44,28 @@ console.log(props.check);
       
       <React.Fragment>
         
+        <Row>
           <Grid is_flex padding="16px">
-            <h1>
-            <Link to="/" style={{ textDecoration: 'none', color:'black'}} className="slogo">
-                MBTI_BOX
-            </Link>
-            </h1>
+            <Col>
+              <h1>
+              <Link to="/" style={{ textDecoration: 'none', color:'black'}} className="slogo">
+                  MBTI_BOX
+              </Link>
+              </h1>
+            </Col>
           
-            
-          
-            <Grid is_flex>
+            <Grid is_flex width="50%">
               <Menu></Menu>
             </Grid>
           
-
-            <Grid is_flex>
+            <Col>
+            
               <Logo/>
               {/* {props.check===1 ? (<h6>true</h6>):(<Logo></Logo>)} */}
-            </Grid>
+            
+            </Col>
           </Grid>
+          </Row>
           
         
       </React.Fragment>
@@ -123,7 +133,7 @@ console.log(props.check);
           </Route>
 
           <Route path="/stitle">
-            <Stitle></Stitle>
+            {isMobile? <Mostitle/> :<Stitle></Stitle>}
           </Route>
 
           <Route path="/INTJ">
