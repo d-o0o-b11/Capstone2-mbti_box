@@ -35,7 +35,7 @@ const stitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6>INTP</h6>
+                  <h6 className="sss">INTP</h6>
                 </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ const stitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6>ENTJ</h6>
+                      <h6 className="sss">ENTJ</h6>
                 </div>
             </div>
           </div>
@@ -57,7 +57,7 @@ const stitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6>ENTP</h6>
+                      <h6 className="sss">ENTP</h6>
                 </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ const stitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6>INFJ</h6>
+                      <h6 className="sss">INFJ</h6>
                 </div>
             </div>
           </div>
@@ -80,61 +80,62 @@ const stitle = () => {
       
       
       <Row>
+      <React.Fragment>
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>INFP</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">INFP</h6>
+                </div>
+            </div>
           </div>
         </Col>
 
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ENFJ</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ENFJ</h6>
+                </div>
+            </div>
           </div>
         </Col>
 
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ENFP</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ENFP</h6>
+                </div>
+            </div>
           </div>
         </Col>
 
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ISTJ</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ISTJ</h6>
+                </div>
+            </div>
           </div>
         </Col>
-        
+
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ISFJ</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ISFJ</h6>
+                </div>
+            </div>
           </div>
         </Col>
-        
+        </React.Fragment>
       </Row>
       
 
