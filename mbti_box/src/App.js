@@ -5,6 +5,7 @@ import Footer from "./footer.js"
 import Logo from "./logo.js"
 import Banner from "./banner.js"
 import Menu from "./menu.js"
+import Momenu from "./momenu.js"
 import Board from "./board.js" 
 import Logincheck from "./logincheck.js" 
 import "./Step.css"
@@ -55,7 +56,7 @@ const isMobile = useMediaQuery({
             </Col>
           
             <Grid is_flex width="50%">
-              <Menu></Menu>
+            {isMobile? <Momenu></Momenu> : <Menu></Menu>}
             </Grid>
           
             <Col>

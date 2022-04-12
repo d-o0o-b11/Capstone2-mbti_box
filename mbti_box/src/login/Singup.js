@@ -174,10 +174,25 @@ const Login = () => {
   const [value, setValue] = React.useState("");
   
   const signAxios = () => {
-    Axios.get('/user/signup')
-    .then((Response)=>{
-        console.log(Response.data)
-    });
+
+    Axios({
+      method: 'post',
+      url: '/user/signup',
+      data: {
+          username: "1",
+          password: "1",
+          email: "1",
+      },
+  })
+  .then((Response)=>{
+      alert("회원가입 성공");
+
+      console.log(Response.data)
+  })
+  .catch((error)=>{
+      alert("회원가입 실패");
+      console.log(error);
+  });
 }
 
   const handleSubmit = (event) => {

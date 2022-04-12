@@ -24,7 +24,7 @@ img {
 
 .textpo {
   text-align: center;
-  margin-left: 10px;
+  
 }
 
 .sss{
@@ -108,7 +108,7 @@ img {
   float: left;
   width: 100%; 
   height: auto;
-  margin: 0 0 0 25px;
+  /* margin: 0 0 0 25px; */
   padding: 0;
 }
 .column div:first-child {

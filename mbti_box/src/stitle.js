@@ -141,88 +141,96 @@ const stitle = () => {
 
       
       <Row>
+      <React.Fragment>
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ESTJ</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ESTJ</h6>
+                </div>
+            </div>
           </div>
         </Col>
 
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ESFJ</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ESFJ</h6>
+                </div>
+            </div>
           </div>
         </Col>
 
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ISTP</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ISTP</h6>
+                </div>
+            </div>
           </div>
         </Col>
 
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ISFP</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ISFP</h6>
+                </div>
+            </div>
           </div>
         </Col>
-        
+
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ESTP</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ESTP</h6>
+                </div>
+            </div>
           </div>
         </Col>
-        
+        </React.Fragment>
       </Row>
       
 
       <Row>
 
+      <React.Fragment>
+       
+
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>ESFP</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">ESFP</h6>
+                </div>
+            </div>
           </div>
         </Col>
 
         <Col>
-          <div className="img-wrapper">
-            <img src={img1} className="size"/>
-              <div className="textpo">
-                <h6>자유</h6>
-              </div>
-                <div className="darkness"></div>
-                <div className="btn-plus"><span draggable="false">+</span></div>
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                <div className="textpo">
+                      <h6 className="sss">자유</h6>
+                </div>
+            </div>
           </div>
         </Col>
+
+        
+        
         <Col></Col><Col></Col><Col></Col>
+        </React.Fragment>
       </Row>
 
 
