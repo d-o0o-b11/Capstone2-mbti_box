@@ -2,8 +2,10 @@ import React from "react"
 import Stitle from "./stitle"
 import Mostitle from "./mostitle"
 import Footer from "./footer.js"
+import Mofooter from "./mofooter.js"
 import Logo from "./logo.js"
 import Banner from "./banner.js"
+import Mobanner from "./mobanner.js"
 import Menu from "./menu.js"
 import Momenu from "./momenu.js"
 import Board from "./board.js" 
@@ -56,13 +58,12 @@ const isMobile = useMediaQuery({
             </Col>
           
             <Grid is_flex width="50%">
-            {isMobile? <Momenu></Momenu> : <Menu></Menu>}
+              {isMobile? <Momenu></Momenu> : <Menu></Menu>}
             </Grid>
           
             <Col>
             
               <Logo/>
-              {/* {props.check===1 ? (<h6>true</h6>):(<Logo></Logo>)} */}
             
             </Col>
           </Grid>
@@ -83,8 +84,9 @@ const isMobile = useMediaQuery({
             </div>*/}
 
             <Row>
-              <Col className='box2' style={{ height: 350}}>
-                <Banner></Banner>
+              <Col className='box2'>
+              {isMobile? <Mobanner/> : <Banner></Banner>}
+                
               </Col>
             </Row>
 
@@ -104,16 +106,18 @@ const isMobile = useMediaQuery({
               </Col>
             </Row>
 
-            <Row>
+            {/* <Row>
               <Col className='box6' style={{ height: 350 }}>
                 랭킹
               </Col>
 
-            </Row>
+            </Row> */}
 
 
             <Row className='box1' style={{marginTop:50, height: 50}}>
-              <Col><Footer></Footer></Col>
+              <Col>
+                {isMobile? <Mofooter/> : <Footer></Footer>}
+              </Col>
             </Row>
 
           </Route>

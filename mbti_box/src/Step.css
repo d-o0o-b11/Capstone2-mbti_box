@@ -20,6 +20,7 @@
 
 .abc {
   text-align: center;
+  height: 100%;
 }
 
 .bann {
@@ -125,4 +126,14 @@ li {
 
 .slogin{
   font-size: 0.9vw;
+  
+}
+
+.mesim{
+  width: 10%;
+  height: 10%;
+}
+
+.fs{
+  font-size: 10px;
 }

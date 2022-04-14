@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import "./Step.css"
 import Profile from "./login/Profile";
 import App from "./App.js"
+import img1 from "./images/mes.png"
 
 
 
@@ -20,12 +21,15 @@ const Logo = (props) => {
               </Link>
             </div>*/}
 
+          {/* 쪽지 이미지 */}
+          {/* <img src={img1}className="mesim login"/> */}
           
           <div className="login">
               <h6>
-                <Link to="/login" style={{ textDecoration: 'none' }} className="slogin">로그인/회원가입 </Link> 
+                <Link to="/login" style={{ textDecoration: 'none' , color:'black'}} className="slogin">회원가입/로그인 </Link> 
               </h6>
           </div>
+          
           
           
           
