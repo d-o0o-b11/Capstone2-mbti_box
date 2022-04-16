@@ -15,7 +15,7 @@ const Menu = () => {
     
       <div className="menu-box">
         <ul className="menu">
-          <li><Link to="/" style={{ textDecoration: 'none', color:'black'}}className="menusize ss">홈</Link> </li>
+          {/* <li><Link to="/" style={{ textDecoration: 'none', color:'black'}}className="menusize ss">홈</Link> </li> */}
 
           <li><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="menusize ss">게시판</Link></li>
 

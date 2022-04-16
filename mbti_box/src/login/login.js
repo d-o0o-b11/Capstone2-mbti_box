@@ -1,25 +1,14 @@
-// import React from "react"
-// import {Link, useHistory} from "react-router-dom";
-// import { useEffect } from "react";
-// import axios from "axios";
-// import qs from "qs";
-// import NaverLogin from "../login/naverlogin.js"
-// import "../login/login.css"
-// import kakaoimg from "../images/kakao.png"
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import {Link} from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 
@@ -89,17 +78,29 @@ const Login = () => {
               로그인
             </Button>
             <Grid container>
+              
+              
               <Grid item xs>
+                
                 <Link to="/PWfind">
-                  <h6>아이디/비밀번호 찾기</h6>
+                  <span style={{marginRight:"5px"}}>아이디</span>
+                </Link>
+
+                <span>|</span>
+
+                <Link to="/PWfind2">
+                  <span style={{marginLeft:"5px"}}>비밀번호 찾기</span>
                 </Link>
               </Grid>
+              
 
+              
               <Grid item>
                 <Link to="/Singup">
-                  <h6>회원가입</h6>
+                  <span>회원가입</span>
                 </Link>
               </Grid>
+              
             </Grid>
           </Box>
         </Box>

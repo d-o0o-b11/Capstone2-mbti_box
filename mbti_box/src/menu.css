@@ -65,3 +65,79 @@ a {
 .slogo{
   font-size: 2.5vw;
 }
+
+.show-menu{
+  width: 376px;
+  height: 500px;
+  position: absolute;
+  left: 0px;
+  transition: 1s;
+  }
+  
+  .hide-menu{
+  width: 376px;
+  height: 500px;
+  position: absolute;
+  left: -376px;
+  transition: 1s;
+  }
+
+  .navBox{ 
+    display:flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-weight: bold; 
+    font-family: 'NEXON Lv2 Gothic Bold'; 
+    font-size:1.5em; 
+    margin:5px; 
+  } 
+
+  .iconBtn{ 
+    width:35px; 
+    cursor:pointer; 
+  }
+
+  .menuWrap { 
+    position: fixed; 
+    top: 0; 
+    right: -300px; 
+    z-index: 400; 
+    width: 300px; 
+    height: 100%; 
+    padding: 50px 20px; 
+    box-sizing: border-box; 
+    transition: right 0.3s ease-in-out; 
+    background-color: #f0f0f0; } 
+    
+  #menuBtn { 
+    width: 35px; 
+    z-index: 401; 
+    transition: all 0.3s ease-in-out; 
+    cursor: pointer; 
+  }
+
+
+  /* 다른 코드 */
+
+  
+  .sidebar {
+    width:300px;
+    height:100%;
+    background:rgba(191, 191, 191, 0.638);
+    position:fixed;
+    top:0;
+    left:200px;
+    z-index:1;
+    transition:all .35s;
+  }
+
+.menuicon > label{z-index:2;}
+.menuicon > label span {background:#fff;}
+.menuicon > label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+.menuicon > label span:nth-child(2) {opacity:0;}
+.menuicon > label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
+.menuicon > label div{left:0;}
+
+.tee{
+  color: red;
+}

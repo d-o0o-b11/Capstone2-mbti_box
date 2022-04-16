@@ -18,6 +18,7 @@ import Auth from "./login/Auth.js"
 import INTJ from "./board/INTJ.js"
 import Test from "./test"
 import PWfind from "./login/PWfind.js";
+import PWfind2 from "./login/PWfind2.js";
 import Singup from "./login/Singup";
 import PostEditor from "./write/PostEditor.js"
 import WRITEINTJ from "./write/writeINTJ.js"
@@ -25,8 +26,9 @@ import Profile from "./login/Profile.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch,Link } from "react-router-dom"
 import { Button, Card, Container, Row, Col, Image, ThemeProvider } from "react-bootstrap";
-import {Grid, Text} from "./elements"
+import {Grid,Text} from "./elements"
 import { useMediaQuery } from "react-responsive"
+import { CacheProvider } from "@emotion/react"
 
 
 
@@ -60,22 +62,17 @@ const isMobile = useMediaQuery({
             <Grid is_flex width="50%">
               {isMobile? <Momenu></Momenu> : <Menu></Menu>}
             </Grid>
-          
-            <Col>
-            
+          <Col></Col>
+            {/* <Col>
               <Logo/>
-            
-            </Col>
+            </Col> */}
           </Grid>
           </Row>
           
         
       </React.Fragment>
 
-        {/* marginTop: 5,  */}
-        <Row className='logoBox' style={{height: 10 }}>
-          
-        </Row>
+       
 
         <Switch>
           <Route exact path="/">
@@ -83,12 +80,24 @@ const isMobile = useMediaQuery({
               <Banner></Banner>
             </div>*/}
 
-            <Row>
-              <Col className='box2'>
-              {isMobile? <Mobanner/> : <Banner></Banner>}
-                
-              </Col>
-            </Row>
+           
+              {isMobile? 
+              <Row>
+                <Mobanner/> 
+              </Row>
+              :
+              <Row>
+                <Col xs={9}>
+                  <Banner></Banner>
+                </Col>
+                <Col xs={3} >
+                  <Logo/>
+                </Col>
+               
+              </Row>
+              }
+             
+           
 
 
             <Row style={{ marginTop: 20 }}>
@@ -114,7 +123,7 @@ const isMobile = useMediaQuery({
             </Row> */}
 
 
-            <Row className='box1' style={{marginTop:50, height: 50}}>
+            <Row style={{marginTop:50, height: 50}}>
               <Col>
                 {isMobile? <Mofooter/> : <Footer></Footer>}
               </Col>
