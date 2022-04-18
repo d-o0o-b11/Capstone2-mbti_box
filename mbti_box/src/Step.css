@@ -20,7 +20,7 @@
 
 .abc {
   text-align: center;
-  height: 80%;
+  height: 100%;
 }
 
 .bann {
@@ -136,4 +136,9 @@ li {
 
 .fs{
   font-size: 10px;
+}
+
+.box7 {
+  border: solid 5px rgb(251, 235, 235);
+  border-radius: 13px;
 }

@@ -109,7 +109,7 @@ a {
     transition: right 0.3s ease-in-out; 
     background-color: #f0f0f0; } 
     
-  #menuBtn { 
+  .menuBtn { 
     width: 35px; 
     z-index: 401; 
     transition: all 0.3s ease-in-out; 
@@ -121,12 +121,12 @@ a {
 
   
   .sidebar {
-    width:300px;
+    width:400px;
     height:100%;
-    background:rgba(191, 191, 191, 0.638);
+    background:rgba(255, 255, 255);
     position:fixed;
     top:0;
-    left:200px;
+    left:100px;
     z-index:1;
     transition:all .35s;
   }
@@ -140,4 +140,24 @@ a {
 
 .tee{
   color: red;
+}
+
+.emphasized {
+  position:fixed;
+  top:150px; left:30px;
+  box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+  z-index : 100;
+  }
+
+.st{
+  text-align: left;
+  margin-left: 15px;
+}
+
+.mm{
+  margin-top: 50px;
+}
+
+.m1{
+  margin-top: 20px;
 }

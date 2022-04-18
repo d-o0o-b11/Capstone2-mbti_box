@@ -48,7 +48,23 @@ const isMobile = useMediaQuery({
       <Container> {/*추가*/ }  
       
       <React.Fragment>
-        
+      {isMobile?
+        <Row>
+            <Col xs={9}>
+            <Link to="/" style={{ textDecoration: 'none', color:'black'}}>
+              <h1 style={{marginTop:10 }}>
+                  MBTI_BOX
+              </h1>
+            </Link>
+            </Col>
+          
+            
+            <Col xs={3}>
+              <Momenu></Momenu>
+            </Col>
+            
+        </Row>
+      :
         <Row>
           <Grid is_flex padding="16px">
             <Col>
@@ -60,7 +76,7 @@ const isMobile = useMediaQuery({
             </Col>
           
             <Grid is_flex width="50%">
-              {isMobile? <Momenu></Momenu> : <Menu></Menu>}
+              <Menu></Menu>
             </Grid>
           <Col></Col>
             {/* <Col>
@@ -68,7 +84,7 @@ const isMobile = useMediaQuery({
             </Col> */}
           </Grid>
           </Row>
-          
+        }
         
       </React.Fragment>
 
@@ -90,7 +106,7 @@ const isMobile = useMediaQuery({
                 <Col xs={9}>
                   <Banner></Banner>
                 </Col>
-                <Col xs={3} >
+                <Col className="box7" xs={3} >
                   <Logo/>
                 </Col>
                
@@ -136,14 +152,13 @@ const isMobile = useMediaQuery({
             
           </Route>
 
-          <Route path="/oauth/kakao/callback">
+          {/* <Route path="/oauth/kakao/callback">
             <Auth></Auth>
-          </Route>
+          </Route> */}
             
             
-          <Route path="/profile" >
+          <Route path="/ann" >
             <Profile></Profile>
-            <Logout></Logout>
           </Route>
 
           <Route path="/stitle">
@@ -164,6 +179,10 @@ const isMobile = useMediaQuery({
 
           <Route path="/PWfind">
             <PWfind></PWfind>
+          </Route>
+
+          <Route path="/PWfind2">
+            <PWfind2></PWfind2>
           </Route>
 
           <Route path="/Singup">

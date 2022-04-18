@@ -337,19 +337,7 @@ const Login = () => {
             >
               회원가입
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link to="/PWfind">
-                  <h6>아이디/비밀번호 찾기</h6>
-                </Link>
-              </Grid>
-
-              {/* <Grid item>
-                <Link href="#">
-                  <h6>회원가입</h6>
-                </Link>
-              </Grid> */}
-            </Grid>
+            
           </Box>
         </Box>
 

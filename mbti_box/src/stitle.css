@@ -96,7 +96,7 @@ img {
   padding: 0;
 }
 .column:last-child {
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 .column::after {
   content: '';

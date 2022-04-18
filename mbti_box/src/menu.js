@@ -21,7 +21,7 @@ const Menu = () => {
 
           <li><Link to="./PostEditor"className="menusize ss">게임</Link> </li>
           <li><a href="javascript:;"className="menusize ss">채팅</a> </li>
-          <li><Link to="./Profile" style={{ textDecoration: 'none', color:'black' }}className="menusize ss">문의</Link></li>
+          <li><Link to="./ann" style={{ textDecoration: 'none', color:'black' }}className="menusize ss">공지사항</Link></li>
 
         </ul>
       </div>

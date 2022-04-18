@@ -11,8 +11,8 @@ const Banner = () => {
   return (
     
     
-            <div className="abc">
-                <img src={img1}/>
+            <div className="abc" lm>
+                <img src={img1} style={{width:"100%",height:"100%"}}/>
             </div>
         
             

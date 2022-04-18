@@ -21,7 +21,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">INTJ</h6>
+                      <h6>INTJ</h6>
                 </div>
             </div>
           </div>
