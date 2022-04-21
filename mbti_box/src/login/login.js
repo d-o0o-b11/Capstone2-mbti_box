@@ -105,20 +105,7 @@ const Login = () => {
 
 
   
-      {/* <div className="wrap">
-        <div className="mytitle">
-          <h3>안녕하세요</h3>
-        </div>
-        
-      </div> */}
-        
       
-        
-          {/* <a href={KAKAO_AUTH_URL}>
-            <img src={kakaoimg} className="kast"/>
-          </a>
-        
-      <NaverLogin></NaverLogin> */}
 
       
 

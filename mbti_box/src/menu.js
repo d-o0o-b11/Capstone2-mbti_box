@@ -1,7 +1,6 @@
 import React from "react"
 import "./menu.css"
 import "./Step.css";
-import img1 from "./images/name.jpg"
 import {Link} from "react-router-dom";
 import "./fonts/font.css";
 import {Grid, Text} from "./elements"

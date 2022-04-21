@@ -30,6 +30,8 @@ import {Grid,Text} from "./elements"
 import { useMediaQuery } from "react-responsive"
 import { CacheProvider } from "@emotion/react"
 
+import lo from "./images/mm.png"
+
 
 
 const App = (props) => {
@@ -68,11 +70,12 @@ const isMobile = useMediaQuery({
         <Row>
           <Grid is_flex padding="16px">
             <Col>
-              <h3>
+              {/* <h3>
               <Link to="/" style={{ textDecoration: 'none', color:'black'}} >
                   MBTI_BOX
               </Link>
-              </h3>
+              </h3> */}
+                <Link to="/"><img src={lo} style={{width:200}}/></Link>
             </Col>
           
             <Grid is_flex width="50%">

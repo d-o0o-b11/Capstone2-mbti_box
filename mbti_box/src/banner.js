@@ -1,6 +1,5 @@
 import React from "react"
 import img1 from "./images/ba.jpg"
-import img2 from "./images/t.png"
 import "./Step.css"
 
 
