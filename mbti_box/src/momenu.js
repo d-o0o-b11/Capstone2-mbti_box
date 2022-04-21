@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, Button } from 'antd';
 import styled from 'styled-components';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { MenuOutlined, MenuFoldOutlined, MenuUnfoldOutlined, CloseOutlined, CommentOutlined, NotificationOutlined, SnippetsOutlined } from '@ant-design/icons';
+import { HeartOutlined, CommentOutlined, NotificationOutlined, SnippetsOutlined } from '@ant-design/icons';
 import {Row, Col} from "react-bootstrap";
 import img2 from "./images/me.png"
 import img3 from "./images/xx.png"
@@ -63,9 +63,8 @@ const Momenu = () => {
                   </Col>
 
                   <Col xs={9}style={{ marginTop: 10 }}>
-                    <h1>
-                          MBTI_BOX 
-                    </h1>
+                  <h3><HeartOutlined /> menu <HeartOutlined /></h3>
+                    
                   </Col>
                   <hr></hr>
                 </Row> 

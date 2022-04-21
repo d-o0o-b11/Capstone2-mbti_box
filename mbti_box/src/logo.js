@@ -29,7 +29,7 @@ const Logo = () => {
   return (
     <>
 
-    <Box
+    {/* <Box
       xs={{
         marginTop: 0,
         display: 'flex',
@@ -90,7 +90,7 @@ const Logo = () => {
               
                 <Link to="/Singup" style={{ textDecoration: 'none', color:'gray', marginLeft:100}}>
                   <span>회원가입</span>
-                </Link>
+                </Link> */}
               
   
   
@@ -102,11 +102,11 @@ const Logo = () => {
               로그인
             </Button> */}
           
-          {/* <div className="login">
+          <div className="login">
               <h6>
-                <Link to="/login" style={{ textDecoration: 'none' , color:'black'}} className="slogin">회원가입/로그인 </Link> 
+                <Link to="/login" style={{ textDecoration: 'none' , color:'black'}} className="slogin">로그인 </Link> 
               </h6>
-          </div> */}
+          </div>
           
           
           

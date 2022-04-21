@@ -13,10 +13,6 @@ import Container from '@mui/material/Container';
 
 
 const Login = () => {
-  // const REST_API_KEY = "904930897775ba6799ec662e5a53d205";
-  // const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
-  // const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-  // const CLIENT_SECRET = "2rYlf0MWQZDwNHBN88GPGUvw5szohgSF";
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);

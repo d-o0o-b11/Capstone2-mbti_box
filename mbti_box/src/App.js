@@ -68,20 +68,19 @@ const isMobile = useMediaQuery({
         <Row>
           <Grid is_flex padding="16px">
             <Col>
-              <h1>
-              <Link to="/" style={{ textDecoration: 'none', color:'black'}} className="slogo">
+              <h3>
+              <Link to="/" style={{ textDecoration: 'none', color:'black'}} >
                   MBTI_BOX
               </Link>
-              </h1>
+              </h3>
             </Col>
           
             <Grid is_flex width="50%">
               <Menu></Menu>
             </Grid>
-          <Col></Col>
-            {/* <Col>
+            <Col>
               <Logo/>
-            </Col> */}
+            </Col>
           </Grid>
           </Row>
         }
@@ -103,12 +102,13 @@ const isMobile = useMediaQuery({
               </Row>
               :
               <Row>
-                <Col xs={9}>
+                <Banner></Banner>
+                {/* <Col xs={9}>
                   <Banner></Banner>
                 </Col>
                 <Col className="box7" xs={3} >
                   <Logo/>
-                </Col>
+                </Col> */}
                
               </Row>
               }
@@ -116,7 +116,9 @@ const isMobile = useMediaQuery({
            
 
 
-            <Row style={{ marginTop: 20 }}>
+            <Row style={{ marginTop: 100}}> 
+              {/* <div className="hr-sect">인기게시글</div> */}
+              <hr className="hi"></hr>
               <Col>
                 <Board></Board>
               </Col>
@@ -152,9 +154,6 @@ const isMobile = useMediaQuery({
             
           </Route>
 
-          {/* <Route path="/oauth/kakao/callback">
-            <Auth></Auth>
-          </Route> */}
             
             
           <Route path="/ann" >
