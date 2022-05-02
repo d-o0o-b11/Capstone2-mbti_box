@@ -281,5 +281,12 @@ a {
 
 
 .inputh{
-  height: 100px;
+  padding: 0.875rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  color: #333;
+  outline: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-size: 0.875rem;
 }

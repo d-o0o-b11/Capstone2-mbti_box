@@ -9,13 +9,37 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-
+import Axios from 'axios';
 
 
 const Login = () => {
+  
+  const signAxios = () => {
+
+    Axios({
+      method: 'post',
+      url: '/authenticate',
+      data: {
+          username: "user_id",
+          password: "user_pw",
+      },
+  })
+  .then((Response)=>{
+      alert("회원가입 성공");
+
+      console.log(Response.data)
+  })
+  .catch((error)=>{
+      alert("회원가입 실패");
+      console.log(error);
+  });
+}
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    signAxios();
     console.log({
       email: data.get('userid'),
       password: data.get('password'),

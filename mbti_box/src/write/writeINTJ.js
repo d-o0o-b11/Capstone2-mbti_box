@@ -1,9 +1,37 @@
 import React, { useState } from "react";
 import {Row, Col} from "react-bootstrap";
 import "../write/writes.css"
+import { Input } from "antd"
+import Axios from 'axios';
 
+
+const { TextArea } = Input
 
 const WRITEINTJ = () => {
+
+  const signAxios = () => {
+
+    Axios({
+      method: 'post',
+      url: '/authenticate',
+      data: {
+          username: "user_id",
+          password: "user_pw",
+      },
+  })
+  .then((Response)=>{
+      alert("회원가입 성공");
+
+      console.log(Response.data)
+  })
+  .catch((error)=>{
+      alert("회원가입 실패");
+      console.log(error);
+  });
+  }
+
+
+
   const [post,setPost] = useState({
     title:'',
     desc:'',
@@ -106,9 +134,9 @@ const WRITEINTJ = () => {
             <div className="custom-form-group" >
                 <input type="text" name="title" placeholder="Title" value={title} onChange={handlechange}/>
             </div>
-            <div className="custom-form-group">
-                <input type="text" name="desc" placeholder="Description" value={desc} onChange={handlechange} onKeyDown="if(event.keyCode===13) aaascript();"/>
-            </div>
+            {/* <div className="custom-form-group">
+                <input type="text" name="desc" placeholder="Description" value={desc} onChange={handlechange} className="inputh" autoSize={{ minRows: 6, maxRows: 6 }}/>
+            </div> */}
             <div className="custom-form-group">
                 <div className={highlight? "custom-file-drop-area highlight": "custom-file-drop-area "} 
                 onDragEnter={handlehighlight} 
@@ -129,6 +157,16 @@ const WRITEINTJ = () => {
                     
                 </div>
             </div>
+
+            <TextArea
+              type="text"
+              placeholder="Description"
+              name="desc"
+              className='custom-form-group inputh'
+                autoSize={{ minRows: 6, maxRows: 6 }}
+              />
+
+
             <button type="submit" className="btn-submit">Submit</button>
         
         </div>
