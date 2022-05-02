@@ -29,6 +29,7 @@ import { Button, Card, Container, Row, Col, Image, ThemeProvider } from "react-b
 import {Grid,Text} from "./elements"
 import { useMediaQuery } from "react-responsive"
 import { CacheProvider } from "@emotion/react"
+import { Divider} from 'semantic-ui-react'
 
 import lo from "./images/mm.png"
 
@@ -53,11 +54,7 @@ const isMobile = useMediaQuery({
       {isMobile?
         <Row>
             <Col xs={9}>
-            <Link to="/" style={{ textDecoration: 'none', color:'black'}}>
-              <h1 style={{marginTop:10 }}>
-                  MBTI_BOX
-              </h1>
-            </Link>
+              <Link to="/"><img src={lo} style={{width:200, marginTop:10, marginBottom:10 }}/></Link>
             </Col>
           
             
@@ -119,9 +116,10 @@ const isMobile = useMediaQuery({
            
 
 
-            <Row style={{ marginTop: 100}}> 
+            <Row style={{ marginTop: 70}}> 
               {/* <div className="hr-sect">인기게시글</div> */}
               <hr className="hi"></hr>
+              {/* <Divider horizontal>Or</Divider> */}
               <Col>
                 <Board></Board>
               </Col>

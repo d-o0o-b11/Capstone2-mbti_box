@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import {Row, Col} from "react-bootstrap";
 import "../write/writes.css"
 
 
-const WRITEINTJ = (props) => {
+const WRITEINTJ = () => {
   const [post,setPost] = useState({
     title:'',
     desc:'',
@@ -66,7 +67,7 @@ const WRITEINTJ = (props) => {
 
   const handledelete=e=>{
     let target = e.target.parentElement;
-    let targetindex = target.dataset.imgindex;
+    let targetindex = target.dataset.imgindex*1;
     // console.log(target, targetindex);
      setPost({
        ...post,
@@ -98,6 +99,7 @@ const WRITEINTJ = (props) => {
   }
 
   return (
+    <Row>
         <div className="file-upload">
         <h2>Image Drag & Drop & Preview</h2>
         
@@ -105,7 +107,7 @@ const WRITEINTJ = (props) => {
                 <input type="text" name="title" placeholder="Title" value={title} onChange={handlechange}/>
             </div>
             <div className="custom-form-group">
-                <input type="text" name="desc" placeholder="Description" value={desc} onChange={handlechange}/>
+                <input type="text" name="desc" placeholder="Description" value={desc} onChange={handlechange} onKeyDown="if(event.keyCode===13) aaascript();"/>
             </div>
             <div className="custom-form-group">
                 <div className={highlight? "custom-file-drop-area highlight": "custom-file-drop-area "} 
@@ -114,7 +116,7 @@ const WRITEINTJ = (props) => {
                 onDragLeave={handleunhiglight}
                 onDrop={handledrop}
                 >
-                    <input type="file"name="photos" placeholder="Enter photos" multiple id="filephotos" onChange={handlechange}/>
+                    <input type="file"name="photos" placeholder="Enter photos" multiple id="filephotos" onChange={handlefilechange}/>
                     <label htmlFor="filephotos">Drag & Drop</label>
                 </div>
                 <div className="custom-file-preview">
@@ -129,8 +131,8 @@ const WRITEINTJ = (props) => {
             </div>
             <button type="submit" className="btn-submit">Submit</button>
         
-    </div>
-
+        </div>
+      </Row>
 
   );
 };

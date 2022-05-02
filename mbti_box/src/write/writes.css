@@ -85,7 +85,7 @@ a {
   margin-top: 2rem;
 }
 .file-upload::after {
-  content: "😷 😁 👨‍💻";
+  /* content: "😷 😁 👨‍💻"; */
   position: absolute;
   font-size: 5rem;
   top: -18%;
@@ -101,9 +101,9 @@ a {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.file-upload:hover::after {
+/* .file-upload:hover::after {
   content: "🤘 😎 🤘";
-}
+} */
 .file-upload h2 {
   font-size: 1.5rem;
   color: #333;
@@ -276,4 +276,10 @@ a {
   cursor: pointer;
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.inputh{
+  height: 100px;
 }
