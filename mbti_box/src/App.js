@@ -53,12 +53,12 @@ const isMobile = useMediaQuery({
       <React.Fragment>
       {isMobile?
         <Row>
-            <Col xs={9}>
+            <Col xs={10}>
               <Link to="/"><img src={lo} style={{width:200, marginTop:10, marginBottom:10 }}/></Link>
             </Col>
           
             
-            <Col xs={3}>
+            <Col xs={2}>
               <Momenu></Momenu>
             </Col>
             

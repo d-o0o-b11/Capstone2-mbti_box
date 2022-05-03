@@ -3,10 +3,8 @@ import "./Step.css";
 import {Link} from "react-router-dom";
 import "./fonts/font.css";
 import React, { useState, useEffect } from 'react';
-import { Menu, Button } from 'antd';
 import styled from 'styled-components';
-import { BrowserView, MobileView } from 'react-device-detect';
-import { HeartOutlined, CommentOutlined, NotificationOutlined, SnippetsOutlined, CloudOutlined } from '@ant-design/icons';
+import {  CommentOutlined, NotificationOutlined, SnippetsOutlined, CloudOutlined } from '@ant-design/icons';
 import {Row, Col} from "react-bootstrap";
 import img2 from "./images/me.png"
 import img3 from "./images/xx.png"
@@ -83,13 +81,13 @@ const Momenu = () => {
 
 
                     <Link to="/stitle" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
-                      <h5 className="st mm"><SnippetsOutlined />게시판</h5>
+                      <h5 className="st mm"><SnippetsOutlined style={{ fontSize: '30px', marginRight:'20px'}} />게시판</h5>
                     </Link>
 
-                    <h5 className="st mm"><CommentOutlined />채팅</h5>
+                    <h5 className="st mm"><CommentOutlined style={{ fontSize: '30px', marginRight:'20px'}} />채팅</h5>
 
                     <Link to="./ann" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
-                      <h5 className="st mm"><NotificationOutlined style={{marginBottom:10}}/>공지사항</h5>
+                      <h5 className="st mm"><NotificationOutlined style={{ fontSize: '30px', marginRight:'20px'}}/>공지사항</h5>
                     </Link>
                   
                 

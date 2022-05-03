@@ -1,5 +1,5 @@
 import React from "react"
-import img1 from "./images/moba.jpg"
+import img1 from "./images/moba.png"
 import "./Step.css"
 
 
