@@ -128,7 +128,7 @@ const WRITEINTJ = () => {
 
   return (
     <Row>
-        <div className="file-upload">
+        <div className="file-upload" style={{marginTop:30}}>
         <h2>Image Drag & Drop & Preview</h2>
         
             <div className="custom-form-group" >
@@ -162,6 +162,7 @@ const WRITEINTJ = () => {
               type="text"
               placeholder="Description"
               name="desc"
+              maxLength={6}
               className='custom-form-group inputh'
                 autoSize={{ minRows: 6, maxRows: 6 }}
               />
