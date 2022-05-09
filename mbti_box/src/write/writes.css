@@ -261,8 +261,8 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: #333;
-  color: #f1f1f1;
+  background-color: rgb(253, 195,219);
+  color: #000000;
   font-size: 0.875rem;
   text-transform: uppercase;
   padding: 0.875rem 1.5rem;

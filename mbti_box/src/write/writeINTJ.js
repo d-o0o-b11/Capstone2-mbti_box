@@ -131,6 +131,7 @@ const WRITEINTJ = () => {
         <div className="file-upload" style={{marginTop:30}}>
         {/* Image Drag & Drop & Preview */}
         <h2>게시글 작성</h2>
+        <span style={{marginBottom:10}}>INTJ</span>
         
             <div className="custom-form-group" >
                 <input type="text" name="title" placeholder="Title" value={title} onChange={handlechange}/>
