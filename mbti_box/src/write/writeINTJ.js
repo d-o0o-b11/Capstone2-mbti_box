@@ -129,7 +129,8 @@ const WRITEINTJ = () => {
   return (
     <Row>
         <div className="file-upload" style={{marginTop:30}}>
-        <h2>Image Drag & Drop & Preview</h2>
+        {/* Image Drag & Drop & Preview */}
+        <h2>게시글 작성</h2>
         
             <div className="custom-form-group" >
                 <input type="text" name="title" placeholder="Title" value={title} onChange={handlechange}/>
@@ -160,9 +161,9 @@ const WRITEINTJ = () => {
 
             <TextArea
               type="text"
-              placeholder="Description"
+              placeholder="1000자 내외"
               name="desc"
-              maxLength={6}
+              maxLength={1000}
               className='custom-form-group inputh'
                 autoSize={{ minRows: 6, maxRows: 6 }}
               />

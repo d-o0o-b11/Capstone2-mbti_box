@@ -22,7 +22,7 @@ const INTJ=()=>{
 
 
                 <div style={{marginLeft:'0px'}}>
-                    <h2>INTJ게시판</h2>
+                    <h2>INTJ</h2>
                 </div>
         
                 <div style={{marginRight:'0px'}}>
