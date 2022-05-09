@@ -41,7 +41,7 @@ const Momenu = () => {
   return (
     <>
         
-          <img src={img2} onClick={toggleChange} style={{ width:50, height:50, marginLeft:20}}/>
+          <img src={img2} onClick={toggleChange} style={{ width:50, height:50}}/>
         
         {/* <NavTop>
           <MenuUnfoldOutlined src={img2} type="primary" onClick={toggleChange} style={{ marginBottom: 10, width:20 }}>

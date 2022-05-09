@@ -32,7 +32,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                  <h6 className="sss">INTP</h6>
+                  <h6>INTP</h6>
                 </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ENTJ</h6>
+                      <h6>ENTJ</h6>
                 </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ENTP</h6>
+                      <h6>ENTP</h6>
                 </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">INFJ</h6>
+                      <h6>INFJ</h6>
                 </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">INFP</h6>
+                      <h6>INFP</h6>
                 </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ENFJ</h6>
+                      <h6>ENFJ</h6>
                 </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ENFP</h6>
+                      <h6>ENFP</h6>
                 </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ISTJ</h6>
+                      <h6>ISTJ</h6>
                 </div>
             </div>
           </div>
@@ -148,7 +148,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ISFJ</h6>
+                      <h6>ISFJ</h6>
                 </div>
             </div>
           </div>
@@ -159,7 +159,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ESTJ</h6>
+                      <h6>ESTJ</h6>
                 </div>
             </div>
           </div>
@@ -170,7 +170,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ESFJ</h6>
+                      <h6>ESFJ</h6>
                 </div>
             </div>
           </div>
@@ -189,7 +189,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ISTP</h6>
+                      <h6>ISTP</h6>
                 </div>
             </div>
           </div>
@@ -200,7 +200,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ISFP</h6>
+                      <h6>ISFP</h6>
                 </div>
             </div>
           </div>
@@ -211,7 +211,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ESTP</h6>
+                      <h6>ESTP</h6>
                 </div>
             </div>
           </div>
@@ -231,7 +231,7 @@ const mostitle = () => {
             <div>
               <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                 <div className="textpo">
-                      <h6 className="sss">ESFP</h6>
+                      <h6>ESFP</h6>
                 </div>
             </div>
           </div>
@@ -241,7 +241,7 @@ const mostitle = () => {
                 <div>
                   <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
                     <div className="textpo">
-                          <h6 className="sss">자유</h6>
+                          <h6>자유</h6>
                     </div>
                 </div>
               </div>
