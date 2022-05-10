@@ -11,7 +11,7 @@ const Board = () => {
   return (
     
     <>
-      <div style={{marginTop:20}}>
+      <div style={{marginTop:10}}>
           <img src={img1}/>
           <h6 style={{marginTop:10}}>
             제목 : ooo

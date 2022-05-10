@@ -1,5 +1,6 @@
 import React from "react"
-import img1 from "./images/moba.png"
+import img1 from "./images/cc.png"
+// import img1 from "./images/moba.png"
 import "./Step.css"
 
 

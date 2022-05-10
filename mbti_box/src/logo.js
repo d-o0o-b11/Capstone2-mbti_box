@@ -29,85 +29,14 @@ const Logo = () => {
   return (
     <>
 
-    {/* <Box
-      xs={{
-        marginTop: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-    <Box component="form" onSubmit={handleSubmit} noValidate xs={{ mt: 1 }} style={{marginTop:20}}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="userid"
-              label="ID"
-              name="userid"
-              autoComplete="current-userid"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 2, mb: 2 }}
-            >
-              로그인
-            </Button>
-    </Box>
-
-    
-  </Box>
-            
-            
-                
-                <Link to="/PWfind" style={{ textDecoration: 'none', color:'gray'}}>
-                  <span style={{marginRight:"5px"}}>아이디</span>
-                </Link>
-
-                <span>|</span>
-
-                <Link to="/PWfind2" style={{ textDecoration: 'none', color:'gray'}}>
-                  <span style={{marginLeft:"5px"}}>비밀번호 찾기</span>
-                </Link>
-             
-              
-
-              
-              
-                <Link to="/Singup" style={{ textDecoration: 'none', color:'gray', marginLeft:100}}>
-                  <span>회원가입</span>
-                </Link> */}
-              
-  
-  
-            {/* <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 10, mb: 2 }}>
-              로그인
-            </Button> */}
           
-          <div className="login">
+          {/* <div className="login">
               <h6>
                 <Link to="/login" style={{ textDecoration: 'none' , color:'black'}} className="slogin">로그인 </Link> 
               </h6>
-          </div>
+          </div> */}
           
+          {/* 안써요 */}
           
           
         

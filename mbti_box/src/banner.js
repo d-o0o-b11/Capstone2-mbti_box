@@ -1,5 +1,5 @@
 import React from "react"
-import img1 from "./images/ba.png"
+import img1 from "./images/cc.png"
 import "./Step.css"
 import { Carousel } from 'antd';
 
@@ -19,9 +19,9 @@ const Banner = () => {
   return (
     
     
-            <div className="abc" lm>
+            
                 <img src={img1} style={{width:"100%",height:"100%"}}/>
-            </div>
+            
 
             
         

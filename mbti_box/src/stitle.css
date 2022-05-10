@@ -166,3 +166,25 @@ figure:hover+span {
     opacity: 1;
   }
 }
+
+/* 모바일 */
+
+figure1 {
+  margin: 0 auto;
+  width: 100%; 
+  height: auto;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
+figure1:hover+span {
+  bottom: -36px;
+  opacity: 1;
+}
+
+
+.hover13 figure1:hover img {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}

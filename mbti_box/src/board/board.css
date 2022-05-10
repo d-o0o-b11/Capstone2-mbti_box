@@ -1,0 +1,57 @@
+  .column {
+    margin: 15px 15px 0;
+    padding: 0;
+  }
+  .column:last-child {
+    padding-bottom: 20px;
+  }
+  .column::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+  .column img {
+    position: relative;
+    float: left;
+    width: 120%; 
+    
+    height: auto;
+    /* margin: 0 0 0 25px; */
+    padding: 0;
+  }
+  .column div:first-child {
+    margin-left: 0;
+  }
+
+  
+  .sss{
+    
+    font-size: 1.2vw;
+  }
+
+
+/* 모바일 css */
+  .column1 {
+    margin: 15px 15px 0;
+    padding: 0;
+  }
+  .column1:last-child {
+    padding-bottom: 20px;
+  }
+  .column1::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+  .column1 img {
+    position: relative;
+    float: left;
+    width: 100%; 
+    
+    height: auto;
+    /* margin: 0 0 0 25px; */
+    padding: 0;
+  }
+  .column1 div:first-child {
+    margin-left: 0;
+  }

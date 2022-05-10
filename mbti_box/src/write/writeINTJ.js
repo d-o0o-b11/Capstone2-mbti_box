@@ -126,6 +126,7 @@ const WRITEINTJ = () => {
     console.log(files);
   }
 
+  
   return (
     <Row>
         <div className="file-upload" style={{marginTop:30}}>

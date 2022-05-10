@@ -126,7 +126,7 @@ a {
     background:rgba(255, 255, 255);
     position:fixed;
     top:0;
-    left:100px;
+    left:140px;
     z-index:1;
     transition:all .35s;
   }

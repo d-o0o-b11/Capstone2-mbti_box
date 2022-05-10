@@ -13,14 +13,14 @@ const mostitle = () => {
   return (
     <>
     <React.Fragment>
-    <Row>
+    <Row style={{marginTop:10}}>
       
         <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>INTJ</h6>
+                      <h6 style={{marginTop:5}}>INTJ</h6>
                 </div>
             </div>
           </div>
@@ -28,106 +28,100 @@ const mostitle = () => {
         
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                  <h6>INTP</h6>
+                  <h6 style={{marginTop:5}}>INTP</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ENTJ</h6>
+                  <h6 style={{marginTop:5}}>ENTJ</h6>
                 </div>
             </div>
           </div>
         </Col>
 
-        
-        
-       
-        
       </Row>
       
-      
-      
-      <Row>
+         
+      <Row style={{marginTop:10}}>
       
       <Col>
-          <div className="hover13 column">
+          <div className="hover13">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ENTP</h6>
+                  <h6 style={{marginTop:5}}>ENTP</h6>
                 </div>
             </div>
           </div>
         </Col>
 
       <Col>
-          <div className="hover13 column">
+          <div className="hover13">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>INFJ</h6>
+                  <h6 style={{marginTop:5}}>INFJ</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>INFP</h6>
+                  <h6 style={{marginTop:5}}>INFP</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         
-        
       </Row>
       
 
       
-      <Row>
+      <Row style={{marginTop:10}}>
      
       <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ENFJ</h6>
+                  <h6 style={{marginTop:5}}>ENFJ</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ENFP</h6>
+                  <h6 style={{marginTop:5}}>ENFP</h6>
                 </div>
             </div>
           </div>
         </Col>
 
       <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ISTJ</h6>
+                  <h6 style={{marginTop:5}}>ISTJ</h6>
                 </div>
             </div>
           </div>
@@ -140,37 +134,37 @@ const mostitle = () => {
       </Row>
       
 
-      <Row>
+      <Row style={{marginTop:10}}>
 
       
       <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ISFJ</h6>
+                  <h6 style={{marginTop:5}}>ISFJ</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ESTJ</h6>
+                  <h6 style={{marginTop:5}}>ESTJ</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ESFJ</h6>
+                  <h6 style={{marginTop:5}}>ESFJ</h6>
                 </div>
             </div>
           </div>
@@ -182,36 +176,36 @@ const mostitle = () => {
        
       </Row>
       
-      <Row>
+      <Row style={{marginTop:10}}>
         
         <Col>
-          <div className="hover13 column">
+          <div className="hover13">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ISTP</h6>
+                  <h6 style={{marginTop:5}}>ISTP</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ISFP</h6>
+                  <h6 style={{marginTop:5}}>ISFP</h6>
                 </div>
             </div>
           </div>
         </Col>
 
         <Col>
-          <div className="hover13 column">
+          <div className="hover13">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ESTP</h6>
+                  <h6 style={{marginTop:5}}>ESTP</h6>
                 </div>
             </div>
           </div>
@@ -224,24 +218,24 @@ const mostitle = () => {
       </Row>
 
 
-      <Row>
+      <Row style={{marginTop:10}}>
         
         <Col>
-          <div className="hover13 column">
+          <div className="hover13 ">
             <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
-                      <h6>ESFP</h6>
+                  <h6 style={{marginTop:5}}>ESFP</h6>
                 </div>
             </div>
           </div>
         </Col>
           <Col>
-              <div className="hover13 column">
+              <div className="hover13 ">
                 <div>
-                  <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
+                  <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                     <div className="textpo">
-                          <h6>자유</h6>
+                      <h6 style={{marginTop:5}}>자유</h6>
                     </div>
                 </div>
               </div>

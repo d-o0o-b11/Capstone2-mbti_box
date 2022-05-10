@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
+.font-big{
+  font-size: 0.9vw;
+}
+
+.row{
+  margin-right: 0 !important;
+}
+
+.row>*{
+  padding-right: 0 !important;
+  margin-right: 0;
+}
+
 .hihi {
   float: left;
   width: 100px;
@@ -18,10 +31,7 @@
   height: 40px;
 }
 
-.abc {
-  text-align: center;
-  height: 100%;
-}
+
 
 .bann {
   width: 1900px;
@@ -33,10 +43,6 @@
   min-height: 100%;
 }
 
-.header {
-  height: 50px;
-  background: #ccc;
-}
 
 .menu {
   height: 50px;
@@ -46,10 +52,11 @@
 .footer {
   /*ㄱㄷ*/
   text-align: center;
-  color: black;
   /*따라오는거 수정, 밑에 고정*/
 }
 
+
+/* 배경 */
 .container {
   background-color: rgb(255, 255, 255);
 }
@@ -82,20 +89,7 @@
   background-color: darksalmon;
 }
 
-.middle {
-  background: rgb(94, 218, 121);
-}
 
-.board {
-  background-color: rgb(86, 199, 214);
-  height: 500px;
-}
-
-.footerblock {
-  height: 300px;
-  bottom: 0;
-  background-color: #ccc;
-}
 
 h1,
 h2,
@@ -148,21 +142,65 @@ li {
 
 
 
-.hi {
-  border: none;
-  border-top: 1px solid rgba(156, 50, 50, 0);
-  overflow: visible;
-  text-align: center;
-  margin-top: 24px;
-  height: 17px;
+
+
+
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;	
+  font-weight: bold;
 }
 
-.hi:after {
-  content: "인기 게시글";
-  position: relative;
-  top: -25px;
-  background: rgb(255, 255, 255); 
-  padding: 0 10px;
-  color: #000000;
-  font-size: 2.0em;
+
+
+.c-biz-tit[data-v-42081291] {
+
+  margin: 0 0 46px;
+  font-size: 19px;
+  font-weight: 400;		
+  text-align: left;		
+  line-height: 1.2;
+  border-bottom: 2px solid #ff6969;
+}
+
+.c-biz-tit span[data-v-42081291] {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 165px;
+  min-height: 34px;
+  padding: 3px 44px;
+  margin-bottom: -2px;
+  border-radius: 7px 7px 0 0;
+  background-color: #ff6969;
+  color: #fff;
+}
+
+.c-biz-tit[data-v-42081291] {
+  margin: 0 0 46px;
+  font-size: 19px;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.2;
+  border-bottom: 2px solid #ff6969;
+}
+
+
+/* 배경색 */
+.body{
+  background-color: rgb(255, 255, 255);
+}
+/* rgb(245,246,248) */
+
+
+
+.aaa{
+    width: 102%;
+    background-color: #FFF;
+    /* top: 0; */
+    box-shadow: -13px 6px 19px 0px #c4ac8e;
 }
