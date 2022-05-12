@@ -9,27 +9,59 @@ const { TextArea } = Input
 
 const WRITEINTJ = () => {
 
+  const [Title, setTitle] = React.useState("");  //title
+  const [Picture, setPicture] = React.useState("");  //picture
+  const [Text, setText] = React.useState("");  //text
+
+  
   const signAxios = () => {
 
     Axios({
       method: 'post',
-      url: '/authenticate',
+      url: 'api/user/singup',
       data: {
-          username: "user_id",
-          password: "user_pw",
+          Title: Title,
+          Text: Text,
+          //사진 넣어야함
       },
   })
   .then((Response)=>{
-      alert("회원가입 성공");
+      alert("성공");
 
       console.log(Response.data)
   })
   .catch((error)=>{
-      alert("회원가입 실패");
+      alert("실패");
       console.log(error);
   });
-  }
+}
 
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+
+  // if(data.get('userid')===""){
+  //   alert("아이디를 입력해주세요");
+  // }
+  // else if(data.get('password')===""){
+  //   alert("비밀번호를 입력해주세요");
+  // }
+  // else if(data.get('email')===""){
+  //   alert("이메일을 입력해주세요");
+  // }
+  // else if(data.get('nickname')===""){
+  //   alert("닉네임을 입력해주세요");
+  // }
+  // else if(value===""){
+  //   alert("MBTI를 선택해주세요");
+  // }
+  // else{
+  //   alert("회원가입 성공");
+  //   signAxios();
+  // }
+
+};
 
 
   const [post,setPost] = useState({
@@ -141,18 +173,23 @@ const WRITEINTJ = () => {
                     
                 </div>
             </div>
-
+              
+              
+            <span style={{marginLeft:"auto"}}>{desc.length}/1,000자</span>
             <TextArea
               type="text"
               placeholder="1000자 내외"
               name="desc"
+              value={desc}
+              onChange={
+                handlechange}
               maxLength={1000}
               className='custom-form-group inputh'
                 autoSize={{ minRows: 6, maxRows: 6 }}
               />
 
 
-            <button type="submit" className="btn-submit">Submit</button>
+            <button type="submit" className="btn-submit" onClick={handleSubmit}>Submit</button>
         
         </div>
         </div>

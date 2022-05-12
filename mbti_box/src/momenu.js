@@ -29,19 +29,14 @@ const Momenu = () => {
   return (
     <>
         
-          <img src={img2} onClick={toggleChange} style={{ width:50, height:50}}/>
+        <img src={img2} onClick={toggleChange} style={{ width:50, height:50}}/>
         
-        {/* <NavTop>
-          <MenuUnfoldOutlined src={img2} type="primary" onClick={toggleChange} style={{ marginBottom: 10, width:20 }}>
-            { toggleBar ? <MenuOutlined /> : <MenuFoldOutlined /> }
-          </MenuUnfoldOutlined>
-        </NavTop> */}
         { toggleMenu &&
         <>
         
           <div className="emphasized">
             
-              <div className="label sidebar">
+              <div className="label sidebar" >
                 <Row>
                   <Col xs={3}>
                     <img src={img3} onClick={toggleChange} style={{ marginTop: 10, marginLeft:10, width:30, height:30}}/>
