@@ -5,8 +5,7 @@ import img2 from "../images/blue.png"
 import {HeartOutlined, HeartFilled} from '@ant-design/icons';
 import "../stitle.css";
 import "./board.css";
-
-import {Row, Col } from "react-bootstrap";
+import {Container,Row, Col } from "react-bootstrap";
 
 class INTJ extends React.Component{
 
@@ -41,20 +40,19 @@ class INTJ extends React.Component{
                 <Link to="/writeINTJ"><FormOutlined style={{ fontSize: '30px', marginLeft:'10px'}}></FormOutlined></Link>
             </Col>
         </Row> */}
+                
+                <Container>
+                
+                <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
+                    <span data-v-42081291>INTJ</span>
+                </h4>
 
                 <Row>
-                    <Col xs={10}>
-                        <div style={{marginLeft:'0px'}}>
-                            <h3>INTJ</h3>
-                        </div>
-                    </Col>
-            
-                    <Col xs={2}>
+
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>
+                            <Link to="/writeINTJ"><FormOutlined style={{ fontSize: '30px', marginRight:'10px'}}></FormOutlined></Link>
                             <span>글작성</span>
-                            <Link to="/writeINTJ"><FormOutlined style={{ fontSize: '30px', marginLeft:'10px'}}></FormOutlined></Link>
                         </div>
-                    </Col>
                 </Row>
                 
                     {/* <div className="icons-list">
@@ -103,6 +101,7 @@ class INTJ extends React.Component{
                     
 
                 </Row>
+                </Container>
         
         </>
     );

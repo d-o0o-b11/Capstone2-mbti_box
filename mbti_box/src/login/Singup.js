@@ -14,7 +14,8 @@ import PopperUnstyled from '@mui/base/PopperUnstyled';
 import OptionGroupUnstyled from '@mui/base/OptionGroupUnstyled';
 import { styled } from '@mui/system';
 import Axios from 'axios';
-import "./login.css"
+import "./login.css";
+
 
 
 const blue = {
@@ -169,19 +170,25 @@ CustomSelect.propTypes = {
 };
 
 
-
 const Login = () => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState("");  //mbti
+  const [Id, setId] = React.useState("");  //Id
+  const [Pw, setPw] = React.useState("");  //pw
+  const [Email, setEmail] = React.useState("");  //email
+  const [Nickname, setNickname] = React.useState("");  //nick
+
   
   const signAxios = () => {
 
     Axios({
       method: 'post',
-      url: '/user/signup',
+      url: 'api/user/singup',
       data: {
-          username: "1",
-          password: "1",
-          email: "1",
+          username: Id,
+          password: Pw,
+          email: Email,
+          nickname:Nickname,
+          mbti:value,
       },
   })
   .then((Response)=>{
@@ -258,6 +265,9 @@ const Login = () => {
               fullWidth
               id="userid"
               label="ID"
+              _onChange={(e) => {
+                setId(e.target.value);
+              }}
               name="userid"
               autoComplete="current-userid"
               autoFocus
@@ -269,6 +279,9 @@ const Login = () => {
               name="password"
               label="Password"
               type="password"
+              _onChange={(e) => {
+                setPw(e.target.value);
+              }}
               id="password"
               autoComplete="current-password"
             />
@@ -277,6 +290,9 @@ const Login = () => {
                   required
                   fullWidth
                   id="email"
+                  _onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   label="email"
                   name="email"
                   autoComplete="email"
@@ -286,6 +302,9 @@ const Login = () => {
                   required
                   fullWidth
                   id="nickname"
+                  _onChange={(e) => {
+                    setNickname(e.target.value);
+                  }}
                   label="nickname"
                   name="nickname"
                   autoComplete="nickname"

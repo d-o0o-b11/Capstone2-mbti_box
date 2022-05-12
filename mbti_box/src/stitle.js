@@ -1,11 +1,8 @@
-import {Row, Col} from "react-bootstrap";
+import {Row, Col, Container} from "react-bootstrap";
 import React, {Component} from "react";
 import "./stitle.css";
 import img2 from "./images/blue.png"
 import {Link} from "react-router-dom";
-import {Grid, Text, Image} from "./elements"
-import { View, ImageBackground, } from 'react-native';
-import { height, width } from "@mui/system";
 
 
 const stitle = () => {
@@ -14,7 +11,7 @@ const stitle = () => {
 
   return (
     <>
-    
+    <Container>
       <Row>
       <React.Fragment>
         <Col>
@@ -232,7 +229,7 @@ const stitle = () => {
         </React.Fragment>
       </Row>
 
-
+      </Container>
     </>
   );
 };

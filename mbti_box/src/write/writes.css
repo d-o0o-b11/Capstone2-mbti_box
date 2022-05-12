@@ -1,15 +1,3 @@
-Img {
-  object-fit: cover;
-  width: 100%;
-}
-
-ImgArea {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
 
 .uploader-wrapper{
   display: flex;
@@ -46,7 +34,7 @@ ImgArea {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* body {
+/* .ch body {
   margin: 0;
   padding: 0;
   background: #f1f1f1;
@@ -60,7 +48,7 @@ ImgArea {
   -ms-flex-pack: center;
   justify-content: center;
   height: 100vh;
-} */
+}  */
 img {
   max-width: 100%;
 }
@@ -80,12 +68,11 @@ a {
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  width:800px;
+  width:100%;
   position: relative;
   margin-top: 2rem;
 }
 .file-upload::after {
-  /* content: "😷 😁 👨‍💻"; */
   position: absolute;
   font-size: 5rem;
   top: -18%;
@@ -294,4 +281,10 @@ a {
 .custom-form-group inputh:focus {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.che{
+  box-sizing: border-box;
 }

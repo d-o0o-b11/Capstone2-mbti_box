@@ -7,6 +7,9 @@ import Logo from "./logo.js"
 import Banner from "./banner.js"
 import Mobanner from "./mobanner.js"
 import Menu from "./menu.js"
+import MAIN1 from "./main1.js"
+import Footer1 from "./footer1.js"
+import Header1 from "./header1.js"
 import Momenu from "./momenu.js"
 import Board from "./board.js" 
 import "./Step.css"
@@ -29,9 +32,7 @@ import lo from "./images/mm.png"
 
 
 
-const App = (props) => {
-console.log(props.check);
-{/*console.log(props.name);*/}
+const App = () => {
 
 const isMobile = useMediaQuery({
   query : "(max-width:767px)"
@@ -48,104 +49,28 @@ const isTablet = useMediaQuery({
       <div className="App body"> {/*추가*/ }
       {/* <Container>  */}
       
-      <React.Fragment>
-      {(isMobile||isTablet)?
-        <Row>
-            <Col xs={10}>
-              <Link to="/"><img src={lo} style={{width:200, marginTop:10, marginBottom:10 }}/></Link>
-            </Col>
-          
-            
-            <Col xs={2}>
-              <Momenu></Momenu>
-            </Col>
-            
-        </Row>
-      :
-        <Row  className="aaa"  style={{ paddingTop: 30, paddingBottom:10}}>
-
-            <Col>
-              <Menu></Menu>
-            </Col>
-       
-          </Row>
-        }
-        
-      </React.Fragment>
-      {/* </Container> */}
+        {/* 메뉴 */}
+        <Header1/>
        
 
         <Switch>
           <Route exact path="/">
-            {/*<div className="container">
-              <Banner></Banner>
-            </div>*/}
 
-           
-              {isMobile? 
-              <Row>
-                <Mobanner/> 
-              </Row>
-              :
-              <Row>
-                <Banner></Banner>
-                {/* <Col xs={9}>
-                  <Banner></Banner>
-                </Col>
-                <Col className="box7" xs={3} >
-                  <Logo/>
-                </Col> */}
-               
-              </Row>
-              }
-             
-           
-
-      
-            <Row style={{ marginTop: 50}}> 
-              
-                <h4 data-v-42081291 class="c-biz-tit">
-                  <span data-v-42081291>인기게시글</span>
-                </h4>
-
-              {/* <Divider horizontal>Or</Divider> */}
-              <Col>
-                <Board></Board>
-              </Col>
-              <Col>
-                <Board></Board>
-              </Col>
-              <Col>
-                <Board></Board>
-              </Col>
-              <Col>
-                <Board></Board>
-              </Col>
-            </Row>
-
-            {/* <Row>
-              <Col className='box6' style={{ height: 350 }}>
-                랭킹
-              </Col>
-
-            </Row> */}
-
-
-            <Row style={{marginTop:50, height: 50}}>
-              <Col>
-                {isMobile? <Mofooter/> : <Footer></Footer>}
-              </Col>
-            </Row>
+           {/* 메인페이지 */}
+              <MAIN1/>  
+            
+            {/* 바닥글 */}
+              <Footer1/>
 
           </Route>
+
+
+
 
           <Route path="/login">
             <Login></Login>
-            
           </Route>
 
-            
-            
           <Route path="/ann" >
             <Profile></Profile>
           </Route>

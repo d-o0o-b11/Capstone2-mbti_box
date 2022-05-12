@@ -1,7 +1,6 @@
 import React from "react"
 import img1 from "./images/cc.png"
 import "./Step.css"
-import { Carousel } from 'antd';
 
 const contentStyle = {
   height: '160px',

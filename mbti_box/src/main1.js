@@ -1,24 +1,19 @@
 import React from "react"
 import Banner from "./banner.js"
 import Mobanner from "./mobanner.js"
-import Menu from "./menu.js"
-import Momenu from "./momenu.js"
 import Board from "./board.js" 
 import "./Step.css"
 import "./menu.css"
+import "./fonts.css"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Route, Switch,Link } from "react-router-dom"
 import { Container, Row, Col} from "react-bootstrap";
-import {Grid,Text} from "./elements"
 import { useMediaQuery } from "react-responsive"
 
-import lo from "./images/mm.png"
+import img1 from "./images/cc3.png"
 
 
 
-const App = (props) => {
-console.log(props.check);
-{/*console.log(props.name);*/}
+const MAIN1 = () => {
 
 const isMobile = useMediaQuery({
   query : "(max-width:767px)"
@@ -31,40 +26,7 @@ const isTablet = useMediaQuery({
   return (
     <>
 
-    <BrowserRouter>
-      {/* <Container>  */}
-      
-      <React.Fragment>
-      {(isMobile||isTablet)?
-        <Row>
-            <Col xs={10}>
-              <Link to="/"><img src={lo} style={{width:200, marginTop:10, marginBottom:10 }}/></Link>
-            </Col>
-          
-            
-            <Col xs={2}>
-              <Momenu></Momenu>
-            </Col>
-            
-        </Row>
-      :
-        <Row  className="aaa"  style={{ paddingTop: 30, paddingBottom:10}}>
-
-            <Col>
-              <Menu></Menu>
-            </Col>
-       
-          </Row>
-        }
-        
-      </React.Fragment>
-      {/* </Container> */}
-       
-
-        <Switch>
-          <Route exact path="/">
-           
-              {isMobile? 
+            {isMobile? 
               <Row>
                 <Mobanner/> 
               </Row>
@@ -77,7 +39,7 @@ const isTablet = useMediaQuery({
              
            
 
-      
+      <Container style={{marginBottom:60}}>
             <Row style={{ marginTop: 50}}> 
               
                 <h4 data-v-42081291 class="c-biz-tit">
@@ -98,16 +60,22 @@ const isTablet = useMediaQuery({
                 <Board></Board>
               </Col>
             </Row>
+        </Container>
+
+          
+          
+        {/* <div className="to">
+              <span>m</span>
+              <span>b</span>
+              <span>t</span>
+              <span>i</span>
+        </div>   */}
 
 
-          </Route>
+        <img src={img1} style={{width:"100%",height:"100%"}}/>
 
-
-        </Switch>
-      
-    </BrowserRouter>
     </>
   )
 }
-export default App
+export default MAIN1
 //CreateList

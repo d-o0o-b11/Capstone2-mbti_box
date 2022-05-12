@@ -55,3 +55,50 @@
   .column1 div:first-child {
     margin-left: 0;
   }
+
+
+
+  /*구분선*/
+  h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;	
+    font-weight: bold;
+  }
+  
+  
+  
+  .c-biz-tit[data-v-42081291] {
+  
+    margin: 0 0 46px;
+    font-size: 19px;
+    font-weight: 400;		
+    text-align: left;		
+    line-height: 1.2;
+    border-bottom: 2px solid rgb(239,182,110);
+  }
+  
+  .c-biz-tit span[data-v-42081291] {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 165px;
+    min-height: 34px;
+    padding: 3px 44px;
+    margin-bottom: -2px;
+    border-radius: 7px 7px 0 0;
+    background-color: rgb(239,182,110);
+    color: #fff;
+  }
+  
+  .c-biz-tit[data-v-42081291] {
+    margin: 0 0 10px;
+    font-size: 19px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.2;
+    border-bottom: 2px solid rgb(239,182,110);
+  }

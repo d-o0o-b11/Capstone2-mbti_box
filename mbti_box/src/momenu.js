@@ -8,20 +8,8 @@ import {  CommentOutlined, NotificationOutlined, SnippetsOutlined, CloudOutlined
 import {Row, Col} from "react-bootstrap";
 import img2 from "./images/me.png"
 import img3 from "./images/xx.png"
-import Grid from '@mui/material/Grid';
+import img4 from "./images/blue.png"
 
-
-const MenuList = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const NavTop = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  
-  
-`;
 
 const Momenu = () => {
 
@@ -66,6 +54,21 @@ const Momenu = () => {
                   <hr></hr>
                 </Row> 
                 
+                  {/* <Row>
+                    <Col>
+                      <Link to="/login" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
+                        <span className="st m1">로그인</span>
+                      </Link>
+                      <Link to="/Singup" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
+                        <span className="st m1">회원가입</span>
+                      </Link>   
+                    </Col>
+                  </Row> */}
+                <div style={{textAlign: "center"}}>
+                  <div className="profile" style={{margin: "0 auto"}}>
+                      <img src={img4}/>
+                  </div>
+
                   <Row>
                     <Col>
                       <Link to="/login" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
@@ -75,7 +78,8 @@ const Momenu = () => {
                         <span className="st m1">회원가입</span>
                       </Link>   
                     </Col>
-                  </Row>
+                  </Row> 
+                  </div>
 
                   
 

@@ -1,4 +1,4 @@
-import {Row, Col} from "react-bootstrap";
+import {Row, Col, Container} from "react-bootstrap";
 import React, {Component} from "react";
 import "./stitle.css";
 import img2 from "./images/blue.png"
@@ -13,6 +13,7 @@ const mostitle = () => {
   return (
     <>
     <React.Fragment>
+    <Container>
     <Row style={{marginTop:10}}>
       
         <Col>
@@ -243,6 +244,7 @@ const mostitle = () => {
             <Col/>
         
         </Row>
+        </Container>
         </React.Fragment>
 
     </>

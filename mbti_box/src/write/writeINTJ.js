@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import {Row, Col} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import "../write/writes.css"
-import { Input } from "antd"
+import { Input,Row, Col  } from "antd"
 import Axios from 'axios';
 
 
@@ -50,25 +50,7 @@ const WRITEINTJ = () => {
   const handlefilechange = e =>{
     let files = e.target.files;
     handfiles(files);
-    //console.log(files);
-    // let photosArr =[];
-    // for(let file of files){
-    //   let reader = new FileReader();
-    //   reader.readAsDataURL(file);
-    //   reader.addEventListener('load',()=>{
-    //     let fileobj={
-    //       name: file.name,
-    //       type: file.type,
-    //       size: file.size,
-    //       src: reader.result
-    //     }
-    //     photosArr.push(fileobj);
-    //     setPost({
-    //       ...post,
-    //       photos: [...photos, ...photosArr]
-    //     })
-    //   });
-    // }
+   
   }
 
   const handfiles=files=>{
@@ -128,18 +110,17 @@ const WRITEINTJ = () => {
 
   
   return (
-    <Row>
+    <Container>
+          <div style={{margin:"auto"}}>
         <div className="file-upload" style={{marginTop:30}}>
         {/* Image Drag & Drop & Preview */}
         <h2>게시글 작성</h2>
         <span style={{marginBottom:10}}>INTJ</span>
         
             <div className="custom-form-group" >
-                <input type="text" name="title" placeholder="Title" value={title} onChange={handlechange}/>
+                <input type="text" name="title" placeholder="Title" maxLength={40} value={title} onChange={handlechange}/>
             </div>
-            {/* <div className="custom-form-group">
-                <input type="text" name="desc" placeholder="Description" value={desc} onChange={handlechange} className="inputh" autoSize={{ minRows: 6, maxRows: 6 }}/>
-            </div> */}
+            
             <div className="custom-form-group">
                 <div className={highlight? "custom-file-drop-area highlight": "custom-file-drop-area "} 
                 onDragEnter={handlehighlight} 
@@ -174,7 +155,8 @@ const WRITEINTJ = () => {
             <button type="submit" className="btn-submit">Submit</button>
         
         </div>
-      </Row>
+        </div>
+        </Container>
 
   );
 };
