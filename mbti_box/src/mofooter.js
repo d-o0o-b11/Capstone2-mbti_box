@@ -12,26 +12,6 @@ const Mofooter = () => {
 
   return (
     <div className="footer">
-          <Row>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
-            <Col>
-              <img src={Insta} className="pi picenter"/>
-              <span>백앤드</span>
-            </Col>
-            <Col>
-              <img src={Insta} className="pi picenter"/>
-              <span>프론트앤드</span>
-            </Col>
-            <Col>
-              <img src={Insta} className="pi picenter"/>
-              <span >게임</span>
-            </Col>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
-          </Row>
 
             <p>
                 <span className="slogin">&copy; {thisYear()}</span>

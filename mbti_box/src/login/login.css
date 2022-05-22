@@ -40,3 +40,78 @@
   position: relative;
   margin-top: 2rem;
 }
+
+
+.inputbox{ 
+  position:relative; 
+  margin:10px 0; 
+}
+
+.inputbox > input{ 
+  background:transparent; 
+  /* 주변테두리 지우기 */
+  border:none;  
+  /* bottom에만 라인 */
+  border-bottom: solid 1px #ccc; 
+  padding:20px 0px 5px 0px; 
+  font-size:14pt; 
+  width:100%; 
+}
+
+
+.inputbox input::placeholder{ 
+  /* 투명색 */
+  color:transparent; 
+}
+
+.inputbox input:placeholder-shown + label{ 
+  color:#aaa; 
+  font-size:14pt; 
+  top:15px; 
+}
+
+
+/* label여기가 문제야ㅠㅠ */
+/* .inputbox input:focus + label, label */
+
+.inputbox input:focus + label,
+.inputbox input:valid + label{ 
+  color:rgb(226,160,110); 
+  font-size:10pt; 
+  pointer-events: none; 
+  position: absolute; 
+  left:0px; 
+  top:0px; 
+  transition: all 0.2s ease ;
+  -webkit-transition: all 0.2s ease; 
+  -moz-transition: all 0.2s ease; 
+  -o-transition: all 0.2s ease; 
+}
+
+
+
+
+.inputbox input:focus, input:not(:placeholder-shown){ 
+  /* placeholder-shown가 사라지고 focus되었을때 */
+  border-bottom: solid 1px rgb(226,160,110); 
+  outline:none; 
+}
+
+.w-btn {
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 15px 30px;
+  height: 50px;
+  width: 100%;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.w-btn-green {
+  background-color: rgb(226,160,110);
+  color: #ffffff;
+}

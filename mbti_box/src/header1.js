@@ -39,7 +39,7 @@ const isTablet = useMediaQuery({
             
         </Row>
       :
-        <Row  className="aaa"  style={{ paddingTop: 30, paddingBottom:10}}>
+        <Row  className="aaa"  style={{ paddingTop: 20, paddingBottom:10}}>
 
             <Col>
               <Menu></Menu>

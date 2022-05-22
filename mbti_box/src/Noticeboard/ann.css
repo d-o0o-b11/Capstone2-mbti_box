@@ -1,0 +1,49 @@
+
+.blueone {
+  border-collapse: collapse;
+  margin: 30px auto 0 auto;
+  width: 80%;
+  /* 테두리 분리 */
+}  
+.blueone th {
+  padding: 10px;
+  color: rgb(226,160,110);
+  border-bottom: 3px solid rgb(226,160,110);
+  text-align: left;
+}
+.blueone td {
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-bottom: 1px solid rgb(226,160,110);
+}
+
+.blueone tr :nth-child(1){
+    padding: 10px;
+    width: 8%;
+  }
+
+.blueone tr :nth-child(2){
+    padding: 10px;
+    width: 60%;
+}
+
+.blueone tr :nth-child(3){
+    padding: 10px;
+    width: 20%;
+}
+
+.blueone tr :nth-child(4){
+    padding: 10px;
+    width: 12%;
+}
+
+
+.blueone tr:hover td {
+  color: rgb(34, 40, 214);
+}s
+
+.tablecenter{
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+}

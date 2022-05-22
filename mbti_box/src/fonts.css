@@ -1,0 +1,14 @@
+.line{
+    border-left: thick solid rgb(255, 201, 201);
+    height: 40px;
+}
+
+.intr{
+    font-family: "Jua", sans-serif, "Times New Roman", serif;
+    display: inline;
+    font-size: 1.8em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 10;
+}

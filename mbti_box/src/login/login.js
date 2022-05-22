@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useHistory } from "react-router-dom";
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,40 +13,73 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Axios from 'axios';
 
+import "./login.css";
+import img1 from "../images/login.png"
 
-const Login = () => {
+
+const Login = (props) => {
+  const [Id, SetId] = useState("");  //Id
+  const [Pw, SetPw] = useState("");  //pw
   
-  const signAxios = () => {
+  const history = useHistory();
+
+ 
+
+  //비밀번호
+  const passwordHandler = (e) => {
+    e.preventDefault();
+    SetPw(e.target.value);
+  };
+
+  //아이디
+  const IDHandler = (e) => {
+    e.preventDefault();
+    SetId(e.target.value);
+  };
+
+
+  //제출버튼
+  const submitHandler = (e) => {
+    e.preventDefault();
+    // state에 저장한 값을 가져옵니다.
+    console.log(Id);
+    console.log(Pw);
+
+    let body = {
+          username: Id,
+          password: Pw,  
+    };
 
     Axios({
       method: 'post',
-      url: '/authenticate',
+      url: 'api/user/login',
       data: {
-          username: "user_id",
-          password: "user_pw",
+          username: Id,
+          password: Pw,
       },
   })
   .then((Response)=>{
-      alert("회원가입 성공");
+      alert("로그인 성공");
+      localStorage.setItem("token",Response.data.token)
+      const TOKEN = localStorage.getItem("token");
+      console.log(TOKEN);
 
-      console.log(Response.data)
+
+
+      const users = Response.data;
+      localStorage.setItem("nickname", users.nickname);
+      const NICKNAME = localStorage.getItem("nickname");
+      window.alert(`${users.nickname}님 환영합니다.`);
+      history.replace("/");
+      window.location.reload();
+      //console.log(users.nickname);
   })
   .catch((error)=>{
-      alert("회원가입 실패");
+      alert("로그인 실패");
       console.log(error);
   });
-}
-
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    signAxios();
-    console.log({
-      email: data.get('userid'),
-      password: data.get('password'),
-    });
   };
+
 
 
   return (
@@ -61,42 +96,30 @@ const Login = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            <h3>로그인</h3>
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="userid"
-              label="ID"
-              name="userid"
-              autoComplete="current-userid"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
+          <img src={img1} style={{width:200}}/>
+
+
+
+          {/* 입력값 */}
+
+          <Box component="form" onSubmit={submitHandler}>
+            <Container maxWidth="xs">
+
+              <div className='inputbox'>
+                <input type="text" placeholder="아이디" id="userid" value={Id} onChange={IDHandler} name="userid"></input>
+                <label for="userid"><span>아이디</span></label>
+              </div>
+
+              <div className='inputbox'>
+                <input type="password" placeholder="비밀번호" id="password" value={Pw} onChange={passwordHandler}></input>
+                <label for="password">비밀번호</label>
+              </div>
+
+            </Container>
             
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              로그인
-            </Button>
+            <button class="w-btn w-btn-green" type="submit" style={{marginTop:20, marginBottom:20}}>
+                로그인
+            </button>
             <Grid container>
               
               

@@ -123,10 +123,7 @@ a {
   transition: 0.3s ease-in-out;
   font-size: 0.875rem;
 }
-.custom-form-group input:focus {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+
 .custom-file-drop-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -248,8 +245,8 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: rgb(253, 195,219);
-  color: #000000;
+  background-color: rgb(226,160,110);
+  color: #ffffff;
   font-size: 0.875rem;
   text-transform: uppercase;
   padding: 0.875rem 1.5rem;

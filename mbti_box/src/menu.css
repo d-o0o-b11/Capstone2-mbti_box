@@ -118,9 +118,6 @@ a {
 
 
   /* 다른 코드 */
-  /* .l-header.is-active .l-sidebar[data-v-240cc5fc] {
-    display: block;
-} */
   
 .sidebar {
     width:60vw;
@@ -131,31 +128,10 @@ a {
     right: 0;
     z-index:1;
     transition:all .35s;
-    /* display: none;
-    z-index: 1100;
-    box-sizing: border-box;
-    position: fixed;
-    top: 68px;
-    left: 0;
-    right: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #fff;
-    box-shadow: 0 6px 5px rgb(0 0 0 / 15%);
-    -webkit-animation-name: sidebar-md-active-data-v-240cc5fc;
-    animation-name: sidebar-md-active-data-v-240cc5fc;
-    -webkit-animation-duration: .3s;
-    animation-duration: .3s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards; */
 
   }
 
-  /* .l-sidebar[data-v-240cc5fc] {
-    flex-grow: 1;
-    position: relative;
-    z-index: 1950;
-} */
+
 
 .menuicon > label{z-index:2;}
 .menuicon > label span {background:#fff;}
@@ -169,10 +145,6 @@ a {
 }
 
 .emphasized {
-  /* position:fixed;
-  top:150px; left:30px;
-  box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
-  z-index : 100; */
   position: fixed;
     width:60vw;
     height: 100vh;
@@ -214,4 +186,10 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.bb{
+  margin: 0 auto;
+  border: 0;
+  background-color: white;
 }

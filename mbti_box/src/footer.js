@@ -12,32 +12,7 @@ const Footer = () => {
 
   return (
     <div className="footer">
-          <Row>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
-            <Col>
-              <img src={Insta} className="pi picenter"/>
-              <span>백앤드</span>
-            </Col>
-            <Col>
-              <img src={Insta} className="pi picenter"/>
-              <span>프론트앤드</span>
-            </Col>
-            <Col>
-              <img src={Insta} className="pi picenter"/>
-              <span>게임</span>
-            </Col>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
-          </Row>
-{/* 
-            <nav>
-                <a href="https://www.naver.com/" target="_blank">Naver</a> |
-                <a href="https://www.daum.net/" tager="_blank">Daum</a>
-            </nav>
- */}
+          
             <p>
                 <span>&copy; {thisYear()}</span>
 

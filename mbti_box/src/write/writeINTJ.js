@@ -9,59 +9,6 @@ const { TextArea } = Input
 
 const WRITEINTJ = () => {
 
-  const [Title, setTitle] = React.useState("");  //title
-  const [Picture, setPicture] = React.useState("");  //picture
-  const [Text, setText] = React.useState("");  //text
-
-  
-  const signAxios = () => {
-
-    Axios({
-      method: 'post',
-      url: 'api/user/singup',
-      data: {
-          Title: Title,
-          Text: Text,
-          //사진 넣어야함
-      },
-  })
-  .then((Response)=>{
-      alert("성공");
-
-      console.log(Response.data)
-  })
-  .catch((error)=>{
-      alert("실패");
-      console.log(error);
-  });
-}
-
-
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const data = new FormData(event.currentTarget);
-
-  // if(data.get('userid')===""){
-  //   alert("아이디를 입력해주세요");
-  // }
-  // else if(data.get('password')===""){
-  //   alert("비밀번호를 입력해주세요");
-  // }
-  // else if(data.get('email')===""){
-  //   alert("이메일을 입력해주세요");
-  // }
-  // else if(data.get('nickname')===""){
-  //   alert("닉네임을 입력해주세요");
-  // }
-  // else if(value===""){
-  //   alert("MBTI를 선택해주세요");
-  // }
-  // else{
-  //   alert("회원가입 성공");
-  //   signAxios();
-  // }
-
-};
 
 
   const [post,setPost] = useState({
@@ -72,6 +19,7 @@ const handleSubmit = (event) => {
 
   const [highlight, setHighlight]= useState(false);
   const {title, desc, photos}=post;
+
   const handlechange = e =>{
     setPost({
       ...post,
@@ -81,6 +29,7 @@ const handleSubmit = (event) => {
 
   const handlefilechange = e =>{
     let files = e.target.files;
+    console.log(files);
     handfiles(files);
    
   }
@@ -103,6 +52,7 @@ const handleSubmit = (event) => {
           photos: [...photos, ...photosArr]
         })
       });
+
     }
   }
 
@@ -140,6 +90,67 @@ const handleSubmit = (event) => {
     console.log(files);
   }
 
+
+  const submitHandler=(e)=>{
+    e.preventDefault();
+
+    Axios({
+          method: 'post',
+          url: '/api/board/create',
+          data: {
+            title: title,
+            content: desc,
+          },
+        })
+        .then((Response)=>{
+
+          console.log(title);
+          console.log(desc);
+            alert("글 성공");
+
+            console.log("이미지 실행");
+    
+            const formData = new FormData()
+
+                formData.append('file', this.files[0])
+
+                Axios.post('/api/file/upload', formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+                .then(response => {
+                    console.log(response.data);
+                    console.log("이미지 성공");
+                })
+                .catch(error => {
+                    console.log(error);
+                    console.log("이미지 실패");
+                })
+
+
+        })
+        .catch((error)=>{
+            alert("실패");
+        });
+
+        // const formData = new FormData();
+        // formData.append('file',e.target.files[0]);
+        // console.log("이미지 실행");
+
+        // Axios({
+        //   method: 'post',
+        //   url: '/api/file/upload',
+        //   data: {
+        //     file:formData,
+        //   },
+        // })
+        // .then((Response)=>{
+  
+        //   console.log(formData);
+        //     alert("이미지 성공");
+        // })
+        // .catch((error)=>{
+        //     alert("실패");
+        // });
+  }
+
   
   return (
     <Container>
@@ -160,9 +171,10 @@ const handleSubmit = (event) => {
                 onDragLeave={handleunhiglight}
                 onDrop={handledrop}
                 >
-                    <input type="file"name="photos" placeholder="Enter photos" multiple id="filephotos" onChange={handlefilechange}/>
+                    <input type="file"name="photos" accept="image/*" placeholder="Enter photos" multiple id="filephotos" onChange={handlefilechange}/>
                     <label htmlFor="filephotos">Drag & Drop</label>
                 </div>
+              
                 <div className="custom-file-preview">
                   {photos.length > 0 && photos.map((item,index)=>(
                     <div className="prev-img" key={index} data-imgindex={index}>
@@ -175,7 +187,7 @@ const handleSubmit = (event) => {
             </div>
               
               
-            <span style={{marginLeft:"auto"}}>{desc.length}/1,000자</span>
+            
             <TextArea
               type="text"
               placeholder="1000자 내외"
@@ -183,13 +195,13 @@ const handleSubmit = (event) => {
               value={desc}
               onChange={
                 handlechange}
-              maxLength={1000}
+              maxLength={999}
               className='custom-form-group inputh'
                 autoSize={{ minRows: 6, maxRows: 6 }}
               />
+              <span style={{marginLeft:"auto", marginBottom:20}}>{desc.length}/1,000자</span>
 
-
-            <button type="submit" className="btn-submit" onClick={handleSubmit}>Submit</button>
+            <button type="submit" className="btn-submit" onClick={submitHandler}>Submit</button>
         
         </div>
         </div>

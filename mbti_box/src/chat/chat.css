@@ -1,0 +1,15 @@
+.back {
+    background-color : rgb(209,139,60);
+    border-radius: 5%;
+    width: 80%;
+    height: 90%;
+    padding-top: 20px;
+  }
+
+  .in{
+    margin: 0 auto;
+    background-color : rgb(252,221,167);
+    border-radius: 5%;
+    width: 85%;
+    height: 95%;
+  }

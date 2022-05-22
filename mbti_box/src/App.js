@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from 'react';
 import Stitle from "./stitle"
 import Mostitle from "./mostitle"
 import Footer from "./footer.js"
@@ -11,7 +11,8 @@ import MAIN1 from "./main1.js"
 import Footer1 from "./footer1.js"
 import Header1 from "./header1.js"
 import Momenu from "./momenu.js"
-import Board from "./board.js" 
+import Board from "./board.js"
+import Chatmain from "./chat/chatmain.js"
 import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
@@ -21,93 +22,108 @@ import PWfind from "./login/PWfind.js";
 import PWfind2 from "./login/PWfind2.js";
 import Singup from "./login/Singup";
 import WRITEINTJ from "./write/writeINTJ.js"
-import Profile from "./login/Profile.js";
+import Notice from "./Noticeboard/Notice.js";
+import Annwrite from "./Noticeboard/annwrite.js";
+import Annview from "./Noticeboard/annview.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Route, Switch,Link } from "react-router-dom"
-import { Container, Row, Col} from "react-bootstrap";
-import {Grid,Text} from "./elements"
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
+import { Container, Row, Col } from "react-bootstrap";
+import { Grid, Text } from "./elements"
 import { useMediaQuery } from "react-responsive"
-
-import lo from "./images/mm.png"
 
 
 
 const App = () => {
 
-const isMobile = useMediaQuery({
-  query : "(max-width:767px)"
-});
+  const isMobile = useMediaQuery({
+    query: "(max-width:767px)"
+  });
 
-const isTablet = useMediaQuery({
-  query : "(max-width:1100px)"
-});
+  const isTablet = useMediaQuery({
+    query: "(max-width:1100px)"
+  });
+
+
+
 
   return (
     <>
+      <BrowserRouter>
+        <div className="App body"> {/*추가*/}
+          {/* <Container>  */}
 
-    <BrowserRouter>
-      <div className="App body"> {/*추가*/ }
-      {/* <Container>  */}
-      
-        {/* 메뉴 */}
-        <Header1/>
-       
-
-        <Switch>
-          <Route exact path="/">
-
-           {/* 메인페이지 */}
-              <MAIN1/>  
-            
-            {/* 바닥글 */}
-              <Footer1/>
-
-          </Route>
+          {/* 메뉴 */}
+          <Header1 />
 
 
 
 
-          <Route path="/login">
-            <Login></Login>
-          </Route>
+          <Switch>
+            <Route exact path="/">
 
-          <Route path="/ann" >
-            <Profile></Profile>
-          </Route>
+              {/* 메인페이지 */}
+              <MAIN1 />
 
-          <Route path="/stitle">
-            {isMobile? <Mostitle/> :<Stitle></Stitle>}
-          </Route>
+              {/* 바닥글 */}
+              <Footer1 />
 
-          <Route path="/INTJ">
-            {isMobile? <MOINTJ/> :<INTJ></INTJ>}
-          </Route>
+            </Route>
 
-          <Route path="/writeINTJ">
-            <WRITEINTJ></WRITEINTJ>
-          </Route>
 
-          {/* <Route path="/PostEditor">
+
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+
+            {/* 이전 게시판 지워도될듯? */}
+            <Route path="/detail" component={Notice} />
+
+            <Route path="/chat" >
+              <Chatmain></Chatmain>
+            </Route>
+
+            <Route path="/stitle">
+              {isMobile ? <Mostitle /> : <Stitle></Stitle>}
+            </Route>
+
+            <Route path="/INTJ">
+              {isMobile ? <MOINTJ /> : <INTJ></INTJ>}
+            </Route>
+
+            <Route path="/writeINTJ">
+              <WRITEINTJ></WRITEINTJ>
+            </Route>
+
+            {/* <Route path="/PostEditor">
             <PostEditor/>
           </Route> */}
 
-          <Route path="/PWfind">
-            <PWfind></PWfind>
-          </Route>
+            <Route path="/PWfind">
+              <PWfind></PWfind>
+            </Route>
 
-          <Route path="/PWfind2">
-            <PWfind2></PWfind2>
-          </Route>
+            <Route path="/PWfind2">
+              <PWfind2></PWfind2>
+            </Route>
 
-          <Route path="/Singup">
-            <Singup></Singup>
-          </Route>
+            <Route path="/Singup">
+              <Singup></Singup>
+            </Route>
+
+            <Route path="/Annwrite">
+              <Annwrite></Annwrite>
+            </Route>
+
+            <Route path="/Annview">
+              <Annview></Annview>
+            </Route>
 
 
-        </Switch>
-      
-      </div>
-    </BrowserRouter>
+
+          </Switch>
+
+        </div>
+      </BrowserRouter>
     </>
   )
 }

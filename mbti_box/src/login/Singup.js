@@ -1,4 +1,7 @@
-import * as React from 'react';
+// import * as React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useHistory } from "react-router-dom";
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,6 +18,10 @@ import OptionGroupUnstyled from '@mui/base/OptionGroupUnstyled';
 import { styled } from '@mui/system';
 import Axios from 'axios';
 import "./login.css";
+
+
+import img1 from '../images/sign.png'
+import { Api } from '@mui/icons-material';
 
 
 
@@ -170,77 +177,132 @@ CustomSelect.propTypes = {
 };
 
 
-const Login = () => {
-  const [value, setValue] = React.useState("");  //mbti
-  const [Id, setId] = React.useState("");  //Id
-  const [Pw, setPw] = React.useState("");  //pw
-  const [Email, setEmail] = React.useState("");  //email
-  const [Nickname, setNickname] = React.useState("");  //nick
 
-  
-  const signAxios = () => {
+const Singup = () => {
+  const [value, SetValue] = useState("");  //mbti
+  const [Id, SetId] = useState("");  //Id
+  const [Pw, SetPw] = useState("");  //pw
+  const [Email, SetEmail] = useState("");  //email
+  const [Nickname, SetNickname] = useState("");  //nick
 
-    Axios({
-      method: 'post',
-      url: 'api/user/singup',
-      data: {
-          username: Id,
-          password: Pw,
-          email: Email,
-          nickname:Nickname,
-          mbti:value,
-      },
-  })
-  .then((Response)=>{
-      alert("회원가입 성공");
+  const [usingid, Setusingid] =useState(true);
+//중복아니면 false
 
-      console.log(Response.data)
-  })
-  .catch((error)=>{
-      alert("회원가입 실패");
-      console.log(error);
-  });
-}
+  const history = useHistory();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
+  // 이메일
+  const emailHandler = (e) => {
+    e.preventDefault();
+    SetEmail(e.target.value);
+  };
 
-    if(data.get('userid')===""){
+  //비밀번호
+  const passwordHandler = (e) => {
+    e.preventDefault();
+    SetPw(e.target.value);
+  };
+
+  //아이디
+  const IDHandler = (e) => {
+    e.preventDefault();
+    SetId(e.target.value);
+  };
+
+  //닉네임
+  const NicknameHandler = (e) => {
+    e.preventDefault();
+    SetNickname(e.target.value);
+  };
+
+
+
+  //제출버튼
+  const submitHandler = (e) => {
+    e.preventDefault();
+    // state에 저장한 값을 가져옵니다.
+    // console.log(Email);
+    // console.log(Pw);
+    // console.log(Id);
+    // console.log(Nickname);
+    // console.log(value);
+
+    if(Id===""){
       alert("아이디를 입력해주세요");
     }
-    else if(data.get('password')===""){
+    else if(Pw===""){
       alert("비밀번호를 입력해주세요");
     }
-    else if(data.get('email')===""){
+    else if(Email===""){
       alert("이메일을 입력해주세요");
     }
-    else if(data.get('nickname')===""){
+    else if(Nickname===""){
       alert("닉네임을 입력해주세요");
     }
     else if(value===""){
       alert("MBTI를 선택해주세요");
     }
     else{
-      alert("회원가입 성공");
-      signAxios();
-    }
     
-    console.log({
-      userid: data.get('userid'),
-      password: data.get('password'),
-      email: data.get('email'),
-      nickname: data.get('nickname'),
-    });
-     console.log({value});
-    
+          
+      Axios({
+        method: 'post',
+        url: 'api/user/check/nickname',
+        data: {nickname: Nickname},
+      })    
+      .then((Response)=>{
+        console.log("닉네임:"+Response.data.nickname);
+        alert("닉네임 중복 입니다.")
+      })  
+      .catch((error)=>{
+          Axios({
+            method: 'post',
+            url: 'api/user/check/username',
+            data: {username: Id},
+          })
+          .then((Response) => {
+            //console.log(Response.data);
+            alert("아이디 중복 입니다.")
+          })
+          .catch((error)=>{
+              Axios({
+                method: 'post',
+                url: 'api/user/signup',
+                data: {
+                  email: Email,
+                    password: Pw,
+                    mbti:value,
+                    nickname:Nickname,
+                    username: Id,
+                },
+              })
+              .then((Response)=>{
+                  alert("회원가입 성공");
+                  //console.log(Response.data)
+                  history.replace("/login");
+                  
+                  
+              })
+              .catch((error)=>{
+                  alert("회원가입 실패");
+                  console.log(error);
+              });
+          })
+      })
+      
+      
 
+  }
   };
+
+
+
 
 
   return (
     
     <>
+
+
         {/* sm */}
       <Container component="main" maxWidth="xs"> 
         <CssBaseline />
@@ -252,66 +314,48 @@ const Login = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             <h3>회원가입</h3>
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="userid"
-              label="ID"
-              _onChange={(e) => {
-                setId(e.target.value);
-              }}
-              name="userid"
-              autoComplete="current-userid"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              _onChange={(e) => {
-                setPw(e.target.value);
-              }}
-              id="password"
-              autoComplete="current-password"
-            />
-            <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  _onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  label="email"
-                  name="email"
-                  autoComplete="email"
-            />
-            <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="nickname"
-                  _onChange={(e) => {
-                    setNickname(e.target.value);
-                  }}
-                  label="nickname"
-                  name="nickname"
-                  autoComplete="nickname"
-            />
+          </Typography> */}
+
+          <img src={img1} style={{width:200}}/>
+
+
+
+          {/* 입력값 */}
+
+
+
+          <Box component="form" onSubmit={submitHandler}>
+
+          <Container maxWidth="xs">
+            <div className='inputbox'>
+              <input type="text" placeholder="아이디" id="userid" value={Id} onChange={IDHandler} name="userid"></input>
+              <label for="userid"><span>아이디</span></label>
+            </div>
+
+            <div className='inputbox'>
+              <input type="password" placeholder="비밀번호" id="password" value={Pw} onChange={passwordHandler}></input>
+              <label for="password">비밀번호</label>
+            </div>
+
+            <div className='inputbox'>
+              <input type="email" placeholder="이메일" id="email" value={Email} onChange={emailHandler} ></input>
+              <label for="email">이메일</label>
+            </div>
+
+            <div className='inputbox'>
+              <input type="text" placeholder="아이디" id="nickname" value={Nickname} onChange={NicknameHandler}></input>
+              <label for="nickname">닉네임</label>
+            </div>
+          </Container>
+            
 
     <div>
-      <CustomSelect value={value} onChange={setValue}>
+      <CustomSelect value={value} onChange={SetValue}>
         
       <OptionGroupUnstyled label="IN♡♡">
         <StyledOption value="INTJ">INTJ</StyledOption>
@@ -348,14 +392,11 @@ const Login = () => {
                 
 
 
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              회원가입
-            </Button>
+    <button class="w-btn w-btn-green" type="submit">
+        회원가입
+    </button>
+
+            
             
           </Box>
         </Box>
@@ -372,4 +413,4 @@ const Login = () => {
 
   );
 };
-export default Login
+export default Singup
