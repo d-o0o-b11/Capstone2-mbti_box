@@ -8,26 +8,15 @@ import axios from "axios";
 
 function ListItem({ id, title,  createdAt}) { //start_date -> date
 
-   
 
     return (
     <>
-
-        {/* <Link to={{
-            pathname:"/announcement"+`/${id}`,
-            // search:`/${id}`
-        }} style={{ textDecoration: 'none', color: 'black'}}> */}
-
-
-        {/* <Link to={`/announcement/${board_id}`} style={{ textDecoration: 'none', color: 'black'}}> */}
 
         <Link to={{
             pathname:"/detail",
             search:`?id=${id}`
         }} style={{ textDecoration: 'none', color: 'black'}}>
 
-
-{/* <Link to={`/detail/${id}`} style={{ textDecoration: 'none', color: 'black'}}> */}
 
             <table class="blueone tablecenter">
                 <tr>

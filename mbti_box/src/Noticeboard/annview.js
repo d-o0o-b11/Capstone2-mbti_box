@@ -33,7 +33,7 @@ function List() {
       <Link to="/Annwrite"><FormOutlined style={{ fontSize: '30px', right:'25%', position:'absolute'}}></FormOutlined></Link>
 
 
-        <Container>     
+        <Container style={{marginTop:"30px"}}>     
           <table class="blueone tablecenter">
             <tr>
               <th>순번</th>
@@ -51,7 +51,7 @@ function List() {
                           id={id}
                           title={title}
                           //content={content}
-                          createdAt={createdAt}
+                          createdAt={createdAt.substr(0,10)}
                           key={id}
                       />
                   )

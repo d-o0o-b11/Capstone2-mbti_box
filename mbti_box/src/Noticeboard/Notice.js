@@ -5,6 +5,7 @@ import { FormOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 import qs from 'qs';
 import axios from "axios";
+import { Space } from "antd";
 
 function useFetch(url, id) {
   const [data, setData] = useState({});
@@ -53,20 +54,43 @@ const Notice = ({ location, history }) => {
           <div>loading</div>
       )
   } else {
-    
+
       return (
           <>
-          check
           <hr></hr>
-          
-          <h2>제목</h2>
-          {data.title}
+            <Container>
+                <h3 style={{marginTop:"40px"}}>공지사항</h3>
 
-          <h4>내용</h4>
-          {data.content}
+                <hr className="hrset"></hr>
 
-          <h6>업로드 날짜</h6>
-          {data.createdAt} 
+                <div style={{margin:"auto 0 auto 40px"}}>
+                    <h5>{data.title}</h5>
+                    <span className="datesize">[공지]</span>
+                </div>
+
+                <hr></hr>
+
+                <div style={{margin:"40px 0 40px 40px"}}>
+                    <span style={{whiteSpace:"pre"}}>{data.content}</span>
+                </div>
+
+                <hr></hr>
+
+                <Link to="/Annview">
+                    <button className="btn2">목록으로 돌아가기</button>
+                </Link>
+
+                <Link to={{
+                        pathname:"/write",
+                        search:`?id=${query.id}`
+                    }}>
+                    <button className='btn1'>수정</button>
+                </Link>
+                
+                
+                
+
+            </Container>
           </>
         
       )

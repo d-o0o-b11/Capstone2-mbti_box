@@ -40,10 +40,33 @@
 
 .blueone tr:hover td {
   color: rgb(34, 40, 214);
-}s
+}
 
 .tablecenter{
     text-align: center;
     margin: 0 auto;
     width: 80%;
+}
+
+.datesize{
+  color: rgb(129, 129, 129);
+}
+
+.hrset{
+  border-bottom: 4px solid rgb(226,160,110);
+}
+
+.btn1{
+  padding: 10px 20px;
+  border-style: none;
+  border-radius: 20px;
+  position: absolute;
+  right:20%;
+}
+
+
+.btn2{
+  padding: 10px 20px;
+  border-style: none;
+  border-radius: 20px;
 }
