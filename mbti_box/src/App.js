@@ -17,10 +17,11 @@ import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
 import INTJ from "./board/INTJ.js"
+import MbtiNotice from "./board/MbtiNotice.js";
 import PWfind from "./login/PWfind.js";
 import PWfind2 from "./login/PWfind2.js";
 import Singup from "./login/Singup";
-import WRITEINTJ from "./write/writeINTJ.js"
+import WRITEMBTI from "./write/writeMBTI.js"
 import Notice from "./Noticeboard/Notice.js";
 import Annwrite from "./Noticeboard/annwrite.js";
 import Annview from "./Noticeboard/annview.js";
@@ -85,13 +86,15 @@ const App = () => {
               {isMobile ? <Mostitle /> : <Stitle></Stitle>}
             </Route>
 
-            <Route path="/INTJ">
+            <Route path="/INTJ" component={MbtiNotice}/>
+
+            <Route path="/INTJboard">
               <INTJ></INTJ>
             </Route>
 
-            <Route path="/writeINTJ">
-              <WRITEINTJ></WRITEINTJ>
-            </Route>
+            <Route path="/writeMBTI" component={WRITEMBTI}/>
+              {/* <WRITEMBTI></WRITEMBTI>
+            </Route> */}
 
             {/* <Route path="/PostEditor">
             <PostEditor/>

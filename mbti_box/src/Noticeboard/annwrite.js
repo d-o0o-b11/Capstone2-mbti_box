@@ -58,7 +58,7 @@ const Annwrite=()=>{
               <div style={{margin:"auto"}}>
             <div className="file-upload" style={{marginTop:30}}>
             {/* Image Drag & Drop & Preview */}
-            <h2>게시글 작성</h2>
+            <h2>공지사항 작성</h2>
             
                 <div className="custom-form-group" >
                     <input type="text" name="title" placeholder="Title" maxLength={40} value={title} onChange={handlechange}/>

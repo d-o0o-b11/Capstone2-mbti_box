@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import "./fonts/font.css";
 import {Grid, Text} from "./elements"
 import lo from "./images/mm.png"
+import { useHistory } from 'react-router-dom';
 
 const Menu = (props) => {
   // const is_login = useSelector((store)=> store.user.is_login);
@@ -16,10 +17,15 @@ const Menu = (props) => {
     
   let [retoken, ReToken] = useState(token);
 
+  const history = useHistory();
+
+
 const removeToken=()=>{
   //ReToken(0);
+  
   localStorage.clear(); 
   console.log(token)
+  history.replace("/");
   window.location.reload();
 }
  

@@ -19,7 +19,7 @@ const mostitle = () => {
         <Col>
           <div className="hover13 ">
             <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
+              <figure1><Link to="/INTJboard" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
                 <div className="textpo">
                       <h6 style={{marginTop:5}}>INTJ</h6>
                 </div>

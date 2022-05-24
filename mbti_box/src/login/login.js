@@ -69,6 +69,7 @@ const Login = (props) => {
       const users = Response.data;
       localStorage.setItem("nickname", users.nickname);
       const NICKNAME = localStorage.getItem("nickname");
+      
       window.alert(`${users.nickname}님 환영합니다.`);
       history.replace("/");
       window.location.reload();

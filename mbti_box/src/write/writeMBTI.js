@@ -1,15 +1,64 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect  } from "react";
 import {Container} from "react-bootstrap";
 import "../write/writes.css"
 import { Input,Row, Col  } from "antd"
 import Axios from 'axios';
-
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+import qs from 'qs';
 
 const { TextArea } = Input
 
-const WRITEINTJ = () => {
+const WRITEINTJ = ({ location }) => {
+
+  const query = qs.parse(location.search, {
+      ignoreQueryPrefix: true
+  });
+
+  // const [post,setPost] = useState({
+  //   title:'',
+  //   desc:'',
+  //   photos:[]
+  // });
+
+  // const {title, desc, photos}=post;
 
 
+  const [data, setData] = useState(null);
+
+  let inputRef = useRef([]);
+  inputRef.current = [0,0].map(
+      (ref, index) => inputRef.current[index] = React.createRef()
+  )
+
+  async function fetchUrl(url, id) {
+      //수정필요 url
+      await axios.get(`${url}${id}`).then(response => {
+          setData(response.post);
+      });
+  }
+
+  useEffect(() => {
+      if (query.id) { //수정 필요
+          fetchUrl("/api/board/boards-id/", query.id)
+      } else {
+        setData(null);        
+          inputRef.current.map(item => 
+              item.current.value = '')
+          console.log(inputRef.current);
+      }
+      return () => {
+        setData(null);
+      }
+  }, [location.search]);
+
+
+
+
+  const MBTI = localStorage.getItem("mbti");
+  const NICKNAME = localStorage.getItem("nickname");
+
+  const history = useHistory();
 
   const [post,setPost] = useState({
     title:'',
@@ -96,33 +145,38 @@ const WRITEINTJ = () => {
 
     Axios({
           method: 'post',
-          url: '/api/board/create',
+          url: `/api/board/create/${MBTI}`,
           data: {
             title: title,
             content: desc,
+            nickname: NICKNAME,
+            mbti: MBTI,
           },
         })
         .then((Response)=>{
 
           console.log(title);
           console.log(desc);
+          console.log("데이터확인")
+          console.log(Response);
             alert("글 성공");
+          history.replace(`/${MBTI}board`);
 
-            console.log("이미지 실행");
+            // console.log("이미지 실행");
     
-            const formData = new FormData()
+            // const formData = new FormData()
 
-                formData.append('file', this.files[0])
+            //     formData.append('file', this.files[0])
 
-                Axios.post('/api/file/upload', formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-                .then(response => {
-                    console.log(response.data);
-                    console.log("이미지 성공");
-                })
-                .catch(error => {
-                    console.log(error);
-                    console.log("이미지 실패");
-                })
+            //     Axios.post('/api/file/upload', formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+            //     .then(response => {
+            //         console.log(response.data);
+            //         console.log("이미지 성공");
+            //     })
+            //     .catch(error => {
+            //         console.log(error);
+            //         console.log("이미지 실패");
+            //     })
 
 
         })
@@ -130,25 +184,7 @@ const WRITEINTJ = () => {
             alert("실패");
         });
 
-        // const formData = new FormData();
-        // formData.append('file',e.target.files[0]);
-        // console.log("이미지 실행");
 
-        // Axios({
-        //   method: 'post',
-        //   url: '/api/file/upload',
-        //   data: {
-        //     file:formData,
-        //   },
-        // })
-        // .then((Response)=>{
-  
-        //   console.log(formData);
-        //     alert("이미지 성공");
-        // })
-        // .catch((error)=>{
-        //     alert("실패");
-        // });
   }
 
   
@@ -158,10 +194,16 @@ const WRITEINTJ = () => {
         <div className="file-upload" style={{marginTop:30}}>
         {/* Image Drag & Drop & Preview */}
         <h2>게시글 작성</h2>
-        <span style={{marginBottom:10}}>INTJ</span>
+        <span style={{marginBottom:10}}>{MBTI}</span>
         
             <div className="custom-form-group" >
-                <input type="text" name="title" placeholder="Title" maxLength={40} value={title} onChange={handlechange}/>
+
+              {
+               data && location.search?
+                <input  type="text" name="title" placeholder="Title" maxLength={40} value={title} onChange={handlechange}/>
+                :
+                <input ref={inputRef.current[0]} type="text" name="title" placeholder="제목"/>
+              }
             </div>
             
             <div className="custom-form-group">
@@ -211,4 +253,3 @@ const WRITEINTJ = () => {
 };
 
 export default WRITEINTJ
-

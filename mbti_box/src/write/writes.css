@@ -273,6 +273,8 @@ a {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   font-size: 0.875rem;
+  height: 300px;
+  padding-top:5;
 }
 
 .custom-form-group inputh:focus {
