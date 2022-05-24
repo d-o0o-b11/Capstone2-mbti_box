@@ -64,7 +64,7 @@ const Login = (props) => {
       const TOKEN = localStorage.getItem("token");
       console.log(TOKEN);
 
-
+      localStorage.setItem("mbti",Response.data.mbti)
 
       const users = Response.data;
       localStorage.setItem("nickname", users.nickname);

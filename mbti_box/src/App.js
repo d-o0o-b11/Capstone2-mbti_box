@@ -17,7 +17,6 @@ import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
 import INTJ from "./board/INTJ.js"
-import MOINTJ from "./board/moINTJ.js"
 import PWfind from "./login/PWfind.js";
 import PWfind2 from "./login/PWfind2.js";
 import Singup from "./login/Singup";
@@ -87,7 +86,7 @@ const App = () => {
             </Route>
 
             <Route path="/INTJ">
-              {isMobile ? <MOINTJ /> : <INTJ></INTJ>}
+              <INTJ></INTJ>
             </Route>
 
             <Route path="/writeINTJ">
