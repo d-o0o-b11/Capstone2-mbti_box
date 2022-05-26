@@ -22,6 +22,7 @@ import PWfind from "./login/PWfind.js";
 import PWfind2 from "./login/PWfind2.js";
 import Singup from "./login/Singup";
 import WRITEMBTI from "./write/writeMBTI.js"
+import UPDATEMBTI from "./write/updateMBTI.js"
 import Notice from "./Noticeboard/Notice.js";
 import Annwrite from "./Noticeboard/annwrite.js";
 import Annview from "./Noticeboard/annview.js";
@@ -92,10 +93,11 @@ const App = () => {
               <INTJ></INTJ>
             </Route>
 
-            <Route path="/writeMBTI" component={WRITEMBTI}/>
-              {/* <WRITEMBTI></WRITEMBTI>
-            </Route> */}
+            <Route path="/writeMBTI">
+              <WRITEMBTI></WRITEMBTI>
+            </Route>
 
+            <Route path="/updateMBTI" component={UPDATEMBTI}/>
             {/* <Route path="/PostEditor">
             <PostEditor/>
           </Route> */}

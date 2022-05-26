@@ -1,59 +1,19 @@
-import React, { useRef, useState, useEffect  } from "react";
+import React, { useState } from "react";
 import {Container} from "react-bootstrap";
 import "../write/writes.css"
 import { Input,Row, Col  } from "antd"
 import Axios from 'axios';
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import qs from 'qs';
+
+
+
+
+
 
 const { TextArea } = Input
 
-const WRITEINTJ = ({ location }) => {
-
-  const query = qs.parse(location.search, {
-      ignoreQueryPrefix: true
-  });
-
-  // const [post,setPost] = useState({
-  //   title:'',
-  //   desc:'',
-  //   photos:[]
-  // });
-
-  // const {title, desc, photos}=post;
-
-
-  const [data, setData] = useState(null);
-
-  let inputRef = useRef([]);
-  inputRef.current = [0,0].map(
-      (ref, index) => inputRef.current[index] = React.createRef()
-  )
-
-  async function fetchUrl(url, id) {
-      //수정필요 url
-      await axios.get(`${url}${id}`).then(response => {
-          setData(response.post);
-      });
-  }
-
-  useEffect(() => {
-      if (query.id) { //수정 필요
-          fetchUrl("/api/board/boards-id/", query.id)
-      } else {
-        setData(null);        
-          inputRef.current.map(item => 
-              item.current.value = '')
-          console.log(inputRef.current);
-      }
-      return () => {
-        setData(null);
-      }
-  }, [location.search]);
-
-
-
+const WRITEINTJ = () => {
 
   const MBTI = localStorage.getItem("mbti");
   const NICKNAME = localStorage.getItem("nickname");
@@ -190,20 +150,14 @@ const WRITEINTJ = ({ location }) => {
   
   return (
     <Container>
-          <div style={{margin:"auto"}}>
+        <div style={{margin:"auto"}}>
         <div className="file-upload" style={{marginTop:30}}>
         {/* Image Drag & Drop & Preview */}
         <h2>게시글 작성</h2>
         <span style={{marginBottom:10}}>{MBTI}</span>
         
             <div className="custom-form-group" >
-
-              {
-               data && location.search?
-                <input  type="text" name="title" placeholder="Title" maxLength={40} value={title} onChange={handlechange}/>
-                :
-                <input ref={inputRef.current[0]} type="text" name="title" placeholder="제목"/>
-              }
+                <input type="text" name="title" placeholder="Title" maxLength={40} value={title} onChange={handlechange}/>
             </div>
             
             <div className="custom-form-group">
@@ -230,7 +184,7 @@ const WRITEINTJ = ({ location }) => {
               
               
             
-            <TextArea
+            <textarea
               type="text"
               placeholder="1000자 내외"
               name="desc"

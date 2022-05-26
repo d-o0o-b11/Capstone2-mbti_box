@@ -219,12 +219,7 @@ const Singup = () => {
   //제출버튼
   const submitHandler = (e) => {
     e.preventDefault();
-    // state에 저장한 값을 가져옵니다.
-    // console.log(Email);
-    // console.log(Pw);
-    // console.log(Id);
-    // console.log(Nickname);
-    // console.log(value);
+
 
     if(Id===""){
       alert("아이디를 입력해주세요");
@@ -268,7 +263,7 @@ const Singup = () => {
                 method: 'post',
                 url: 'api/user/signup',
                 data: {
-                  email: Email,
+                    email: Email,
                     password: Pw,
                     mbti:value,
                     nickname:Nickname,
@@ -284,7 +279,9 @@ const Singup = () => {
               })
               .catch((error)=>{
                   alert("회원가입 실패");
+                  console.log(Id);
                   console.log(error);
+                  
               });
           })
       })

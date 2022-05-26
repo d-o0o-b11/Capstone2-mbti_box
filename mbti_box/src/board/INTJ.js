@@ -48,7 +48,7 @@ function INTJ (){
                 </h4>
 
                 <Row>
-                {
+                { 
                     {
                         INTJ :
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>

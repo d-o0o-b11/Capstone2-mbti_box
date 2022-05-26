@@ -4,6 +4,11 @@
   font-size: 0.9vw;
 }
 
+.font-big2{
+  font-size: 0.v7w;
+  color: gray;
+}
+
 .row{
   margin-right: 0 !important;
   
@@ -98,6 +103,7 @@ h3,
 h4,
 h5,
 h6,
+p,
 li {
   font-family: "Jua", sans-serif, "Times New Roman",
     serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;

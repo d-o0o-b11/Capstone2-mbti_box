@@ -6,6 +6,8 @@ import {Link} from "react-router-dom";
 import qs from 'qs';
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
+import Comwrite from "../comment/comwrite.js";
+import Comview from "../comment/comview.js"
 
 
 function useFetch(url, id) {
@@ -55,8 +57,28 @@ const MbtiNotice = ({ location, history }) => {
 
   console.log(query.id);
   console.log("현재닉네임2: "+NICKNAME);
+  console.log("글쓴사람닉네임: "+Currentnickname);
 
   const [data, loading] = useFetch("/api/board/boards-id/", query.id);
+
+
+  
+  const removeView=(e)=> {
+    if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
+      
+        axios(`api/board/delete/${query.id}`, {
+            method : 'delete',
+            data : {
+                id : query.id
+                }
+        })
+
+        alert('게시물이 삭제되었습니다.')
+        return backhistory.replace("/");
+
+    }
+  }
+
 
 
 
@@ -70,7 +92,7 @@ const MbtiNotice = ({ location, history }) => {
           <>
           <hr></hr>
             <Container>
-                <h3 style={{marginTop:"40px"}}>테스트</h3>
+                <h3 style={{marginTop:"40px"}}>게시판</h3>
 
                 <hr className="hrset"></hr>
 
@@ -81,8 +103,8 @@ const MbtiNotice = ({ location, history }) => {
 
                 <hr></hr>
 
-                <div style={{margin:"40px 0 40px 40px"}}>
-                    <span style={{whiteSpace:"pre"}}>{data.content}</span>
+                <div style={{padding:"30px"}}>
+                    <span style={{whiteSpace:"pre-line"}}>{data.content}</span>
                 </div>
 
                 <hr></hr>
@@ -93,17 +115,30 @@ const MbtiNotice = ({ location, history }) => {
                 
                     {   
                         (Currentnickname===NICKNAME && NICKNAME) ?    
-                            <Link to={{
-                                    pathname:"/writeMBTI",
-                                    search:`?id=${query.id}`
-                                }}>
-                                <button className='btn1'>수정</button>
-                            </Link>
+                            <>
+                                <Link to={{
+                                        pathname:"/updateMBTI",
+                                        search:`?id=${query.id}`
+                                    }}>
+                                    <button className='btn1'>수정</button>
+                                </Link>
+                                <button className='btn1' onClick={()=>removeView()}>삭제</button>
+                            </>
+
                             : <></>
                     }
-                
-                
-                
+                    <div>
+                    {
+                        NICKNAME ?
+                            <><Comwrite id={query.id}/></>
+                        :   <></>
+                    }
+                    </div>
+
+                    {/* 댓글보이기 */}
+                    <Comview id={query.id}/>
+
+                        
 
             </Container>
           </>

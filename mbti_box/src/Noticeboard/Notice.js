@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import qs from 'qs';
 import axios from "axios";
 
+
 function useFetch(url, id) {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,7 @@ const Notice = ({ location, history }) => {
 
   const [data, loading] = useFetch("/api/announcement/announcement/", query.id);
   
-
+ 
 
 
   if (loading) {

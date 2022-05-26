@@ -13,6 +13,7 @@ const Menu = (props) => {
   // const dispatch = useDispatch();
   // const cookie = getCookie("is_login")
   let nickname = localStorage.getItem("nickname")
+  let mbti = localStorage.getItem("mbti");
   let token = localStorage.getItem("token")
     
   let [retoken, ReToken] = useState(token);
@@ -31,7 +32,7 @@ const removeToken=()=>{
  
 
 
-   if(retoken){
+   if(retoken){ 
   return (
     <>
         <div style={{marginLeft:'10%'}}>
@@ -45,6 +46,7 @@ const removeToken=()=>{
          <span style={{marginLeft:'5%'}}><Link to="/Annview" style={{ textDecoration: 'none', color:'black' }}className="font-big">공지사항</Link></span> 
 
          <span style={{marginLeft:'5%'}} className="font-big">{nickname} 님</span>
+         <span className="font-big2" style={{marginLeft:'2px'}}>[{mbti}]</span>
          <span style={{marginLeft:'1%'}} className="font-big"><button onClick={removeToken} className="bb">로그아웃 </button></span> 
         </div>
     

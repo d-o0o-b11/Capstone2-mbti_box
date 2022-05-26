@@ -1,37 +1,38 @@
 import React, { useEffect, useState } from "react";
 import "./chat.css"
-import img1 from "../images/cc3.png"
 import { Container, Row, Col} from "react-bootstrap";
+import img5 from "../images/chat.png"
 
 const Chatmain = () => {
-  
-
 
   return (
     <>
-        <img src={img1} style={{width:'100%', height:'100%'}}/>
-        
         <Container>
-
+            <div className="chatting">
+                <div className="banner">
+                    <img src={img5} height="150" />
+                </div>
             <Row>
-                <Col style={{height:'600px', marginTop:30, marginRight:30}}>
+                <Col className="sickbang">
                     <div className="back">
+                        <h1 className="test11" src={img5} height="30" width="30">단체 채팅</h1>
                         <div className="in">
 
                         </div>
                     </div>
                 </Col>
 
-                <Col style={{height:'600px', marginTop:30, marginLeft:30}}>
+                <Col className="sickbang">
                     <div className="back">
+                    <h1 className="test11" src={img5} height="30" width="30">개인 채팅</h1>
                         <div className="in">
-                            
-                        </div>
+                        <h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2><h2>aaa</h2>
+                         </div>
                     </div>
                 </Col>
 
             </Row>
-
+            </div>
         </Container>
     </>
     

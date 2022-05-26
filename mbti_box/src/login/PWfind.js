@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useEffect, useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,34 +8,49 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Row, Col } from "react-bootstrap";
+import "./login.css";
+import Axios from "axios";
+
+import img1 from "../images/idfind.jpg"
 
 const PWfind =()=>{
 
-     const IDSubmit = (event) => {
-         event.preventDefault();
-         const data = new FormData(event.currentTarget);
-         console.log({
-           email: data.get('email')
-         });
+  const [Email, SetEmail] = useState("");
 
-       };
+  const emailHandler = (e) => {
+    e.preventDefault();
+    SetEmail(e.target.value);
+  };
 
-      const pwSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          userid: data.get('userid'),
-          email: data.get('email'),
-        });
-      };  
-
+  const submitHandler = (e) => {
+    if(Email===""){
+      alert("이메일을 입력해주세요");
+    }
+    else{
+    
+          
+      Axios({
+        method: 'post',
+        url: 'api/user/check/nickname', //수정하기
+        data: {
+          email: Email,
+        },
+      })    
+      .then((Response)=>{
+        console.log("성공");
+        console.log(Response.data);
+      })  
+      .catch((error)=>{
+        console.log(error);
+      })
+    }
+  }
 
     return(
         <>
-      
-        
+
           <Container component="main" maxWidth="xs">
-            <CssBaseline />
+            
             <Box
               sx={{
                 marginTop: 8,
@@ -44,41 +59,21 @@ const PWfind =()=>{
                 alignItems: 'center',
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                <LockOutlinedIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                <h3>아이디 찾기</h3>
-              </Typography>
-              <Box component="form" onSubmit={IDSubmit} noValidate sx={{ mt: 1 }}>
-              {/* <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="userid"
-                  label="ID"
-                  name="userid"
-                  autoComplete="current-userid"
-                  autoFocus
-                /> */}
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="email"
-                  name="email"
-                  autoComplete="email"
-                />
+              
+
+              <img src={img1} style={{width:200}}/>
+
+
+              <Box component="form" onSubmit={submitHandler}>
                 
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
-                >
-                  아이디 찾기
-                </Button>
+              <div className='inputbox'>
+                <input type="email" placeholder="이메일" id="email" value={Email} onChange={emailHandler} ></input>
+                <label for="email">이메일</label>
+              </div>
+
+              <button class="w-btn w-btn-green" type="submit" style={{marginTop:"20px"}}>
+                ID 찾기
+              </button>
                 
               </Box>
             </Box>
@@ -91,5 +86,6 @@ const PWfind =()=>{
     );
 
 }
+
 
 export default PWfind

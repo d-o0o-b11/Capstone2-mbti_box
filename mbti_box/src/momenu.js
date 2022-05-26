@@ -8,7 +8,6 @@ import {  CommentOutlined, NotificationOutlined, SnippetsOutlined, CloudOutlined
 import {Row, Col} from "react-bootstrap";
 import img2 from "./images/me.png"
 import img3 from "./images/xx.png"
-import img4 from "./images/blue.png"
 import img5 from "./images/face.jpg"
 
 import { useSelector } from 'react-redux'
@@ -20,6 +19,8 @@ const Momenu = (props) => {
 
   let nickname = localStorage.getItem("nickname")
   let token = localStorage.getItem("token")
+
+  let mbti = localStorage.getItem("mbti")
     
   let [retoken, ReToken] = useState(token);
 
@@ -56,31 +57,32 @@ const Momenu = (props) => {
               <div className="label sidebar" >
                 <Row>
                   <Col xs={3}>
-                    <img src={img3} onClick={toggleChange} style={{ marginTop: 10, marginLeft:10, width:30, height:30}}/>
+                      <img src={img3} onClick={toggleChange} style={{ marginTop: 10, marginLeft:10, width:30, height:30}}/>
                   </Col>
-
+      
                   <Col xs={9}style={{ marginTop: 10 }}>
-                  <h3><CloudOutlined /> menu <CloudOutlined /></h3>
-                    
+                      <h3 style={{textAlign: "left"}}>Menu</h3>
                   </Col>
-                  <hr></hr>
+                  
                 </Row> 
-                
+
+
+              <div className="menuborder">  
                 <div style={{textAlign: "center"}}>
-                  <div className="profile" style={{margin: "0 auto"}}>
-                      <img src={img5}/>
-                  </div>
+                    <div className="profile" style={{margin: "0 auto"}}>
+                        <img src={img5}/>
+                    </div>
 
                   <Row>
                     <Col>
                         <span style={{marginLeft:'5%'}}>{nickname} 님</span>
-                        
+                        <span className="font-big2" style={{marginLeft:'2px'}}>[{mbti}]</span>
                         <span style={{marginLeft:'5%'}}><button onClick={removeToken} className="bb">로그아웃 </button></span>   
                     </Col>
                   </Row> 
                   </div>
 
-                  
+                  </div>       
 
 
                     <Link to="/stitle" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
@@ -96,7 +98,7 @@ const Momenu = (props) => {
                     <Link to="/Annview" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                       <h5 className="st mm"><NotificationOutlined style={{ fontSize: '30px', marginRight:'20px'}}/>공지사항</h5>
                     </Link>
-                  
+              
                 
                 
             </div>
@@ -129,33 +131,34 @@ const Momenu = (props) => {
                         </Col>
       
                         <Col xs={9}style={{ marginTop: 10 }}>
-                        <h3><CloudOutlined /> menu <CloudOutlined /></h3>
-                          
+                          <h3 style={{textAlign: "left"}}>Menu</h3>
                         </Col>
-                        <hr></hr>
                       </Row> 
                       
-                      <div style={{textAlign: "center"}}>
-                        <div className="profile" style={{margin: "0 auto"}}>
-                            <img src={img5}/>
+                      <div className="menuborder">
+
+                        <div style={{textAlign: "center"}}>
+                          <div className="profile" style={{margin: "0 auto"}}>
+                              <img src={img5}/>
+                          </div>
+        
+                          <Row>
+                            <Col>
+                              <Link to="/login" onClick={toggleChange} style={{ textDecoration: 'none', color:'black', marginRight:20 }}>
+                                <span className="st m1">로그인</span>
+                              </Link>
+                              |
+                              <Link to="/Singup" onClick={toggleChange} style={{ textDecoration: 'none', color:'black', marginRight:20 }}>
+                                <span className="st m1">회원가입</span>
+                              </Link>   
+                            </Col>
+                          </Row> 
+                          </div>
+
                         </div>
-      
-                        <Row>
-                          <Col>
-                            <Link to="/login" onClick={toggleChange} style={{ textDecoration: 'none', color:'black', marginRight:20 }}>
-                              <span className="st m1">로그인</span>
-                            </Link>
-                            |
-                            <Link to="/Singup" onClick={toggleChange} style={{ textDecoration: 'none', color:'black', marginRight:20 }}>
-                              <span className="st m1">회원가입</span>
-                            </Link>   
-                          </Col>
-                        </Row> 
-                        </div>
-      
                         
       
-      
+                        
                           <Link to="/stitle" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                             <h5 className="st mm"><SnippetsOutlined style={{ fontSize: '30px', marginRight:'20px'}} />게시판</h5>
                           </Link>
@@ -169,6 +172,7 @@ const Momenu = (props) => {
                           <Link to="/Annview" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                             <h5 className="st mm"><NotificationOutlined style={{ fontSize: '30px', marginRight:'20px'}}/>공지사항</h5>
                           </Link>
+                        
                         
                       
                       

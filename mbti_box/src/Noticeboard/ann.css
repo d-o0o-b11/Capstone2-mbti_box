@@ -60,13 +60,15 @@
   padding: 10px 20px;
   border-style: none;
   border-radius: 20px;
-  position: absolute;
-  right:20%;
+  float: right;
 }
+
 
 
 .btn2{
   padding: 10px 20px;
   border-style: none;
   border-radius: 20px;
+  float: right;
 }
+

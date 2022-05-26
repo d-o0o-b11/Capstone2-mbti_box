@@ -12,15 +12,13 @@ function BoardListItem({id, title, nickname,  createdAt}) { //start_date -> date
         query: "(max-width:767px)"
       });
 
-    // const deletetoken = () =>{
-    //     window.location.reload();
-    // }
+
 
     return (
     <>
     {(isMobile)?
         <>
-        {/* 모바일 */}
+        {/* 모바일 */} 
         <Link to={{
             pathname:"/INTJ",
             search:`?id=${id}`
@@ -31,7 +29,7 @@ function BoardListItem({id, title, nickname,  createdAt}) { //start_date -> date
                     <span style={{fontSize:"15px", color:"#000000", fontStyle:"blod"}}>{title}</span>
                     <br></br>
                     <span style={{fontSize:"12px", color:"#000000"}}>{nickname}</span>
-                    <span style={{fontSize:"12px", color:"#000000"}}>{createdAt}</span>
+                    {/* <span style={{fontSize:"12px", color:"#000000"}}>{createdAt}</span> */}
                 </div>
 
         </Link>

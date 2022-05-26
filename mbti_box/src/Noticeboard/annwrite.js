@@ -29,7 +29,7 @@ const Annwrite=()=>{
     
       const submitHandler=(e)=>{
         e.preventDefault();
-    
+     
         Axios({
               method: 'post',
               url: '/api/announcement/create',
