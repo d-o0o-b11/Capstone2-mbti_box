@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Container} from "react-bootstrap";
+import {Container, Form} from "react-bootstrap";
 import "../write/writes.css"
 import { Input,Row, Col  } from "antd"
 import Axios from 'axios';
@@ -36,11 +36,20 @@ const WRITEINTJ = () => {
     })
   }
 
-  const handlefilechange = e =>{
+
+  
+  const [sendfiles, Setsendfiles] = useState('');
+
+  const handlefilechange = (e) =>{
     let files = e.target.files;
+    Setsendfiles(files);
     console.log(files);
+    //form.append("file",files); //
     handfiles(files);
-   
+    console.log(files); //
+    //form.append("file",files); //
+    //console.log(sendfiles);
+    //form.append("files",sendfiles);
   }
 
   const handfiles=files=>{
@@ -56,6 +65,7 @@ const WRITEINTJ = () => {
           src: reader.result
         }
         photosArr.push(fileobj);
+        
         setPost({
           ...post,
           photos: [...photos, ...photosArr]
@@ -103,6 +113,16 @@ const WRITEINTJ = () => {
   const submitHandler=(e)=>{
     e.preventDefault();
 
+    const formdata = new FormData();
+    formdata.append('files', sendfiles);
+
+    const config = {
+      headers: {
+        'content-type' : 'multipart/form-data',
+      },
+    };
+
+
     Axios({
           method: 'post',
           url: `/api/board/create/${MBTI}`,
@@ -120,23 +140,26 @@ const WRITEINTJ = () => {
           console.log("데이터확인")
           console.log(Response);
             alert("글 성공");
-          history.replace(`/${MBTI}board`);
+          //history.replace(`/${MBTI}board`);
 
-            // console.log("이미지 실행");
-    
-            // const formData = new FormData()
+            console.log("이미지 실행");
 
-            //     formData.append('file', this.files[0])
+            // const formData = new FormData();
+            // console.log("formData: "+formData);
+            // formData.append("file", photos);
 
-            //     Axios.post('/api/file/upload', formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-            //     .then(response => {
-            //         console.log(response.data);
-            //         console.log("이미지 성공");
-            //     })
-            //     .catch(error => {
-            //         console.log(error);
-            //         console.log("이미지 실패");
-            //     })
+
+
+              Axios.post("/api/file", formdata,config)
+                .then(response => {
+                    console.log(response.data);
+                    console.log("이미지 성공");
+                })
+                .catch(error => {
+                    console.log(error);
+                    console.log("이미지 실패");
+                    console.log(formdata);
+                })
 
 
         })
@@ -204,6 +227,6 @@ const WRITEINTJ = () => {
         </Container>
 
   );
-};
+}
 
 export default WRITEINTJ
