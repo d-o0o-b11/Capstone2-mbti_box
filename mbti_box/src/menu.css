@@ -41,6 +41,14 @@ a {
 .menu > li:hover .sub {
   display: block;
 }
+
+.menucolor > span:hover {
+  text-align: center;
+  background-color: rgb(251, 235, 235);
+}
+
+
+
 .sub {
   position: absolute;
   top: 50px;
@@ -196,7 +204,9 @@ a {
 
 .menuborder{
   padding: 30px 0;
-  background-color: rgb(251, 235, 235);
+  /* background-color: rgb(251, 235, 235); */
+  background-color: rgb(255, 224, 190);
+  /* rgb(255, 213, 170) */
   display: block;
   height: auto;
 }

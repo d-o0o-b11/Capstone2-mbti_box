@@ -14,6 +14,8 @@ function useFetch(url, id) {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   
+    
+
   function fetchUrl() {
         axios.get(`${url}${id}`).then(response => {
           setData(response.data);
@@ -47,9 +49,9 @@ const MbtiNotice = ({ location, history }) => {
 
   const backhistory = useHistory();
   const MBTI = localStorage.getItem("mbti");
-  const NICKNAME = localStorage.getItem("nickname"); //글 쓴 사람
+  const NICKNAME = localStorage.getItem("nickname"); //로그인된 사람
 
-  let Currentnickname = localStorage.getItem("currentnickname");
+  let Currentnickname = localStorage.getItem("currentnickname"); //글쓴 사람
 
   const query = qs.parse(location.search, {
       ignoreQueryPrefix: true

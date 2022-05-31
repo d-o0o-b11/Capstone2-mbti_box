@@ -38,6 +38,25 @@
 }
 
 
+.backin{
+    overflow-y: scroll;
+}
+
+.backin::-webkit-scrollbar{
+  width: 6px;
+}
+
+/* 스크롤바 막대 설정*/
+.backin::-webkit-scrollbar-thumb{
+  height: 10%;
+  background-color: rgb(108, 78, 55);
+  border-radius: 10px;  
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.backin::-webkit-scrollbar-track{
+  background-color: rgba(226,160,110, 0.3);
+}
 
 
 .backblock{
@@ -52,7 +71,7 @@
   background: rgb(220, 160, 110);
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 93%;
   padding: 0 10%;
 }
 
@@ -77,4 +96,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.mbticontent{
+  text-align: center;
 }

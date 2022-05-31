@@ -35,9 +35,10 @@ const removeToken=()=>{
    if(retoken){ 
   return (
     <>
-        <div style={{marginLeft:'10%'}}>
+        <div style={{marginLeft:'10%'}} className="menucolor">
 
-          <span ><Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link></span>
+          {/* span */}
+          <Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link>
 
           <span style={{marginLeft:'15%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
 
@@ -57,7 +58,7 @@ const removeToken=()=>{
    else{
     return (
       <>
-          <div style={{marginLeft:'10%'}}>
+          <div style={{marginLeft:'10%'}} className="menucolor">
   
             <span ><Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link></span>
   

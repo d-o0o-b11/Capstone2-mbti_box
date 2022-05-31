@@ -13,6 +13,7 @@ import Header1 from "./header1.js"
 import Momenu from "./momenu.js"
 import Board from "./board.js"
 import Chatmain from "./chat/chatmain.js"
+import Privatechat from "./chat/privatechat.js"
 import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
@@ -31,6 +32,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
 import { Container, Row, Col } from "react-bootstrap";
 import { Grid, Text } from "./elements"
 import { useMediaQuery } from "react-responsive"
+
 
 
 
@@ -123,10 +125,14 @@ const App = () => {
             </Route>
 
 
-
           </Switch>
 
+
         </div>
+
+        <Route path="/privatematching">
+          <Privatechat></Privatechat>
+        </Route>
       </BrowserRouter>
     </>
   )

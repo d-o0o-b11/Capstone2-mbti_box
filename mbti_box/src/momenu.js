@@ -7,8 +7,10 @@ import styled from 'styled-components';
 import {  CommentOutlined, NotificationOutlined, SnippetsOutlined, CloudOutlined } from '@ant-design/icons';
 import {Row, Col} from "react-bootstrap";
 import img2 from "./images/me.png"
-import img3 from "./images/xx.png"
+// import img3 from "./images/xx.png"
+import img3 from "./images/menucancel.png"
 import img5 from "./images/face.jpg"
+import menulogo from "./images/momenu.png"
 
 import { useSelector } from 'react-redux'
 
@@ -57,23 +59,23 @@ const Momenu = (props) => {
               <div className="label sidebar" >
                 <Row>
                   <Col xs={3}>
-                      <img src={img3} onClick={toggleChange} style={{ marginTop: 10, marginLeft:10, width:30, height:30}}/>
+                      <img src={img3} onClick={toggleChange} style={{ marginTop: 20, marginLeft:10, width:30, height:30}}/>
                   </Col>
       
-                  <Col xs={9}style={{ marginTop: 10 }}>
-                      <h3 style={{textAlign: "left"}}>Menu</h3>
+                  <Col xs={9}style={{ marginTop: 10, marginBottom:10 }}>
+                      <img src={menulogo} style={{width:"140px", height:"45px", marginLeft:"20px"}}/>
                   </Col>
                   
                 </Row> 
 
 
               <div className="menuborder">  
-                <div style={{textAlign: "center"}}>
+                <div style={{textAlign: "center", padding:"50px"}} >
                     <div className="profile" style={{margin: "0 auto"}}>
                         <img src={img5}/>
                     </div>
 
-                  <Row>
+                  <Row style={{marginTop:20}}>
                     <Col>
                         <span style={{marginLeft:'5%'}}>{nickname} 님</span>
                         <span className="font-big2" style={{marginLeft:'2px'}}>[{mbti}]</span>
@@ -127,22 +129,22 @@ const Momenu = (props) => {
                     <div className="label sidebar" >
                       <Row>
                         <Col xs={3}>
-                          <img src={img3} onClick={toggleChange} style={{ marginTop: 10, marginLeft:10, width:30, height:30}}/>
+                          <img src={img3} onClick={toggleChange} style={{ marginTop: 20, marginLeft:10, width:30, height:30}}/>
                         </Col>
       
-                        <Col xs={9}style={{ marginTop: 10 }}>
-                          <h3 style={{textAlign: "left"}}>Menu</h3>
-                        </Col>
+                        <Col xs={9}style={{ marginTop: 10, marginBottom:10 }}>
+                          <img src={menulogo} style={{width:"150px", height:"50px", marginLeft:"20px"}}/>
+                      </Col>
                       </Row> 
                       
                       <div className="menuborder">
 
-                        <div style={{textAlign: "center"}}>
+                        <div style={{textAlign: "center", padding:"50px"}}>
                           <div className="profile" style={{margin: "0 auto"}}>
                               <img src={img5}/>
                           </div>
         
-                          <Row>
+                          <Row style={{marginTop:20}}>
                             <Col>
                               <Link to="/login" onClick={toggleChange} style={{ textDecoration: 'none', color:'black', marginRight:20 }}>
                                 <span className="st m1">로그인</span>

@@ -6,24 +6,6 @@ import { Link } from 'react-router-dom';
 
 
 
-// function useFetch(url) {
-
-//     const [data, setData] = useState([]);
-    
-//     async function fetchUrl() {
-//         const response = await fetch(url);
-//         const json = await response.json();
-        
-//         setData(json);
-//         console.log("댓글데이터확인:"+data);
-//     }
-    
-//     useEffect(() => {
-//         fetchUrl();
-//     }, []);
-//     return data;
-//   }
-
 const ComList=(props)=> {
     const [data, setData] = useState([]);
 
@@ -39,8 +21,7 @@ const ComList=(props)=> {
     },[]);
     
 
-  
-    // const data = useFetch(`/api/comment/get/1/comment`);
+
     
     return (
       <>
@@ -48,11 +29,12 @@ const ComList=(props)=> {
 
               <section>
                   {data.map(
-                      ({ content, nickname, mbti, createdAt}) => (
+                      ({ content, nickname, mbti, createdAt, board_id}) => (
                           <ComListItem
                               mbti={mbti}
                               nickname={nickname}
                               content={content}
+                              board_id={props.id}
                               //createdAt={createdAt}
                                 createdAt={createdAt.substr(0,10)}
                               key={nickname}
