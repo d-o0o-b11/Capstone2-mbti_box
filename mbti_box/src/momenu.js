@@ -63,23 +63,24 @@ const Momenu = (props) => {
                   </Col>
       
                   <Col xs={9}style={{ marginTop: 10, marginBottom:10 }}>
-                      <img src={menulogo} style={{width:"140px", height:"45px", marginLeft:"20px"}}/>
+                      <img src={menulogo} style={{width:"140px", height:"45px", marginLeft:"15px"}}/>
                   </Col>
                   
                 </Row> 
 
 
               <div className="menuborder">  
-                <div style={{textAlign: "center", padding:"50px"}} >
+                <div style={{textAlign: "center", padding:"10px 10px 50px 10px"}} >
                     <div className="profile" style={{margin: "0 auto"}}>
                         <img src={img5}/>
                     </div>
 
                   <Row style={{marginTop:20}}>
                     <Col>
-                        <span style={{marginLeft:'5%'}}>{nickname} 님</span>
-                        <span className="font-big2" style={{marginLeft:'2px'}}>[{mbti}]</span>
-                        <span style={{marginLeft:'5%'}}><button onClick={removeToken} className="bb">로그아웃 </button></span>   
+                        <span>{nickname} 님</span>
+                        <span className="font-big2">[{mbti}]</span>
+                        <br></br>
+                        <span style={{marginLeft:'5px'}}><button onClick={removeToken} className="bb">로그아웃 </button></span>   
                     </Col>
                   </Row> 
                   </div>
@@ -92,7 +93,7 @@ const Momenu = (props) => {
                     </Link>
 
           
-                    <Link to="./chat" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
+                    <Link to="/Game" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                       <h5 className="st mm"><CommentOutlined style={{ fontSize: '30px', marginRight:'20px'}} />채팅</h5>
                     </Link>
 
@@ -133,14 +134,14 @@ const Momenu = (props) => {
                         </Col>
       
                         <Col xs={9}style={{ marginTop: 10, marginBottom:10 }}>
-                          <img src={menulogo} style={{width:"150px", height:"50px", marginLeft:"20px"}}/>
+                          <img src={menulogo} style={{width:"150px", height:"50px", marginLeft:"15px"}}/>
                       </Col>
                       </Row> 
                       
                       <div className="menuborder">
 
-                        <div style={{textAlign: "center", padding:"50px"}}>
-                          <div className="profile" style={{margin: "0 auto"}}>
+                        <div style={{textAlign: "center", padding:"10px 10px 50px 10px"}}>
+                          <div className="profile" style={{margin: "30px auto"}}>
                               <img src={img5}/>
                           </div>
         
@@ -150,12 +151,12 @@ const Momenu = (props) => {
                                 <span className="st m1">로그인</span>
                               </Link>
                               |
-                              <Link to="/Singup" onClick={toggleChange} style={{ textDecoration: 'none', color:'black', marginRight:20 }}>
+                              <Link to="/Singup" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                                 <span className="st m1">회원가입</span>
                               </Link>   
                             </Col>
                           </Row> 
-                          </div>
+                        </div>
 
                         </div>
                         
@@ -166,7 +167,7 @@ const Momenu = (props) => {
                           </Link>
       
                 
-                          <Link to="./chat" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
+                          <Link to="/Game" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                             <h5 className="st mm"><CommentOutlined style={{ fontSize: '30px', marginRight:'20px'}} />채팅</h5>
                           </Link>
       

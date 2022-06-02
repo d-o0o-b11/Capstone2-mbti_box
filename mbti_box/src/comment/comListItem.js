@@ -61,12 +61,12 @@ function ComListItem({ content, nickname, mbti, createdAt, board_id}) { //start_
                     <span>{nickname}</span>
                     <span className='mbticolor'>[{mbti}]</span>
 
-                {
+                {/* {
                     (Currentnickname===NICKNAME && NICKNAME)?
                         <span onClick={()=>removeView()}>X</span>
                         :
                         <></>
-                }
+                } */}
 
                     <br></br>
                     <p style={{float:"left", marginLeft:"10px"}}>

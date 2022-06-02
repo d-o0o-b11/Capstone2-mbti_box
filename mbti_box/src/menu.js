@@ -38,13 +38,13 @@ const removeToken=()=>{
         <div style={{marginLeft:'10%'}} className="menucolor">
 
           {/* span */}
-          <Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link>
+         <Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link>
 
-          <span style={{marginLeft:'15%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
+         <span style={{marginLeft:'10%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
 
-         <span style={{marginLeft:'5%'}}><Link to="./PostEditor"className="font-big">게임</Link> </span>
-         <span style={{marginLeft:'5%'}}><Link to="/chat" style={{ textDecoration: 'none', color:'black' }}className="font-big">채팅</Link> </span> 
-         <span style={{marginLeft:'5%'}}><Link to="/Annview" style={{ textDecoration: 'none', color:'black' }}className="font-big">공지사항</Link></span> 
+         <span style={{marginLeft:'3%'}}><Link to="/Game" style={{ textDecoration: 'none', color:'black' }}className="font-big">게임</Link> </span>
+         <span style={{marginLeft:'3%'}}><Link to="/chat" style={{ textDecoration: 'none', color:'black' }}className="font-big">채팅</Link> </span> 
+         <span style={{marginLeft:'3%'}}><Link to="/Annview" style={{ textDecoration: 'none', color:'black' }}className="font-big">공지사항</Link></span> 
 
          <span style={{marginLeft:'5%'}} className="font-big">{nickname} 님</span>
          <span className="font-big2" style={{marginLeft:'2px'}}>[{mbti}]</span>

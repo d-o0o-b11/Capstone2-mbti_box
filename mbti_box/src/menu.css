@@ -5,10 +5,10 @@
 ul {
   list-style: none;
 }
-a {
+/* a {
   text-decoration: none;
   color: inherit;
-}
+} */
 .menu-box {
   width: 100%;
   max-width: 600px;
@@ -42,11 +42,21 @@ a {
   display: block;
 }
 
-.menucolor > span:hover {
-  text-align: center;
-  background-color: rgb(251, 235, 235);
+span{
+  padding: 10px;
 }
 
+.menucolor > span:hover {
+  text-align: center;
+  background-color: rgb(252,221,167);
+  border-radius: 10px;
+  box-shadow: 3px -3px 0px rgb(226,160,110);
+}
+
+
+.menucolor > span:hover > a{
+  color: rgb(218,141,111) !important;
+}
 
 
 .sub {

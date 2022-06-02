@@ -48,20 +48,43 @@ const isTablet = useMediaQuery({
                 <h4 data-v-42081291 className="divid">
                   <span data-v-42081291>인기게시글</span>
                 </h4>
+              
+              {isMobile? 
+                <>
+                <Row style={{margin:"0 auto"}}>
+                  <Col>
+                    <Board></Board>
+                  </Col>
+                  <Col>
+                    <Board></Board>
+                  </Col>
+                  </Row>
+                  <Row style={{margin:"0 auto"}}>
+                  <Col>
+                    <Board></Board>
+                  </Col>
+                  <Col>
+                    <Board></Board>
+                  </Col>
+                  </Row>
+                </>
+              : 
+                <>
+                  <Col>
+                  <Board></Board>
+                </Col>
+                <Col>
+                  <Board></Board>
+                </Col>
+                <Col>
+                  <Board></Board>
+                </Col>
+                <Col>
+                  <Board></Board>
+                </Col>  
+                </>
+              }
 
-              {/* <Divider horizontal>Or</Divider> */}
-              <Col>
-                <Board></Board>
-              </Col>
-              <Col>
-                <Board></Board>
-              </Col>
-              <Col>
-                <Board></Board>
-              </Col>
-              <Col>
-                <Board></Board>
-              </Col>
             </Row>
         </Container>
 

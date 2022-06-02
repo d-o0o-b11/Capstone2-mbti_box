@@ -27,6 +27,7 @@ import UPDATEMBTI from "./write/updateMBTI.js"
 import Notice from "./Noticeboard/Notice.js";
 import Annwrite from "./Noticeboard/annwrite.js";
 import Annview from "./Noticeboard/annview.js";
+import Game from "./game/Game.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
 import { Container, Row, Col } from "react-bootstrap";
@@ -122,6 +123,10 @@ const App = () => {
 
             <Route path="/Annview">
               <Annview></Annview>
+            </Route>
+
+            <Route path="/Game">
+              <Game></Game>
             </Route>
 
 

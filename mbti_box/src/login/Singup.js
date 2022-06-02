@@ -345,7 +345,7 @@ const Singup = () => {
             </div>
 
             <div className='inputbox'>
-              <input type="text" placeholder="아이디" id="nickname" value={Nickname} onChange={NicknameHandler}></input>
+              <input type="text" placeholder="아이디" id="nickname" value={Nickname} onChange={NicknameHandler} maxLength="10"></input>
               <label for="nickname">닉네임</label>
             </div>
           </Container>
