@@ -47,7 +47,7 @@ function ListItem({ id, title,  createdAt}) { //start_date -> date
                     <td>{createdAt}</td>
                 </tr>
             </table>
-
+.
         </Link>
     }
     </>

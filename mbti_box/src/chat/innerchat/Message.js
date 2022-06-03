@@ -1,21 +1,61 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import ScrollToBottom from 'react-scroll-to-bottom';
 import './Message.css';
 import Message_sendme from './message_sendme';
 import Message_sendfrom from './message_sendfrom';
+import qs from 'qs';
 import io from 'socket.io-client';
+import { NearbyError } from "@mui/icons-material";
+//ListItem
+
+
+function useFetch(url, id) {
+    const [data, setData] = useState({});
+    const [loading, setLoading] = useState(true);
+    
+    
+    function fetchUrl() {
+          axios.get(`${url}`).then(response => {
+            setData(response.data);
+            console.log("확인함");
+            console.log(response.data);
+            //name(방이름), roomId(순번)
+        });
+        setLoading(false);
+    }
+    useEffect(() => {
+        if (id) {
+            fetchUrl();
+            console.log("gd");
+        } else {
+            setData(null);
+            setLoading(false);
+            console.log("no");
+        }
+    }, []);
+    return [data, loading];
+}
 
 //상대방 닉네임, 숫자1 받기 axios
-const socket = io('http://localhost:3000');
+const socket = io.connect("http://localhost:3001");
+//io.connect
 
-export default class Message extends React.Component{
+export default class Message extends Component{
+
   constructor(props){
       super(props);
       this.state = {
-          premessages:[],
-          userid:'jybin96',
-          messages:[],
-          message:''
+        //   premessages:[],
+        //   userid:'jybin96',
+        //   messages:[],
+        //   message:''
+        type:'ENTER',
+        name: data.name,
+        sender: NICKNAME,
+        premessages:[],
+        messages:[],
+        message:''
+
       }
   }
   recievemessage=(messageobject)=>{
@@ -25,22 +65,25 @@ export default class Message extends React.Component{
   }
   componentWillMount(){
       const post = {
-          userid:this.state.userid,
-          touser:'snsk3779'
+        //   userid:this.state.userid,
+        //   touser:'snsk3779'
+        type:'ENTER',
+        name: data.name,
+        sender: NICKNAME,
       }
-      fetch('http://localhost:3001/messageshow',{
-          method:"post",
-          headers : {
-              'content-type':'application/json'
-          },
-          body:JSON.stringify(post)
-      }).then(res => res.json())
-      .then(json =>{
-          this.setState({
-              premessages:json
-          })
-          console.log(this.state.premessages);
-      })
+    //   fetch('ws://localhost:8081/ws/chat',{
+    //       method:"post",
+    //       headers : {
+    //           'content-type':'application/json'
+    //       },
+    //       body:JSON.stringify(post)
+    //   }).then(res => res.json())
+    //   .then(json =>{
+    //       this.setState({
+    //           premessages:json
+    //       })
+    //       console.log(this.state.premessages);
+    //   })
       socket.on('send message',(messageobject)=>{
           this.recievemessage(messageobject);
       })
@@ -64,8 +107,7 @@ export default class Message extends React.Component{
       })
       const messageobject = {
           body : this.state.message,
-          userid:this.state.userid,
-          touser:'snsk3779'
+          userid:this.state.userid
       }
       fetch('http://localhost:3001/message',{
           method:"post",
@@ -78,6 +120,17 @@ export default class Message extends React.Component{
      
   }
   render(){
+
+    const NICKNAME = localStorage.getItem("nickname"); //로그인된 사람
+
+    const query = qs.parse(location.search, {
+        ignoreQueryPrefix: true
+    });
+
+    console.log(query);
+
+    const [data, loading] = useFetch("/chat");
+    
       return(
           <div className="message_main">
               <div className="message_title">

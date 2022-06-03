@@ -2,7 +2,7 @@ import React from 'react'
 
 const Modal = (props)=>{
 
-    const {open, close, header} = props;
+    const {open, close, header, submit} = props;
 
     return(
         <>
@@ -19,7 +19,7 @@ const Modal = (props)=>{
                         <main>{props.children}</main>
 
                         <footer>
-                            <button className="close" onClick={close}>
+                            <button className="close" onClick={submit}>
                                 submit
                             </button>
                         </footer>

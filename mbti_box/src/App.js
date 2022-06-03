@@ -28,6 +28,7 @@ import Notice from "./Noticeboard/Notice.js";
 import Annwrite from "./Noticeboard/annwrite.js";
 import Annview from "./Noticeboard/annview.js";
 import Game from "./game/Game.js";
+import Message from "./chat/innerchat/Message.js"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
 import { Container, Row, Col } from "react-bootstrap";
@@ -81,6 +82,8 @@ const App = () => {
 
             {/* 이전 게시판 지워도될듯? */}
             <Route path="/detail" component={Notice} />
+
+            <Route path="/chatting" component={Message}/>
 
             <Route path="/chat" >
               <Chatmain></Chatmain>

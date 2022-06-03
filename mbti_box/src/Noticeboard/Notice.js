@@ -5,6 +5,7 @@ import { FormOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 import qs from 'qs';
 import axios from "axios";
+import { useHistory } from 'react-router-dom';
 
 
 function useFetch(url, id) {
@@ -37,7 +38,12 @@ function useFetch(url, id) {
 
 const Notice = ({ location, history }) => {
 
+    const backhistory = useHistory();
+    const NICKNAME = localStorage.getItem("nickname"); //로그인된 사람
 
+    let Currentnickname = localStorage.getItem("currentnickname"); //글쓴 사람
+
+    
   const query = qs.parse(location.search, {
       ignoreQueryPrefix: true
   });
@@ -46,7 +52,21 @@ const Notice = ({ location, history }) => {
 
   const [data, loading] = useFetch("/api/announcement/announcement/", query.id);
   
- 
+  const removeView=(e)=> {
+    if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
+      
+        axios(`api/announcement/delete/${query.id}`, {
+            method : 'delete',
+            data : {
+                id : query.id
+                }
+        })
+
+        alert('게시물이 삭제되었습니다.')
+        return backhistory.replace("/");
+
+    }
+  }
 
 
   if (loading) {
@@ -80,15 +100,16 @@ const Notice = ({ location, history }) => {
                     <button className="btn2">목록으로 돌아가기</button>
                 </Link>
 
-                <Link to={{
-                        pathname:"/write",
-                        search:`?id=${query.id}`
-                    }}>
-                    <button className='btn1'>수정</button>
-                </Link>
+
                 
-                
-                
+                {               //조건 걸기
+                        (Currentnickname===NICKNAME && NICKNAME) ?    
+                            <>
+                                <button className='btn1' onClick={()=>removeView()}>삭제</button>
+                            </>
+
+                            : <></>
+                }
 
             </Container>
           </>

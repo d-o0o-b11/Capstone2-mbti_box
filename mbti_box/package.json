@@ -13,6 +13,7 @@
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.3",
     "@mui/styles": "^5.5.3",
+    "@stomp/stompjs": "^6.1.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -45,6 +46,7 @@
     "redux": "^4.2.0",
     "semantic-ui-react": "^2.1.2",
     "socket.io": "^4.5.1",
+    "sockjs-client": "^1.6.1",
     "styled": "^1.0.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.2"
