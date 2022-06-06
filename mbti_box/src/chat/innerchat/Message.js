@@ -1,183 +1,117 @@
-import React, { Component, useEffect, useState } from "react";
-import ScrollToBottom from 'react-scroll-to-bottom';
+import React, { Component, useEffect, useState, useCallback, useRef } from "react";
 import './Message.css';
-import Message_sendme from './message_sendme';
-import Message_sendfrom from './message_sendfrom';
 import qs from 'qs';
-import io from 'socket.io-client';
-import { NearbyError } from "@mui/icons-material";
-//ListItem
+import * as StompJS from '@stomp/stompjs';
+import SockJS from "sockjs-client";
+import { Stomp } from "@stomp/stompjs";
+import Container from './Container.js';
+import axios from "axios";
 
 
-function useFetch(url, id) {
-    const [data, setData] = useState({});
-    const [loading, setLoading] = useState(true);
+
+
+const Message = ({ location, history }) => {
+    const [ms, setMs] = useState("");
+    const [content, setContent] = useState([]);
     
-    
-    function fetchUrl() {
-          axios.get(`${url}`).then(response => {
-            setData(response.data);
-            console.log("확인함");
-            console.log(response.data);
-            //name(방이름), roomId(순번)
-        });
-        setLoading(false);
-    }
+
+    const NICKNAME = localStorage.getItem("nickname"); //현재 로그인 된 사람 닉네임
+    const ROOMID = localStorage.getItem("roomId"); //현재 방 아이디
+
     useEffect(() => {
-        if (id) {
-            fetchUrl();
-            console.log("gd");
-        } else {
-            setData(null);
-            setLoading(false);
-            console.log("no");
-        }
+        wsSubscribe();
+     return () => wsDisconnect();
     }, []);
-    return [data, loading];
-}
 
-//상대방 닉네임, 숫자1 받기 axios
-const socket = io.connect("http://localhost:3001");
-//io.connect
+    var sock = new SockJS("/ws/chat");
+    var ws = Stomp.over(sock);
 
-export default class Message extends Component{
-
-  constructor(props){
-      super(props);
-      this.state = {
-        //   premessages:[],
-        //   userid:'jybin96',
-        //   messages:[],
-        //   message:''
-        type:'ENTER',
-        name: data.name,
-        sender: NICKNAME,
-        premessages:[],
-        messages:[],
-        message:''
-
-      }
-  }
-  recievemessage=(messageobject)=>{
-      this.setState({
-          messages:[...this.state.messages,messageobject]
-      })
-  }
-  componentWillMount(){
-      const post = {
-        //   userid:this.state.userid,
-        //   touser:'snsk3779'
-        type:'ENTER',
-        name: data.name,
-        sender: NICKNAME,
-      }
-    //   fetch('ws://localhost:8081/ws/chat',{
-    //       method:"post",
-    //       headers : {
-    //           'content-type':'application/json'
-    //       },
-    //       body:JSON.stringify(post)
-    //   }).then(res => res.json())
-    //   .then(json =>{
-    //       this.setState({
-    //           premessages:json
-    //       })
-    //       console.log(this.state.premessages);
-    //   })
-      socket.on('send message',(messageobject)=>{
-          this.recievemessage(messageobject);
-      })
-      console.log(this.state.messageobject);
-  }
-  
-  onChange=(e)=>{
-      this.setState({
-          message:e.target.value
-      })
-      console.log(this.state.message);
-  }
-  onKeyDown=(e)=>{
-      if(e.keyCode == 13){
-          console.log("엔터키누름");
-      }
-  }
-  onClick=()=>{
-      this.setState({
-          message:''
-      })
-      const messageobject = {
-          body : this.state.message,
-          userid:this.state.userid
-      }
-      fetch('http://localhost:3001/message',{
-          method:"post",
-          headers : {
-              'content-type':'application/json'
+    const client = new StompJS.Client({
+        brokerURL: ws, // 왜 websocket을 붙여줘야하는거지..?
+        data: {
+            roomId: '',
+            room: {},
+            sender: '',
+            message: '',
+            messages: []
           },
-          body:JSON.stringify(messageobject)
-      }).then(socket.emit('message',messageobject))
-      
-     
-  }
-  render(){
+        
+        recvMessage: function(recv){
+            if (recv.type === "ENTER") {
+                console.log("Eif문 ENTER");
+                
+                this.messages.unshift({"message":recv.message});
 
-    const NICKNAME = localStorage.getItem("nickname"); //로그인된 사람
-
-    const query = qs.parse(location.search, {
-        ignoreQueryPrefix: true
+            }
+        }, 
+        sendMessage: function() {
+            ws.send("/app/chat/message", {}, JSON.stringify({type:'TALK', roomId:ROOMID, sender:NICKNAME, message:this.message}));
+                
+        }, 
+        
+        debug: function (str) {
+            console.log(str);
+        },
     });
 
-    console.log(query);
+    client.activate();
 
-    const [data, loading] = useFetch("/chat");
-    
-      return(
-          <div className="message_main">
-              <div className="message_title">
-                  <div className="message_title_name">
-                      <p>채팅방</p>
-                  </div>
+    const onClick = (message) => {
+        console.log(ws.connected);
+        if (!ws.connected)
+            return;
+
+        ws.send("/app/chat/message", {}, JSON.stringify({type:'TALK', roomId:ROOMID, sender:NICKNAME, message:message}));
+        console.log(message);
+        
+    }
+
+    function User({ user }) {
+        return (
+              <div>
+                 <b>{user.sender}</b> <span>{user.message}</span>
               </div>
-              <div className="message_scroll">
-              <ScrollToBottom className="chat_scroll">
-                  {this.state.premessages.map((message,index)=>{
-                      if(this.state.userid === message.message_user){
-                          return(//내 아이디랑 == 메시지 아이디랑 같으면은 나한테 뜨는것
-                              <Message_sendme message={message.message_body}/>
-                          )
-                      }else{
-                          return(
-                              <Message_sendfrom message={message.message_body}/>
-                          )
-                      }
-                                     
-                                  })
-                      }
-                  {this.state.messages.map((message,index)=>{
-                      if(this.state.userid === message.userid){
-                          return(
-                              <Message_sendme message={message.body}/>
-                          )
-                      }else{
-                          return(
-                              <Message_sendfrom message={message.body}/>
-                          )
-                      }
-                                     
-                                  })
-                      }
-              </ScrollToBottom>
-              </div>
-              <div className="message_input">
-                  <div className="message_inputbox">
-                      <textarea onChange={this.onChange} value={this.state.message} onKeyDown={this.onKeyDown}/>
-                  </div>
-                  <div className="message_button">
-                      <button onClick={this.onClick}>보내기</button>
-                  </div>
-                 
-              </div>
-          </div>
-      )
-  }
+        );
+     }
+
+
+    const wsSubscribe = () => {
+        ws.connect({}, function(frame) {
+            ws.subscribe("/topic/chat/room/"+ROOMID, function(message) {
+              var recv = JSON.parse(message.body);
+              console.log("메시지 체크"+recv.type);
+              client.recvMessage(recv);
+            });
+            ws.send("/app/chat/message", {}, JSON.stringify({type:'ENTER', roomId:ROOMID, sender:NICKNAME}));
+            console.log("얀결됨");
+            console.log("연결확인"+ws.connected);
+            console.log("주소확인"+"/topic/chat/room/"+ROOMID);
+        }, function(error) {
+            
+                console.log("connection reconnect");
+                
+          });
+    }
+
+    const wsDisconnect = () => {
+        client.deactivate();
+    }
+
+
+    return (
+        <>
+            <div>
+                <div id="menu">
+                    <p>Welcome,
+                    </p>
+                </div>
+                {
+                    client.messages.map(user => (<User user={user} />)) 
+                }
+                <Container sendMessage={onClick}/>
+            </div>
+        </>
+    )
 }
+
+export default Message;

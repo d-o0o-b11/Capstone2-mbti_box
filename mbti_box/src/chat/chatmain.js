@@ -5,6 +5,8 @@ import img5 from "../images/chat.png"
 import "./modal.css"
 import Modal from "./Modal.js"
 import ListItemchat from './innerchat/ListItemchat.js';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import { useHistory } from "react-router-dom";
 import Axios from "axios"
 
 function useFetch(url) {
@@ -40,7 +42,9 @@ const Chatmain = () => {
 
     const [roomname, Setroomname] = useState("");  //roomname
 
-    const data = useFetch("/chat");
+    const data = useFetch("/chat/rooms"); 
+
+    const history = useHistory();
 
     //방 이름
     const RoomHandler = (e) => {
@@ -57,16 +61,21 @@ const Chatmain = () => {
         else{
             Axios({
                 method:'post',
-                url: '/chat',
-                data:
-                {name: roomname},
+                url: `/chat/room?name=${roomname}`
             })
             .then((Response)=>{
                 console.log("채팅방이름 잘 전달됨");
+                console.log(roomname);
+                localStorage.setItem("roomId",Response.data.roomId);
+                window.location.reload();
+                Setroomname("");
+                SetmodalOpen(false); 
             })
             .catch((error)=>{
                 console.log("채팅방 오류남");
+                console.log(`/chat?name=${roomname}`);
                 console.log(error);
+
             })
         }
     }
@@ -82,7 +91,7 @@ const Chatmain = () => {
             <Row>
                 <Col className="sickbang">
                     <div className="back">
-                        <h1 className="test11" src={img5} height="30" width="30">단체 채팅<button onClick={openModal}>click</button></h1>
+                        <h1 className="test11" src={img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
 
                         <div className="mbticontent">
                             <Modal open={modalOpen} close={closeModal} header="개인채팅 매칭" submit={submitHandler}>
@@ -94,10 +103,11 @@ const Chatmain = () => {
                             <div className="in">
                                 <section className="list-wrapper">
                                     {data.map(
-                                        ({ name }) => (
+                                        ({ roomName, roomId }) => (
                                             <ListItemchat
-                                                name={name}
-                                                key={name}
+                                                roomName={roomName}
+                                                roomId={roomId}
+                                                key={roomName}
                                             />
                                         )
                                     )}

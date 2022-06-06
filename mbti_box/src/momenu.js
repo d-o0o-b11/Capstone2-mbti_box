@@ -93,7 +93,7 @@ const Momenu = (props) => {
                     </Link>
 
           
-                    <Link to="/Game" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
+                    <Link to="/chat" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                       <h5 className="st mm"><CommentOutlined style={{ fontSize: '30px', marginRight:'20px'}} />채팅</h5>
                     </Link>
 
@@ -167,7 +167,7 @@ const Momenu = (props) => {
                           </Link>
       
                 
-                          <Link to="/Game" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
+                          <Link to="/chat" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                             <h5 className="st mm"><CommentOutlined style={{ fontSize: '30px', marginRight:'20px'}} />채팅</h5>
                           </Link>
       

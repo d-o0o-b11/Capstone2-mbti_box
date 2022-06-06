@@ -91,7 +91,7 @@
 
 
 
-.inputbox input:focus, input:not(:placeholder-shown){ 
+.inputbox input:focus, inputbox input:not(:placeholder-shown){ 
   /* placeholder-shown가 사라지고 focus되었을때 */
   border-bottom: solid 1px rgb(226,160,110); 
   outline:none; 

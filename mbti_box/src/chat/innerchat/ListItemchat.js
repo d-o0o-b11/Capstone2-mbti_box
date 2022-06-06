@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import "./ListItemchat.css"
 
-function ListItemchat({ name }) {
+function ListItemchat({ roomName, roomId }) {
 
 
     return (
@@ -9,16 +10,16 @@ function ListItemchat({ name }) {
     
         <Link to={{
             pathname:"/chatting",
-            search:`?name=${name}`
+            search:`?roomId=${roomId}`
         }} style={{ textDecoration: 'none', color: 'black'}}>
 
 
-            <table class="blueone tablecenter">
-                <tr>
-                    <td>{name}</td>
-                </tr>
-            </table>
-.
+            <div className="list">
+                <div className='text'>
+                    <h6>{roomName}</h6>
+                </div>
+            </div>
+
         </Link>
     
     </>
