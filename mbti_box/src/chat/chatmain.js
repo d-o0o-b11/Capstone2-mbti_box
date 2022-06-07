@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./chat.css"
+import "./mochat.css"
 import { Container, Row, Col} from "react-bootstrap";
 import img5 from "../images/chat.png"
 import "./modal.css"
@@ -8,6 +9,7 @@ import ListItemchat from './innerchat/ListItemchat.js';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useHistory } from "react-router-dom";
 import Axios from "axios"
+import { useMediaQuery } from "react-responsive"
 
 function useFetch(url) {
 
@@ -31,12 +33,17 @@ const Chatmain = () => {
 
     const [modalOpen, SetmodalOpen] = useState(false);
 
+    const isMobile = useMediaQuery({
+        query : "(max-width:767px)"
+      });
+
     const openModal = () => {
         SetmodalOpen(true);
     };
     
     //창 닫으면서 axios로 mbti보내기
     const closeModal = () => {
+        Setroomname("");
         SetmodalOpen(false); 
     };
 
@@ -80,27 +87,43 @@ const Chatmain = () => {
         }
     }
 
+    const enterinput = e =>{
+        if(e.key==='Enter'){
+            submitHandler(e);
+        }
+    }
+
 
   return (
     <>
+    {   (isMobile)?
         <Container>
             <div className="chatting backin">
                 <div className="banner">
                     <img src={img5} height="150" />
                 </div>
-            <Row>
-                <Col className="sickbang">
-                    <div className="back">
+
+                <Row>
+                <Col className="sickbang2">
+                    <div className="back2">
                         <h1 className="test11" src={img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
 
                         <div className="mbticontent">
                             <Modal open={modalOpen} close={closeModal} header="개인채팅 매칭" submit={submitHandler}>
                                 <h5>개설할 방 이름을 적어주세요!</h5>
-                                <input type="text" placeholder="방이름" maxlength="14" style={{width:"250px"}} value={roomname} onChange={RoomHandler}/>
+                                <input 
+                                    type="text" 
+                                    placeholder="방이름" 
+                                    maxlength="14" 
+                                    style={{width:"250px"}} 
+                                    value={roomname} 
+                                    onChange={RoomHandler}
+                                    onKeyPress={enterinput}
+                                />
                             </Modal>
-                        </div>  
+                        </div>   
 
-                            <div className="in">
+                            <div className="in3">
                                 <section className="list-wrapper">
                                     {data.map(
                                         ({ roomName, roomId }) => (
@@ -116,11 +139,56 @@ const Chatmain = () => {
                     </div>
                 </Col>
 
-                
+            </Row>
+
+            </div>
+        </Container>
+        :
+        <Container>
+            <div className="chatting backin">
+                <div className="banner">
+                    <img src={img5} height="150" />
+                </div>
+            <Row>
+                <Col className="sickbang">
+                    <div className="back">
+                        <h1 className="test11" src={img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
+
+                        <div className="mbticontent">
+                            <Modal open={modalOpen} close={closeModal} header="개인채팅 매칭" submit={submitHandler}>
+                                <h5>개설할 방 이름을 적어주세요!</h5>
+                                <input 
+                                    type="text" 
+                                    placeholder="방이름" 
+                                    maxlength="14" 
+                                    style={{width:"250px"}} 
+                                    value={roomname} 
+                                    onChange={RoomHandler}
+                                    onKeyPress={enterinput}
+                                />
+                            </Modal>
+                        </div>   
+
+                            <div className="in2">
+                                <section className="list-wrapper">
+                                    {data.map(
+                                        ({ roomName, roomId }) => (
+                                            <ListItemchat
+                                                roomName={roomName}
+                                                roomId={roomId}
+                                                key={roomName}
+                                            />
+                                        )
+                                    )}
+                                </section>
+                            </div>
+                    </div>
+                </Col>
 
             </Row>
             </div>
         </Container>
+    }
     </>
     
   );

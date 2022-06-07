@@ -16,24 +16,60 @@
     /* border-radius: 5%; */
     width: 450px;
     height: 500px;
+    /* overflow-y: scroll; */
+  }
+
+  .intext{
+    margin: 0 auto;
+    background-color : rgb(252,221,167);
+    /* border-radius: 5%; */
+    width: 450px;
+    height: 450px;
     overflow-y: scroll;
   }
 
 
 
-.in::-webkit-scrollbar{
+.intext::-webkit-scrollbar{
   width: 6px;
 }
 
 /* 스크롤바 막대 설정*/
-.in::-webkit-scrollbar-thumb{
+.intext::-webkit-scrollbar-thumb{
   height: 17%;
   background-color: rgb(108, 78, 55);
   border-radius: 10px;  
 }
 
 /* 스크롤바 뒷 배경 설정*/
-.in::-webkit-scrollbar-track{
+.intext::-webkit-scrollbar-track{
+  background-color: rgba(226,160,110, 0.3);
+}
+
+
+
+.in2{
+  margin: 0 auto;
+  /* background-color : rgb(252,221,167); */
+  /* border-radius: 5%; */
+  width: 450px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.in2::-webkit-scrollbar{
+  width: 6px;
+}
+
+/* 스크롤바 막대 설정*/
+.in2::-webkit-scrollbar-thumb{
+  height: 17%;
+  background-color: rgb(108, 78, 55);
+  border-radius: 10px;  
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.in2::-webkit-scrollbar-track{
   background-color: rgba(226,160,110, 0.3);
 }
 
@@ -71,7 +107,7 @@
   background: rgb(220, 160, 110);
   left: 0;
   width: 100%;
-  height: 93%;
+  height: 100%;
   padding: 0 10%;
 }
 

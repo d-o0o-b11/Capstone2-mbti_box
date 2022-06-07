@@ -43,7 +43,7 @@ const Annwrite=()=>{
               console.log(title);
               console.log(content);
                 alert("글 성공");
-                history.replace("/");
+                history.replace("/Annview");
     
             })
             .catch((error)=>{

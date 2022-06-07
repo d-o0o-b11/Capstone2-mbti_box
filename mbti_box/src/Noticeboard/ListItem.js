@@ -12,7 +12,7 @@ function ListItem({ id, title,  createdAt}) { //start_date -> date
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
       });
-
+ 
     return (
     <>
     {isMobile?

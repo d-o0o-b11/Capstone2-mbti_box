@@ -180,7 +180,7 @@ const WRITEINTJ = () => {
         <span style={{marginBottom:10}}>{MBTI}</span>
         
             <div className="custom-form-group" >
-                <input type="text" name="title" placeholder="Title" maxLength={40} value={title} onChange={handlechange}/>
+                <input type="text" name="title" placeholder="Title" maxLength={20} value={title} onChange={handlechange}/>
             </div>
             
             <div className="custom-form-group">

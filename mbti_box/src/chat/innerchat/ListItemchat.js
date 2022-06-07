@@ -10,7 +10,7 @@ function ListItemchat({ roomName, roomId }) {
     
         <Link to={{
             pathname:"/chatting",
-            search:`?roomId=${roomId}`
+            search:`?roomName=${roomName}`
         }} style={{ textDecoration: 'none', color: 'black'}}>
 
 

@@ -18,6 +18,7 @@ function useFetch(url, id) {
           setData(response.data);
           console.log("확인함");
           console.log(response.data);
+          //여기서 글쓴 사람 닉네임 받아와야함 
       });
       setLoading(false);
   }
@@ -63,10 +64,14 @@ const Notice = ({ location, history }) => {
         })
 
         alert('게시물이 삭제되었습니다.')
-        return backhistory.replace("/");
+        return backhistory.replace("/Annview");
 
     }
   }
+
+  console.log("글쓴사람:"+Currentnickname);
+  console.log("닉네임:"+NICKNAME);
+
 
 
   if (loading) {
@@ -110,6 +115,7 @@ const Notice = ({ location, history }) => {
 
                             : <></>
                 }
+                <button className='btn1' onClick={()=>removeView()}>삭제</button>
 
             </Container>
           </>

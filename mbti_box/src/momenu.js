@@ -11,8 +11,8 @@ import img2 from "./images/me.png"
 import img3 from "./images/menucancel.png"
 import img5 from "./images/face.jpg"
 import menulogo from "./images/momenu.png"
+import { useHistory } from 'react-router-dom';
 
-import { useSelector } from 'react-redux'
 
 const Momenu = (props) => {
 
@@ -26,10 +26,13 @@ const Momenu = (props) => {
     
   let [retoken, ReToken] = useState(token);
 
+  const history = useHistory();
+
   const removeToken=()=>{
     //ReToken(0);
     localStorage.clear(); 
     console.log(token)
+    history.replace("/");
     window.location.reload();
   }
 
@@ -44,6 +47,13 @@ const Momenu = (props) => {
     setToggleBar(!toggleBar)
   }
 
+  const loginChat = () =>{
+    
+    alert("로그인 후 사용가능합니다");
+    toggleChange();
+    history.replace("/login");
+
+  }
 
   if(retoken){
   return (
@@ -167,9 +177,9 @@ const Momenu = (props) => {
                           </Link>
       
                 
-                          <Link to="/chat" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
-                            <h5 className="st mm"><CommentOutlined style={{ fontSize: '30px', marginRight:'20px'}} />채팅</h5>
-                          </Link>
+                          
+                            <h5 className="st mm" onClick={loginChat} style={{cursor:"pointer"}}><CommentOutlined style={{ fontSize: '30px', marginRight:'20px'}} />채팅</h5>
+                         
       
       
                           <Link to="/Annview" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>

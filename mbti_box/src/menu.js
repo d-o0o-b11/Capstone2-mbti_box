@@ -19,7 +19,7 @@ const Menu = (props) => {
   let [retoken, ReToken] = useState(token);
 
   const history = useHistory();
-
+  const NICKNAME = localStorage.getItem("nickname");
 
 const removeToken=()=>{
   //ReToken(0);
@@ -28,6 +28,14 @@ const removeToken=()=>{
   console.log(token)
   history.replace("/");
   window.location.reload();
+}
+
+
+const loginChat = () =>{
+  
+    alert("로그인 후 사용가능합니다");
+    history.replace("/login");
+  
 }
  
 
@@ -43,7 +51,7 @@ const removeToken=()=>{
          <span style={{marginLeft:'10%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
 
          <span style={{marginLeft:'3%'}}><Link to="/Game" style={{ textDecoration: 'none', color:'black' }}className="font-big">게임</Link> </span>
-         <span style={{marginLeft:'3%'}}><Link to="/chat" style={{ textDecoration: 'none', color:'black' }}className="font-big">채팅</Link> </span> 
+         <span style={{marginLeft:'3%'}}><Link to="/chat" style={{ textDecoration: 'none', color:'black' }}className="font-big">채팅</Link></span> 
          <span style={{marginLeft:'3%'}}><Link to="/Annview" style={{ textDecoration: 'none', color:'black' }}className="font-big">공지사항</Link></span> 
 
          <span style={{marginLeft:'5%'}} className="font-big">{nickname} 님</span>
@@ -60,15 +68,14 @@ const removeToken=()=>{
       <>
           <div style={{marginLeft:'10%'}} className="menucolor">
   
-            <span ><Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link></span>
+            <Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link>
   
             <span style={{marginLeft:'15%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
   
-           <span style={{marginLeft:'5%'}}><Link to="./PostEditor"className="font-big">게임</Link> </span>
-           <span style={{marginLeft:'5%'}}><Link to="/chat" style={{ textDecoration: 'none', color:'black' }}className="font-big">채팅</Link> </span> 
+           <span style={{marginLeft:'5%'}}><Link to="/Game" style={{ textDecoration: 'none', color:'black' }}className="font-big">게임</Link> </span>
+           <span style={{marginLeft:'5%', cursor:"pointer"}} className="font-big" onClick={loginChat}><a>채팅</a></span> 
            <span style={{marginLeft:'5%'}}><Link to="/Annview" style={{ textDecoration: 'none', color:'black' }}className="font-big">공지사항</Link></span> 
-  
-           {/* <span style={{marginLeft:'5%'}}>{nickname}님</span> */}
+
            <span style={{marginLeft:'10%'}}><Link to="/login" style={{ textDecoration: 'none' , color:'black'}} className="font-big">로그인 </Link></span> 
           </div>
       

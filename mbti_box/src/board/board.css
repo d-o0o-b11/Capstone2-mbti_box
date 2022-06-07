@@ -123,3 +123,27 @@
     width: 28%;
     text-align: center;
   }
+
+  .inboardframe{
+    /* border: 3px solid red; */
+    display: inline-block;
+    width: 28%;
+    text-align: center;
+  }
+
+
+  .txt_line {
+    /* width:20%; */
+    width: 250px;
+    padding:0 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.txt_line2 {
+  width:180px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}

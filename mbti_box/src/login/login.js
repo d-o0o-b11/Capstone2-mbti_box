@@ -59,7 +59,6 @@ const Login = (props) => {
       },
   })
   .then((Response)=>{
-      alert("로그인 성공");
       localStorage.setItem("token",Response.data.token)
       const TOKEN = localStorage.getItem("token");
       console.log(TOKEN);
@@ -108,7 +107,7 @@ const Login = (props) => {
 
               <div className='inputbox'>
                 <input type="text" placeholder="아이디" id="userid" value={Id} onChange={IDHandler} name="userid"></input>
-                <label for="userid"><span>아이디</span></label>
+                <label for="userid">아이디</label>
               </div>
 
               <div className='inputbox'>
@@ -127,14 +126,9 @@ const Login = (props) => {
               <Grid item xs>
                 
                 <Link to="/PWfind">
-                  <span style={{marginRight:"5px"}}>아이디</span>
+                  <span style={{marginRight:"5px"}}>아이디찾기</span>
                 </Link>
 
-                <span>|</span>
-
-                <Link to="/PWfind2">
-                  <span style={{marginLeft:"5px"}}>비밀번호 찾기</span>
-                </Link>
               </Grid>
               
 

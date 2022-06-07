@@ -214,14 +214,7 @@ const stitle = () => {
         </Col>
 
         <Col>
-          <div className="hover13 column">
-            <div>
-              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure>
-                <div className="textpo">
-                      <h6 className="sss">자유</h6>
-                </div>
-            </div>
-          </div>
+          
         </Col>
 
         

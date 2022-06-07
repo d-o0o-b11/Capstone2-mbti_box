@@ -232,14 +232,7 @@ const mostitle = () => {
           </div>
         </Col>
           <Col>
-              <div className="hover13 ">
-                <div>
-                  <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={img2} /></Link></figure1>
-                    <div className="textpo">
-                      <h6 style={{marginTop:5}}>자유</h6>
-                    </div>
-                </div>
-              </div>
+              
             </Col>
             <Col/>
         

@@ -26,9 +26,10 @@ function BoardListItem({id, title, nickname,  createdAt}) { //start_date -> date
 
                 <div className='boardframe1 column1'>          
                     <img src={img2} />
-                    <span style={{fontSize:"15px", color:"#000000", fontStyle:"blod"}}>{title}</span>
-                    <br></br>
-                    <span style={{fontSize:"12px", color:"#000000"}}>{nickname}</span>
+                    <div className="txt_line2" style={{marginTop:"10px"}}>
+                        <span style={{fontSize:"15px", color:"#000000", fontStyle:"blod"}}>{title}</span>
+                    </div>
+                    <span style={{fontSize:"12px", color:"#000000", marginTop:"10px"}}>{nickname}</span>
                     {/* <span style={{fontSize:"12px", color:"#000000"}}>{createdAt}</span> */}
                 </div>
 
@@ -44,7 +45,9 @@ function BoardListItem({id, title, nickname,  createdAt}) { //start_date -> date
     
                 <div className='boardframe column'>          
                     <img src={img2} />
-                    <span style={{fontSize:"15px", color:"#000000", fontStyle:"blod"}}>{title}</span>
+                    <div className="txt_line" style={{marginTop:"10px"}}>
+                        <h6 style={{fontSize:"15px", color:"#000000", fontStyle:"blod"}}>{title}</h6>
+                    </div>
                     <br></br>
                     <span style={{fontSize:"12px", color:"#000000"}}>{nickname}</span>
                     {/* <span style={{fontSize:"12px", color:"#000000"}}>{createdAt}</span> */}

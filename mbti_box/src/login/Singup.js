@@ -331,7 +331,7 @@ const Singup = () => {
           <Container maxWidth="xs">
             <div className='inputbox'>
               <input type="text" placeholder="아이디" id="userid" value={Id} onChange={IDHandler} name="userid"></input>
-              <label for="userid"><span>아이디</span></label>
+              <label for="userid">아이디</label>
             </div>
 
             <div className='inputbox'>

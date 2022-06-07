@@ -59,7 +59,7 @@ function INTJ (){
                 }
                     
                 </Row>
-                     
+                      
                         <section>
                             {data.map(
                                 ({id, title, nickname, createdAt}) => (

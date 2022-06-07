@@ -46,7 +46,7 @@ function List() {
                 <th>작성자</th>
               </tr>
             </table>
-
+ 
 
             <section className="list-wrapper">
                 {data.map(

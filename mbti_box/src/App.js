@@ -20,7 +20,6 @@ import Login from "./login/login.js"
 import INTJ from "./board/INTJ.js"
 import MbtiNotice from "./board/MbtiNotice.js";
 import PWfind from "./login/PWfind.js";
-import PWfind2 from "./login/PWfind2.js";
 import Singup from "./login/Singup";
 import WRITEMBTI from "./write/writeMBTI.js"
 import UPDATEMBTI from "./write/updateMBTI.js"
@@ -110,10 +109,6 @@ const App = () => {
 
             <Route path="/PWfind">
               <PWfind></PWfind>
-            </Route>
-
-            <Route path="/PWfind2">
-              <PWfind2></PWfind2>
             </Route>
 
             <Route path="/Singup">
