@@ -53,6 +53,8 @@ const MbtiNotice = ({ location, history }) => {
 
   let Currentnickname = localStorage.getItem("currentnickname"); //글쓴 사람
 
+  const ADMINROLE = localStorage.getItem("adminrole");
+
   const query = qs.parse(location.search, {
       ignoreQueryPrefix: true
   });
@@ -116,7 +118,7 @@ const MbtiNotice = ({ location, history }) => {
                 
                 
                     {   
-                        (Currentnickname===NICKNAME && NICKNAME) ?    
+                        ((Currentnickname===NICKNAME && NICKNAME)|| ADMINROLE==="ADMIN") ?    
                             <>
                                 <Link to={{
                                         pathname:"/updateMBTI",

@@ -32,10 +32,21 @@ function List() {
   });
 
   const data = useFetch("/api/announcement/announcements");
+
+ 
+  const ADMINROLE = localStorage.getItem("adminrole");
   
   return (
     <>
-      <Link to="/Annwrite"><FormOutlined style={{ fontSize: '30px', right:'25%', position:'absolute'}}></FormOutlined></Link>
+
+    {
+      (ADMINROLE==="ADMIN")?
+        <Link to="/Annwrite"><FormOutlined style={{ fontSize: '30px', right:'25%', position:'absolute'}}></FormOutlined></Link>
+      :
+      <></>
+    }
+    
+    
       {
         isMobile?
           <Container style={{marginTop:"30px"}}>     
@@ -54,8 +65,6 @@ function List() {
                         <ListItem
                             id={id}
                             title={title}
-                            //content={content}
-                            //createdAt={createdAt.substr(0,10)}
                             key={id}
                         />
                     )

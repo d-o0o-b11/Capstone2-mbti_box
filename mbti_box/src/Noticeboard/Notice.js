@@ -44,6 +44,7 @@ const Notice = ({ location, history }) => {
 
     let Currentnickname = localStorage.getItem("currentnickname"); //글쓴 사람
 
+    const ADMINROLE = localStorage.getItem("adminrole");
     
   const query = qs.parse(location.search, {
       ignoreQueryPrefix: true
@@ -57,7 +58,7 @@ const Notice = ({ location, history }) => {
     if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
       
         axios(`api/announcement/delete/${query.id}`, {
-            method : 'delete',
+            method : 'delete', 
             data : {
                 id : query.id
                 }
@@ -82,7 +83,7 @@ const Notice = ({ location, history }) => {
 
       return (
           <>
-          <hr></hr>
+          <hr></hr> 
             <Container>
                 <h3 style={{marginTop:"40px"}}>공지사항</h3>
 
@@ -108,15 +109,14 @@ const Notice = ({ location, history }) => {
 
                 
                 {               //조건 걸기
-                        (Currentnickname===NICKNAME && NICKNAME) ?    
+                        (ADMINROLE==="ADMIN") ?    
                             <>
                                 <button className='btn1' onClick={()=>removeView()}>삭제</button>
                             </>
 
                             : <></>
                 }
-                <button className='btn1' onClick={()=>removeView()}>삭제</button>
-
+                
             </Container>
           </>
         

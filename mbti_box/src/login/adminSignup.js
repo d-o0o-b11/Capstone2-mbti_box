@@ -2,13 +2,9 @@
 import React, {useEffect, useState} from 'react';
 import { useHistory } from "react-router-dom";
 
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
+
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import PropTypes from 'prop-types';
 import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled';
@@ -178,7 +174,7 @@ CustomSelect.propTypes = {
 
 
 
-const Singup = () => {
+const AdminSignup = () => {
   const [value, SetValue] = useState("");  //mbti
   const [Id, SetId] = useState("");  //Id
   const [Pw, SetPw] = useState("");  //pw
@@ -268,12 +264,11 @@ const Singup = () => {
                     mbti:value,
                     nickname:Nickname,
                     username: Id,
-                    role:"ROLE_USER"
+                    role:"ROLE_ADMIN",
                 },
               })
               .then((Response)=>{
                   alert("회원가입 성공");
-                  //console.log(Response.data)
                   history.replace("/login");
                   
                   
@@ -411,4 +406,4 @@ const Singup = () => {
 
   );
 };
-export default Singup
+export default AdminSignup

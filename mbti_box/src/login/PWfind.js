@@ -31,17 +31,18 @@ const PWfind =()=>{
           
       Axios({
         method: 'post',
-        url: 'api/user/check/nickname', //수정하기
+        url: `api/user/id/${Email}`, //수정하기
         data: {
           email: Email,
         },
       })    
       .then((Response)=>{
-        console.log("성공");
-        console.log(Response.data);
+        SetEmail("");
+        alert("사용자의 아이디는 "+Response.data+" 입니다")
       })  
       .catch((error)=>{
         console.log(error);
+        console.log("아이디 찾기실패");
       })
     }
   }
@@ -64,18 +65,19 @@ const PWfind =()=>{
               <img src={img1} style={{width:200}}/>
 
 
-              <Box component="form" onSubmit={submitHandler}>
-                
+            
+              <Box>
               <div className='inputbox'>
                 <input type="email" placeholder="이메일" id="email" value={Email} onChange={emailHandler} ></input>
                 <label for="email">이메일</label>
               </div>
 
-              <button class="w-btn w-btn-green" type="submit" style={{marginTop:"20px"}}>
+              <button class="w-btn w-btn-green" type="submit" style={{marginTop:"20px"}} onClick={submitHandler}>
                 ID 찾기
               </button>
-                
               </Box>
+                
+              
             </Box>
           </Container>    
         

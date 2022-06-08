@@ -61,13 +61,20 @@ const Login = (props) => {
   .then((Response)=>{
       localStorage.setItem("token",Response.data.token)
       const TOKEN = localStorage.getItem("token");
-      console.log(TOKEN);
+      // console.log(TOKEN);
 
       localStorage.setItem("mbti",Response.data.mbti)
 
       const users = Response.data;
       localStorage.setItem("nickname", users.nickname);
       const NICKNAME = localStorage.getItem("nickname");
+
+      console.log(Response.data.role);
+
+      localStorage.setItem("adminrole",Response.data.role);
+      const ADMINROLE = localStorage.getItem("adminrole");
+
+      console.log("관리자체크"+ADMINROLE);
       
       window.alert(`${users.nickname}님 환영합니다.`);
       history.replace("/");

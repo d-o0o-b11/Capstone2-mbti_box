@@ -1,0 +1,12 @@
+.imgcenter{
+    display:block; 
+    margin:auto;
+}
+
+
+.a img {
+    transition: all 0.2s linear;
+  }
+  .a:hover img {
+    transform: scale(1.1);
+  }

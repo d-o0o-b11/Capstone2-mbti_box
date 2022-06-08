@@ -9,6 +9,8 @@ import {Container,Row, Col } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
 import BoardListItem from './BoardListItem';
 
+import Pagination from "./Pagination";
+ 
 
 function useFetch(url) {
 
@@ -32,6 +34,10 @@ function INTJ (){
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
       });
+
+    const [limit, setLimit] = useState(9);
+    const [page, setPage] = useState(1);
+    const offset = (page - 1) * limit;
 
    
     const MBTI = localStorage.getItem("mbti");
@@ -61,7 +67,8 @@ function INTJ (){
                 </Row>
                       
                         <section>
-                            {data.map(
+                        {/* data.map */}
+                            {data.slice(offset,offset+limit).map(
                                 ({id, title, nickname, createdAt}) => (
                                     <BoardListItem
                                         id={id}
@@ -113,6 +120,14 @@ function INTJ (){
                         </section>
                 </div>
 
+                <div className="footerpage">
+                    <Pagination
+                        total={data.length}
+                        limit={limit}
+                        page={page}
+                        setPage={setPage}
+                    />
+                </div>    
                 
                 </Container>
             }

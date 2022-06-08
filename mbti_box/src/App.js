@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Stitle from "./stitle"
 import Mostitle from "./mostitle"
-import Footer from "./footer.js"
-import Mofooter from "./mofooter.js"
-import Logo from "./logo.js"
-import Banner from "./banner.js"
-import Mobanner from "./mobanner.js"
-import Menu from "./menu.js"
 import MAIN1 from "./main1.js"
 import Footer1 from "./footer1.js"
 import Header1 from "./header1.js"
-import Momenu from "./momenu.js"
-import Board from "./board.js"
 import Chatmain from "./chat/chatmain.js"
-import Privatechat from "./chat/privatechat.js"
 import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
@@ -27,11 +18,10 @@ import Notice from "./Noticeboard/Notice.js";
 import Annwrite from "./Noticeboard/annwrite.js";
 import Annview from "./Noticeboard/annview.js";
 import Game from "./game/Game.js";
+import AdminSignup from "./login/adminSignup";
 import Message from "./chat/innerchat/Message.js"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
-import { Container, Row, Col } from "react-bootstrap";
-import { Grid, Text } from "./elements"
 import { useMediaQuery } from "react-responsive"
 
 
@@ -127,15 +117,18 @@ const App = () => {
               <Game></Game>
             </Route>
 
+            {/* 관리자 로그인 */}
+            <Route path="/AdminSignup2019">
+              <AdminSignup></AdminSignup>
+            </Route>
+
 
           </Switch>
 
 
         </div>
 
-        <Route path="/privatematching">
-          <Privatechat></Privatechat>
-        </Route>
+        
       </BrowserRouter>
     </>
   )

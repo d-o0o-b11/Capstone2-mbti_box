@@ -23,6 +23,7 @@ const Annwrite=()=>{
           [e.target.name]: e.target.value
         })
       }
+      const NICKNAME = localStorage.getItem("nickname"); //로그인된 사람
     
 
       const history = useHistory();
@@ -36,7 +37,8 @@ const Annwrite=()=>{
               data: {
                 title: title,
                 content: content,
-              },
+                nickname:NICKNAME,
+              }, 
             })
             .then((Response)=>{
     

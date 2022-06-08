@@ -7,10 +7,6 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 
-
-
-
-
 const { TextArea } = Input
 
 const WRITEINTJ = () => {
@@ -26,6 +22,7 @@ const WRITEINTJ = () => {
     photos:[]
   });
 
+
   const [highlight, setHighlight]= useState(false);
   const {title, desc, photos}=post;
 
@@ -36,21 +33,16 @@ const WRITEINTJ = () => {
     })
   }
 
+  const [files, setFiles] = useState([]);
 
+  const onInputChange = (e) => {
+    // console.log(e.target.files)
+      let files = e.target.files;
+      setFiles(e.target.files)
+
+      handfiles(files);
+  };
   
-  const [sendfiles, Setsendfiles] = useState('');
-
-  const handlefilechange = (e) =>{
-    let files = e.target.files;
-    Setsendfiles(files);
-    console.log(files);
-    //form.append("file",files); //
-    handfiles(files);
-    console.log(files); //
-    //form.append("file",files); //
-    //console.log(sendfiles);
-    //form.append("files",sendfiles);
-  }
 
   const handfiles=files=>{
     let photosArr =[];
@@ -76,97 +68,73 @@ const WRITEINTJ = () => {
   }
 
 
-  const handledelete=e=>{
-    let target = e.target.parentElement;
-    let targetindex = target.dataset.imgindex*1;
-    // console.log(target, targetindex);
-     setPost({
-       ...post,
-       photos: [...photos.slice(0,targetindex), ...photos.slice(targetindex+1)]
-     })
-  }
+  
 
-  const handlehighlight=e=>{
-    e.preventDefault();
-    e.stopPropagation();
-    setHighlight(true);
-  }
-
-  const handleunhiglight=e=>{
-    e.preventDefault();
-    e.stopPropagation();
-    setHighlight(false);
-  }
-
-  const handledrop=e=>{
-    e.preventDefault();
-    e.stopPropagation();
-
-    let dt= e.dataTransfer;
-    let files= dt.files;
-    setHighlight(false);
-    handfiles(files);
-    console.log(files);
-  }
-
-
-  const submitHandler=(e)=>{
+  const submitHandler=async(e)=>{
     e.preventDefault();
 
-    const formdata = new FormData();
-    formdata.append('files', sendfiles);
+    const data = new FormData();
 
-    const config = {
-      headers: {
-        'content-type' : 'multipart/form-data',
-      },
-    };
+      for(let i = 0; i < files.length; i++) {
+          data.append('files', files[i]);
+      }
+      console.log(files.length);
+    if(title===""){
+      alert("제목을 입력해주세요");
+    }
+    else if(desc===""){
+      alert("내용을 입력해주세요");
+    }  
+    else if(files.length===0){
+      alert("이미지 1개이상 추가해주세요");
+    }
+    else{
+      Axios({
+            method: 'post',
+            url: `/api/board/create/${MBTI}`,
+            data: {
+              title: title,
+              content: desc,
+              nickname: NICKNAME,
+              mbti: MBTI,
+            },
+          })
+          .then((Response)=>{
 
+            console.log(title);
+            console.log(desc);
+            console.log("데이터확인")
+            console.log(Response);
+              alert("글 성공");
+            history.replace(`/${MBTI}board`);
 
-    Axios({
-          method: 'post',
-          url: `/api/board/create/${MBTI}`,
-          data: {
-            title: title,
-            content: desc,
-            nickname: NICKNAME,
-            mbti: MBTI,
-          },
-        })
-        .then((Response)=>{
+              console.log("이미지 실행");
 
-          console.log(title);
-          console.log(desc);
-          console.log("데이터확인")
-          console.log(Response);
-            alert("글 성공");
-          //history.replace(`/${MBTI}board`);
-
-            console.log("이미지 실행");
-
-            // const formData = new FormData();
-            // console.log("formData: "+formData);
-            // formData.append("file", photos);
-
-
-
-              Axios.post("/api/file", formdata,config)
-                .then(response => {
-                    console.log(response.data);
-                    console.log("이미지 성공");
+                Axios({
+                  method:'post',
+                  url: "/api/file", 
+                  mode: "cors",
+                  headers: {
+                    "Content-Type": "multipart/form-data",
+                  },
+                  data: data,
                 })
-                .catch(error => {
-                    console.log(error);
-                    console.log("이미지 실패");
-                    console.log(formdata);
-                })
+                  .then(response => {
+                      console.log(response.data);
+                      console.log("이미지 성공");
+                  })
+                  .catch(error => {
+                      console.log(error);
+                      console.log("이미지 실패");
+                    
+                  })
 
 
-        })
-        .catch((error)=>{
-            alert("실패");
-        });
-
+          })
+          .catch((error)=>{
+              alert("실패");
+          });
+        }
 
   }
 
@@ -177,27 +145,24 @@ const WRITEINTJ = () => {
         <div className="file-upload" style={{marginTop:30}}>
         {/* Image Drag & Drop & Preview */}
         <h2>게시글 작성</h2>
-        <span style={{marginBottom:10}}>{MBTI}</span>
+        <span style={{marginBottom:10}}>{MBTI}</span> 
         
             <div className="custom-form-group" >
                 <input type="text" name="title" placeholder="Title" maxLength={20} value={title} onChange={handlechange}/>
             </div>
             
             <div className="custom-form-group">
-                <div className={highlight? "custom-file-drop-area highlight": "custom-file-drop-area "} 
-                onDragEnter={handlehighlight} 
-                onDragOver={handlehighlight} 
-                onDragLeave={handleunhiglight}
-                onDrop={handledrop}
-                >
-                    <input type="file"name="photos" accept="image/*" placeholder="Enter photos" multiple id="filephotos" onChange={handlefilechange}/>
-                    <label htmlFor="filephotos">Drag & Drop</label>
+                <div className="form-group files">
+                  <label htmlFor="filephotos"><span>Upload</span></label>
+                    <input type="file"
+                     onChange={onInputChange}
+                     className="form-control"
+                     multiple/>
                 </div>
               
                 <div className="custom-file-preview">
                   {photos.length > 0 && photos.map((item,index)=>(
                     <div className="prev-img" key={index} data-imgindex={index}>
-                      <span onClick={handledelete}>&times;</span>
                       <img src={item.src} alt={item.name}/>
                     </div>
                   ))}
