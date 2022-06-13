@@ -4,258 +4,240 @@ import "./stitle.css";
 import img2 from "./images/blue.png"
 import {Link} from "react-router-dom";
 import {Grid, Text, Image} from "./elements"
+import "./boardbackmo.css";
 
-import ENFPimg from "./images/ENFP.jpg"
-import ESFPimg from "./images/ESFP.jpg"
-import ENTPimg from "./images/ENTP.jpg"
-import ESTJimg from "./images/ESTJ.jpg"
-import ESFJimg from "./images/ESFJ.jpg"
-import ESTPimg from "./images/ESTP.jpg"
+import ENFPimg from "./images/ENFP.png"
+import ESFPimg from "./images/ESFP.png"
+import ENTPimg from "./images/ENTP.png"
+import ESTJimg from "./images/ESTJ.png"
+import ESFJimg from "./images/ESFJ.png"
+import ESTPimg from "./images/ESTP.png"
 import ENTJimg from "./images/ENTJ.png"
-import ENFJimg from "./images/ENFJ.jpg"
+import ENFJimg from "./images/ENFJ.png"
 
-import ISFPimg from "./images/ISFP.jpg"
-import INFPimg from "./images/INFP.jpg"
-import INTPimg from "./images/INTP.jpg"
-import ISTJimg from "./images/ISTJ.jpg"
-import ISFJimg from "./images/ISFJ.jpg"
-import INFJimg from "./images/INFJ.jpg"
-import INTJimg from "./images/INTJ.jpg"
-import ISTPimg from "./images/ISTP.jpg"
+import ISFPimg from "./images/ISFP.png"
+import INFPimg from "./images/INFP.png"
+import INTPimg from "./images/INTP.png"
+import ISTJimg from "./images/ISTJ.png"
+import ISFJimg from "./images/ISFJ.png"
+import INFJimg from "./images/INFJ.png"
+import INTJimg from "./images/INTJ.png"
+import ISTPimg from "./images/ISTP.png"
 
-const mostitle = () => {
+const mostitle = () => { 
 
 
 
   return (
     <>
-    <React.Fragment>
-    <Container>
-    <Row style={{marginTop:20}}>
-      
-        <Col>
-          <div className="hover13 ">
+
+{/* 분석형 */}
+<div  className="analytic">
+      <p className="title">분석형</p>
+        <div className="abcc2">
+          <div className="hover13 column">
             <div>
-              <figure1><Link to="/INTJboard" style={{ textDecoration: 'none' }}><img src={INTJimg} /></Link></figure1>
+              <figure><Link to="/INTJboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTJimg} className="analytic_imgback" /></Link></figure>
                 <div className="textpo">
-                      <h6 style={{marginTop:5}}>INTJ</h6>
+                      <p className="stitle">INTJ</p>
                 </div>
             </div>
           </div>
-        </Col>
+        </div>
         
 
-        <Col>
-          <div className="hover13 ">
+        <div className="abcc2">
+          <div className="hover13 column">
+              <div>
+                <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback"  /></Link></figure>
+                  <div className="textpo">
+                  <p className="stitle">INTP</p>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+              <div>
+                <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+ENTJimg} className="analytic_imgback" /></Link></figure>
+                  <div className="textpo">
+                    <p className="stitle">ENTJ</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
             <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={INTPimg} /></Link></figure1>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ENTPimg} className="analytic_imgback" /></Link></figure>
                 <div className="textpo">
-                  <h6 style={{marginTop:5}}>INTP</h6>
+                  <p className="stitle">ENTP</p>
                 </div>
             </div>
           </div>
-        </Col>
-
-        <Col>
-          <div className="hover13 ">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ENTJimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ENTJ</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-      </Row>
-      
-         
-      <Row style={{marginTop:20}}>
-      
-      <Col>
-          <div className="hover13">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ENTPimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ENTP</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-      <Col>
-          <div className="hover13">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={INFJimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>INFJ</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-        <Col>
-          <div className="hover13">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={INFPimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>INFP</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
+        </div>
         
-      </Row>
-      
-
-      
-      <Row style={{marginTop:20}}>
      
-      <Col>
-          <div className="hover13 ">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ENFJimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ENFJ</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
+      </div>
 
-        <Col>
-          <div className="hover13 ">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ENFPimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ENFP</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-      <Col>
-          <div className="hover13 ">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISTJimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ISTJ</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-        
-
-        
-        
-      </Row>
+     {/* 여기까지 */}
       
+      {/* 외교형 */}
 
-      <Row style={{marginTop:20}}>
-
-      
-      <Col>
-          <div className="hover13 ">
+      <div className="diplomatic">
+      <p className="title">외교형</p>
+        <div className="abcc2">
+          <div className="hover13 column">
             <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISFJimg} /></Link></figure1>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={INFJimg} className="diplomatic_imgback" /></Link></figure>
                 <div className="textpo">
-                  <h6 style={{marginTop:5}}>ISFJ</h6>
+                  <p className="stitle">INFJ</p>
                 </div>
             </div>
           </div>
-        </Col>
-
-        <Col>
-          <div className="hover13 ">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESTJimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ESTJ</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-        <Col>
-          <div className="hover13 ">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESFJimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ESFJ</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-       
-      
-
-        
-       
-      </Row>
-      
-      <Row style={{marginTop:20}}>
-        
-        <Col>
-          <div className="hover13">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISTPimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ISTP</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-        <Col>
-          <div className="hover13">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISFPimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ISFP</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
-        <Col>
-          <div className="hover13">
-            <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESTPimg} /></Link></figure1>
-                <div className="textpo">
-                  <h6 style={{marginTop:5}}>ESTP</h6>
-                </div>
-            </div>
-          </div>
-        </Col>
-
+        </div>
         
 
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={INFPimg} className="diplomatic_imgback" /></Link></figure>
+                <div className="textpo">
+                <p className="stitle">INFP</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ENFJimg} className="diplomatic_imgback" /></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ENFJ</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ENFPimg} className="diplomatic_imgback" /></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ENFP</p>
+                </div>
+            </div>
+          </div>
+        </div>
+        
     
-        
-      </Row>
+      </div>
 
+      
+        {/* 관리자형 */}
 
-      <Row style={{marginTop:20}}>
-        
-        <Col>
-          <div className="hover13 ">
+        <div className="manager">
+        <p className="title">관리자형</p>
+        <div className="abcc2">
+          <div className="hover13 column">
             <div>
-              <figure1><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESFPimg} /></Link></figure1>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISTJimg} className="manager_imgback"/></Link></figure>
                 <div className="textpo">
-                  <h6 style={{marginTop:5}}>ESFP</h6>
+                <p className="stitle">ISTJ</p>
                 </div>
             </div>
           </div>
-        </Col>
-          <Col>
-              
-            </Col>
-            <Col/>
+        </div>
         
-        </Row>
-        </Container>
-        </React.Fragment>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISFJimg} className="manager_imgback"/></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ISFJ</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESTJimg} className="manager_imgback"/></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ESTJ</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESFJimg} className="manager_imgback"/></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ESFJ</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+  
+    {/* 탐험가형         */}
+    <div className="explorer">
+    <p className="title">탐험가형</p>
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISTPimg} className="explorer_imgback" /></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ISTP</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ISFPimg} className="explorer_imgback"/></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ISFP</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESTPimg} className="explorer_imgback"/></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ESTP</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="abcc2">
+          <div className="hover13 column">
+            <div>
+              <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={ESFPimg} className="explorer_imgback"/></Link></figure>
+                <div className="textpo">
+                <p className="stitle">ESFP</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      
+        </div>
+
 
     </>
   );

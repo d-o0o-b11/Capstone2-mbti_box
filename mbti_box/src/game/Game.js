@@ -12,7 +12,7 @@ import "./game.css"
 const Game =()=>{
 
     const pagemove = () =>{
-        window.open("https://www.naver.com/");
+        window.open("https://hwangyu-jeong.itch.io/wildcat");
     }
 
     return(

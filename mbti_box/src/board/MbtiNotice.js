@@ -8,6 +8,8 @@ import axios from "axios";
 import { useHistory } from 'react-router-dom';
 import Comwrite from "../comment/comwrite.js";
 import Comview from "../comment/comview.js"
+import test1 from "../asset/login.png";
+
 
 
 function useFetch(url, id) {
@@ -107,6 +109,8 @@ const MbtiNotice = ({ location, history }) => {
 
                 <hr></hr>
 
+                <img src={test1}/>
+                <hr></hr>
                 <div style={{padding:"30px"}}>
                     <span style={{whiteSpace:"pre-line"}}>{data.content}</span>
                 </div>

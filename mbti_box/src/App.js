@@ -79,7 +79,9 @@ const App = () => {
             </Route>
 
             <Route path="/stitle">
-              {isMobile ? <Mostitle /> : <Stitle></Stitle>}
+              {isMobile ? <Mostitle /> :
+                <Stitle></Stitle>
+                }
             </Route>
 
             <Route path="/INTJ" component={MbtiNotice}/>

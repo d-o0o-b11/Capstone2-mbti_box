@@ -46,10 +46,28 @@ const isTablet = useMediaQuery({
             <Row style={{ marginTop: 50}}> 
               
                 <h4 data-v-42081291 className="divid">
-                  <span data-v-42081291>인기게시글</span>
+                  <span data-v-42081291>MBTI_BOX</span>
+
                 </h4>
+                {isMobile? 
+                <>
+                  <h6>MBTI들의 커뮤니케이션 소통공간입니다.</h6>
+                  <h6>다양한 사람들과 다양한 MBTI를 만나보세요!</h6>
+                  <h6>각기다른 성격을 지니고 있는 우리들 </h6>
+                  <h6>한 공간에 모여서 같이 시간을 보내면 새로운 경험을 할 수 있지않을까요?!</h6>
+                </>
+                  :
+                  <>  
+                  <h1>MBTI들의 커뮤니케이션 소통공간입니다.</h1>
+                  <h1>다양한 사람들과 다양한 MBTI를 만나보세요!</h1>
+                  <h1>각기다른 성격을 지니고 있는 우리들 </h1>
+                  <h1>한 공간에 모여서 같이 시간을 보내면 새로운 경험을 할 수 있지않을까요?!</h1>
+                
+                  </>
+                }
+
               
-              {isMobile? 
+                {/* {isMobile? 
                 <>
                 <Row style={{margin:"0 auto"}}>
                   <Col>
@@ -83,7 +101,7 @@ const isTablet = useMediaQuery({
                   <Board></Board>
                 </Col>  
                 </>
-              }
+              } */}
 
             </Row>
         </Container>

@@ -1,0 +1,68 @@
+.analytic{
+    background-color: rgb(231, 223, 234);
+    height: 100%;
+    padding: 200px 0 200px 0;
+    text-align: center;
+}
+
+.diplomatic{
+    background-color: rgb(214,236,227);
+    height: 100%;
+    padding: 200px 0 200px 0;
+    text-align: center;
+}
+
+.manager{
+    background-color: rgb(217, 234, 240);
+    height: 100%;
+    padding: 200px 0 200px 0;
+    text-align: center;
+}
+
+.explorer{
+    background-color: rgb(255, 234, 187);
+    height: 100%;
+    padding: 200px 0 200px 0;
+    text-align: center;
+}
+
+
+.abcc{
+    display: inline-block;
+    width: 20%;
+    border-width: 3px;
+}
+
+.abcc2{
+    display: inline-block;
+    width: 70%;
+    border-width: 3px;
+}
+
+.analytic_imgback{
+    background-color: rgb(231, 223, 234);
+}
+
+.diplomatic_imgback{
+    background-color: rgb(214,236,227);
+}
+
+.manager_imgback{
+    background-color: rgb(217, 234, 240);
+}
+
+.explorer_imgback{
+    background-color: rgb(255, 234, 187);
+}
+
+.title{
+    font-size: 100px;
+    color: white;
+    margin-bottom: 100px;
+}
+
+.stitle{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 100px;
+}

@@ -4,7 +4,6 @@ import "../write/writes.css"
 import { Input,Row, Col  } from "antd"
 import Axios from 'axios';
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 
 
 const { TextArea } = Input
@@ -104,15 +103,15 @@ const WRITEINTJ = () => {
             console.log(title);
             console.log(desc);
             console.log("데이터확인")
-            console.log(Response);
+            console.log(Response.data);
               alert("글 성공");
-            history.replace(`/${MBTI}board`);
+            
 
               console.log("이미지 실행");
 
                 Axios({
                   method:'post',
-                  url: "/api/file", 
+                  url: `/api/${Response.data}/file`, 
                   mode: "cors",
                   headers: {
                     "Content-Type": "multipart/form-data",
@@ -122,6 +121,7 @@ const WRITEINTJ = () => {
                   .then(response => {
                       console.log(response.data);
                       console.log("이미지 성공");
+                      history.replace(`/${MBTI}board`);
                   })
                   .catch(error => {
                       console.log(error);
@@ -141,7 +141,7 @@ const WRITEINTJ = () => {
   
   return (
     <Container>
-        <div style={{margin:"auto"}}>
+        <div style={{margin:"auto auto 100px auto"}}>
         <div className="file-upload" style={{marginTop:30}}>
         {/* Image Drag & Drop & Preview */}
         <h2>게시글 작성</h2>
