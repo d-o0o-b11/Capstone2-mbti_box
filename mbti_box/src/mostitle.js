@@ -37,7 +37,7 @@ const mostitle = () => {
         <div className="abcc2">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/INTJboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTJimg} className="analytic_imgback" /></Link></figure>
+              <figure><Link to="/INTJboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTJimg} className="analytic_imgback"/></Link></figure>
                 <div className="textpo">
                       <p className="stitle">INTJ</p>
                 </div>
@@ -49,7 +49,7 @@ const mostitle = () => {
         <div className="abcc2">
           <div className="hover13 column">
               <div>
-                <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback"  /></Link></figure>
+                <figure><Link to="/INTPboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback"  /></Link></figure>
                   <div className="textpo">
                   <p className="stitle">INTP</p>
                   </div>

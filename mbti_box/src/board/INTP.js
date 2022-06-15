@@ -7,7 +7,7 @@ import "../stitle.css";
 import "./board.css";
 import {Container,Row, Col } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
-import BoardListItem from './BoardListItem';
+import BoardListItem1 from './BoardListItem1';
 import BoardImgListItem from './BoarImgListItem.js';
 import Boardmap from './Boardmap';
 import axios from "axios";
@@ -44,7 +44,7 @@ function useFetch(url) {
     function fetchUrl() {
           axios.get(`${url}`).then(response => {
             setData(response.data);
-            console.log("확인함INTJ");
+            console.log("확인함INTP");
             console.log(response.data);
         });
         setLoading(false);
@@ -56,7 +56,7 @@ function useFetch(url) {
   }
 
 
-function INTJ (){
+function INTP (){
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
       });
@@ -67,7 +67,7 @@ function INTJ (){
 
    
     const MBTI = localStorage.getItem("mbti");
-    const data = useFetch("/api/board/boards-mbti/INTJ");
+    const data = useFetch("/api/board/boards-mbti/INTP");
 
     console.log(data)
 
@@ -77,13 +77,13 @@ function INTJ (){
             <>
             <Container className="footerup"> 
                 <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>INTJ</span>
+                    <span data-v-42081291>INTP</span>
                 </h4>
 
                 <Row>
                 { 
                     {
-                        INTJ :
+                        INTP :
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>
                             <Link to="/writeMBTI"><FormOutlined style={{ fontSize: '30px', marginLeft:'10px'}}></FormOutlined></Link>
                             <span>글작성</span>
@@ -99,7 +99,7 @@ function INTJ (){
                             {data.slice(offset,offset+limit).map(
                                 ({id, title, nickname, createdAt}) => (
                                         <>
-                                            <BoardListItem
+                                            <BoardListItem1
                                                 id={id}
                                                 title={title}
                                                 nickname={nickname}
@@ -125,16 +125,16 @@ function INTJ (){
             </>
             :
             <>
-            <Container className="footerup1">
+            <Container className="footerup">
                 
                 <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>INTJ</span>
+                    <span data-v-42081291>INTP</span>
                 </h4>
 
                 <Row>
                 {
                     {
-                        INTJ :
+                        INTP :
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>
                             <Link to="/writeMBTI"><FormOutlined style={{ fontSize: '30px', marginRight:'10px'}}></FormOutlined></Link>
                             <span>글작성</span>
@@ -144,11 +144,11 @@ function INTJ (){
                     
                 </Row>
                 
-                <div style={{marginLeft:"8%"}}>
+                
                         <section>
                             {data.map(
                                 ({id, title, nickname, createdAt}) => (
-                                    <BoardListItem
+                                    <BoardListItem1
                                         id={id}
                                         title={title}
                                         nickname={nickname}
@@ -159,7 +159,8 @@ function INTJ (){
                             )}
                             
                         </section>
-                </div>
+                
+
                 </Container>
 
                 <div className="footerpage">
@@ -180,4 +181,4 @@ function INTJ (){
 }
 
 
-export default INTJ
+export default INTP

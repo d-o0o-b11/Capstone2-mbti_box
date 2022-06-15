@@ -33,7 +33,9 @@ const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   gap: 4px;
-  margin: 16px;
+  left: 50%
+  position: absolute;  
+  bottom: 10 !important; 
   
 `;
 

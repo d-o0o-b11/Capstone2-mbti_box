@@ -58,50 +58,16 @@ const isTablet = useMediaQuery({
                 </>
                   :
                   <>  
-                  <h1>MBTI들의 커뮤니케이션 소통공간입니다.</h1>
-                  <h1>다양한 사람들과 다양한 MBTI를 만나보세요!</h1>
-                  <h1>각기다른 성격을 지니고 있는 우리들 </h1>
-                  <h1>한 공간에 모여서 같이 시간을 보내면 새로운 경험을 할 수 있지않을까요?!</h1>
+                  <h1 style={{marginLeft:10, fontSize:20, marginBottom:25}}>MBTI들의 커뮤니케이션 소통공간입니다.</h1>
+                  <h1 style={{marginLeft:10, fontSize:20, marginBottom:25}}>다양한 사람들과 다양한 MBTI를 만나보세요!</h1>
+                  <h1 style={{marginLeft:10, fontSize:20, marginBottom:25}}>각기다른 성격을 지니고 있는 우리들 </h1>
+                  <h1 style={{marginLeft:10, fontSize:20, marginBottom:25}}>한 공간에 모여서 같이 시간을 보내면 새로운 경험을 할 수 있지않을까요?!</h1>
                 
                   </>
                 }
 
               
-                {/* {isMobile? 
-                <>
-                <Row style={{margin:"0 auto"}}>
-                  <Col>
-                    <Board></Board>
-                  </Col>
-                  <Col>
-                    <Board></Board>
-                  </Col>
-                  </Row>
-                  <Row style={{margin:"0 auto"}}>
-                  <Col>
-                    <Board></Board>
-                  </Col>
-                  <Col>
-                    <Board></Board>
-                  </Col>
-                  </Row>
-                </>
-              : 
-                <>
-                  <Col>
-                  <Board></Board>
-                </Col>
-                <Col>
-                  <Board></Board>
-                </Col>
-                <Col>
-                  <Board></Board>
-                </Col>
-                <Col>
-                  <Board></Board>
-                </Col>  
-                </>
-              } */}
+
 
             </Row>
         </Container>
@@ -123,16 +89,16 @@ const isTablet = useMediaQuery({
           </h4>
 
           {isMobile? 
-              <div style={{textAlign:"center"}}>
-                <h6> "MBTI_BOX" 웹/앱 사이트는 대학 졸업작품을 위해 제작되었습니다. </h6>
-                <h6> 미흡한 부분이 발견된다면 차차 수정해 나가도록 하겠습니다. </h6>
-                <h6> 구현 된 컨텐츠들을 즐겨보시길 바랍니다. </h6>
-              </div> 
-            :
-              <div style={{textAlign:"center"}}>
+              <div style={{textAlign:"center"}} className="intr2">
                 <h5> "MBTI_BOX" 웹/앱 사이트는 대학 졸업작품을 위해 제작되었습니다. </h5>
                 <h5> 미흡한 부분이 발견된다면 차차 수정해 나가도록 하겠습니다. </h5>
                 <h5> 구현 된 컨텐츠들을 즐겨보시길 바랍니다. </h5>
+              </div> 
+            :
+              <div style={{textAlign:"center"}}>
+                <h1 style={{marginLeft:10, fontSize:20, marginBottom:25}}> "MBTI_BOX" 웹/앱 사이트는 대학 졸업작품을 위해 제작되었습니다. </h1>
+                <h1 style={{marginLeft:10, fontSize:20, marginBottom:25}}> 미흡한 부분이 발견된다면 차차 수정해 나가도록 하겠습니다. </h1>
+                <h1 style={{marginLeft:10, fontSize:20, marginBottom:25}}> 구현 된 컨텐츠들을 즐겨보시길 바랍니다. </h1>
               </div> 
             }
 

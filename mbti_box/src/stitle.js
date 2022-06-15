@@ -51,7 +51,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
               <div>
-                <figure><Link to="/INTJ" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback"  /></Link></figure>
+                <figure><Link to="/INTPboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback"  /></Link></figure>
                   <div className="textpo">
                     <h6 className="sss">INTP</h6>
                   </div>

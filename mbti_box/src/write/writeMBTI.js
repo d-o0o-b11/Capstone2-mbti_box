@@ -84,9 +84,9 @@ const WRITEINTJ = () => {
     else if(desc===""){
       alert("내용을 입력해주세요");
     }  
-    else if(files.length===0){
-      alert("이미지 1개이상 추가해주세요");
-    }
+    // else if(files.length===0){
+    //   alert("이미지 1개이상 추가해주세요");
+    // }
     else{
       Axios({
             method: 'post',
@@ -106,6 +106,12 @@ const WRITEINTJ = () => {
             console.log(Response.data);
               alert("글 성공");
             
+            localStorage.setItem("filelength",files.length);
+            const filecount = localStorage.getItem("filelength");
+
+            console.log(filecount);
+
+            history.replace(`/${MBTI}board`);
 
               console.log("이미지 실행");
 
@@ -121,7 +127,7 @@ const WRITEINTJ = () => {
                   .then(response => {
                       console.log(response.data);
                       console.log("이미지 성공");
-                      history.replace(`/${MBTI}board`);
+                      
                   })
                   .catch(error => {
                       console.log(error);

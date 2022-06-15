@@ -151,11 +151,34 @@
 .footerpage {
   width: 100%;
     height: 100px; /* footer의 높이 */
+    text-align: center;
     position: absolute;  
-    bottom: 0;
-    left: 0;
 }
 
 .footerup{
   position: relative;
+  height: 120vh;
+}
+
+.footerup1{
+  position: relative;
+  height: 120vh;
+}
+
+.profile
+{
+  margin-left: 20px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.profile img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

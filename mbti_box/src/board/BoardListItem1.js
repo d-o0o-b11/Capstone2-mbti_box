@@ -27,7 +27,7 @@ function BoardListItem({id, title, nickname,  createdAt}) { //start_date -> date
         <>
         {/* 모바일 */} 
         <Link to={{
-            pathname:"/INTJ",
+            pathname:"/INTP",
             search:`?id=${id}`
         }} style={{ textDecoration: 'none', color: 'black'}}>
 
@@ -57,7 +57,7 @@ function BoardListItem({id, title, nickname,  createdAt}) { //start_date -> date
         <>
         {/* 컴퓨터 */}
         <Link to={{
-            pathname:"/INTJ",
+            pathname:"/INTP",
             search:`?id=${id}`
         }} style={{ textDecoration: 'none', color: 'black'}}>
     

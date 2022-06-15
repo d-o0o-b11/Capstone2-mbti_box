@@ -9,6 +9,8 @@ import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
 import INTJ from "./board/INTJ.js"
+import INTP from "./board/INTP.js"
+
 import MbtiNotice from "./board/MbtiNotice.js";
 import PWfind from "./login/PWfind.js";
 import Singup from "./login/Singup";
@@ -86,8 +88,14 @@ const App = () => {
 
             <Route path="/INTJ" component={MbtiNotice}/>
 
+            <Route path="/INTP" component={MbtiNotice}/>
+
             <Route path="/INTJboard">
               <INTJ></INTJ>
+            </Route>
+
+            <Route path="/INTPboard">
+              <INTP></INTP>
             </Route>
 
             <Route path="/writeMBTI">
