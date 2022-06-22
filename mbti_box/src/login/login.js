@@ -52,16 +52,17 @@ const Login = (props) => {
 
     Axios({
       method: 'post',
-      url: 'api/user/login',
+      url: '/api/user/login',
       data: {
           username: Id,
           password: Pw,
       },
   })
   .then((Response)=>{
+
+      console.log(Response.data);
       localStorage.setItem("token",Response.data.token)
       const TOKEN = localStorage.getItem("token");
-      // console.log(TOKEN);
 
       localStorage.setItem("mbti",Response.data.mbti)
 
@@ -79,7 +80,7 @@ const Login = (props) => {
       window.alert(`${users.nickname}님 환영합니다.`);
       history.replace("/");
       window.location.reload();
-      //console.log(users.nickname);
+      console.log(users.nickname);
   })
   .catch((error)=>{
       alert("로그인 실패");
@@ -141,7 +142,7 @@ const Login = (props) => {
 
               
               <Grid item>
-                <Link to="/Singup">
+                <Link to="/Signup">
                   <span>회원가입</span>
                 </Link>
               </Grid>

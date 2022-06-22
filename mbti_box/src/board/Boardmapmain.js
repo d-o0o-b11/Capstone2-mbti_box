@@ -34,9 +34,10 @@ function Boardmapmain({id}) { //start_date -> date
       });
 
 
-    const imgdata = useFetch2(`/api/get/${id}/filename`,`${id}`);
+    const imgdata = useFetch2(`/api/board/${id}`,`${id}`);
 
       console.log(imgdata);
+
 
     return (
     <>
@@ -51,7 +52,7 @@ function Boardmapmain({id}) { //start_date -> date
                                     if (index == 0){
                                         return(
                                             <BoardImgListItem
-                                                filename={item.filename}
+                                                filename={item.fileName}
                                                 id={item.id}
                                                 key={item.id}
                                             />
@@ -72,7 +73,7 @@ function Boardmapmain({id}) { //start_date -> date
                                     if (index == 0){
                                         return(
                                             <BoardImgListItem
-                                                filename={item.filename}
+                                                filename={item.fileName}
                                                 id={item.id}
                                                 key={item.id}
                                             />

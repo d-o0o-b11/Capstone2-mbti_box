@@ -160,7 +160,7 @@ const Momenu = (props) => {
                                 <span className="st m1">로그인</span>
                               </Link>
                               |
-                              <Link to="/Singup" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
+                              <Link to="/Signup" onClick={toggleChange} style={{ textDecoration: 'none', color:'black' }}>
                                 <span className="st m1">회원가입</span>
                               </Link>   
                             </Col>

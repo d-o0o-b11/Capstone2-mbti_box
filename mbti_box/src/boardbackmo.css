@@ -39,20 +39,24 @@
     border-width: 3px;
 }
 
-.analytic_imgback{
+.analytic_imgback1{
     background-color: rgb(231, 223, 234);
 }
 
-.diplomatic_imgback{
+.diplomatic_imgback1{
     background-color: rgb(214,236,227);
 }
 
-.manager_imgback{
+.manager_imgback1{
     background-color: rgb(217, 234, 240);
 }
 
-.explorer_imgback{
+.explorer_imgback1{
     background-color: rgb(255, 234, 187);
+}
+
+.imgcenter{
+    text-align: center;
 }
 
 .title{
@@ -64,5 +68,12 @@
 .stitle{
     font-size: 50px;
     color: rgb(0, 0, 0);
+    /* margin-bottom: 100px; */
+}
+
+/*설명*/
+.explanation{
+    font-size: 25px;
+    color: rgb(161, 161, 161);
     margin-bottom: 100px;
 }

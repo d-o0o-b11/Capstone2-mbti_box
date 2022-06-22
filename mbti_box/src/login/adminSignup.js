@@ -12,12 +12,12 @@ import OptionUnstyled, { optionUnstyledClasses } from '@mui/base/OptionUnstyled'
 import PopperUnstyled from '@mui/base/PopperUnstyled';
 import OptionGroupUnstyled from '@mui/base/OptionGroupUnstyled';
 import { styled } from '@mui/system';
+
 import Axios from 'axios';
 import "./login.css";
 
 
 import img1 from '../images/sign.png'
-import { Api } from '@mui/icons-material';
 
 
 
@@ -138,14 +138,7 @@ const StyledPopper = styled(PopperUnstyled)`
   z-index: 1;
 `;
 
-const Paragraph = styled('p')(
-  ({ theme }) => `
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 0.875rem;
-  margin: 10px 0;
-  color: ${theme.palette.mode === 'dark' ? grey[400] : grey[700]};
-  `,
-);
+
 
 
 
@@ -180,9 +173,9 @@ const AdminSignup = () => {
   const [Pw, SetPw] = useState("");  //pw
   const [Email, SetEmail] = useState("");  //email
   const [Nickname, SetNickname] = useState("");  //nick
+  const [Adminpassword, SetAdminpassword] = useState(""); //adminpassword
 
-  const [usingid, Setusingid] =useState(true);
-//중복아니면 false
+
 
   const history = useHistory();
 
@@ -210,6 +203,11 @@ const AdminSignup = () => {
     SetNickname(e.target.value);
   };
 
+  //관리자비밀번호
+  const AdminpasswordHandler =(e)=>{
+    e.preventDefault();
+    SetAdminpassword(e.target.value);
+  }
 
 
   //제출버튼
@@ -232,62 +230,38 @@ const AdminSignup = () => {
     else if(value===""){
       alert("MBTI를 선택해주세요");
     }
+    else if(Adminpassword===""){
+      alert("관리자 비밀번호를 입력해주세요");
+    }
+    else if(Adminpassword!=="001116"){
+      alert("관리자 비밀번호가 일치하지 않습니다.")
+    }
     else{
-    
           
       Axios({
         method: 'post',
-        url: 'api/user/check/nickname',
-        data: {nickname: Nickname},
-      })    
-      .then((Response)=>{
-        console.log("닉네임:"+Response.data.nickname);
-        alert("닉네임 중복 입니다.")
-      })  
-      .catch((error)=>{
-          Axios({
-            method: 'post',
-            url: 'api/user/check/username',
-            data: {username: Id},
-          })
-          .then((Response) => {
-            //console.log(Response.data);
-            alert("아이디 중복 입니다.")
-          })
-          .catch((error)=>{
-              Axios({
-                method: 'post',
-                url: 'api/user/signup',
-                data: {
-                    email: Email,
-                    password: Pw,
-                    mbti:value,
-                    nickname:Nickname,
-                    username: Id,
-                    role:"ROLE_ADMIN",
-                },
-              })
-              .then((Response)=>{
-                  alert("회원가입 성공");
-                  history.replace("/login");
-                  
-                  
-              })
-              .catch((error)=>{
-                  alert("회원가입 실패");
-                  console.log(Id);
-                  console.log(error);
-                  
-              });
-          })
+        url: '/api/user/signup',
+        data: {
+            email: Email,
+            password: Pw,
+            mbti:value,
+            nickname:Nickname,
+            username: Id,
+        },
       })
-      
-      
+      .then((Response)=>{
+          alert("환영합니다");
+          history.replace("/login");    
+      })
+      .catch((error)=>{
+          alert("회원가입 실패");
+          console.log(Id);
+          console.log(error);
+          
+      });
 
   }
   };
-
-
 
 
 
@@ -307,19 +281,9 @@ const AdminSignup = () => {
             alignItems: 'center',
           }}
         >
-          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            <h3>회원가입</h3>
-          </Typography> */}
+
 
           <img src={img1} style={{width:200}}/>
-
-
-
-          {/* 입력값 */}
-
 
 
           <Box component="form" onSubmit={submitHandler}>
@@ -343,6 +307,10 @@ const AdminSignup = () => {
             <div className='inputbox'>
               <input type="text" placeholder="아이디" id="nickname" value={Nickname} onChange={NicknameHandler} maxLength="10"></input>
               <label for="nickname">닉네임</label>
+            </div>
+            <div className='inputbox'>
+              <input type="password" placeholder="관리자비밀번호" id="adminpassword" value={Adminpassword} onChange={AdminpasswordHandler}></input>
+              <label for="nickname">관리자비밀번호</label>
             </div>
           </Container>
             
@@ -380,12 +348,15 @@ const AdminSignup = () => {
 
       </CustomSelect>
 
-      <Paragraph>본인 MBTI: {value}</Paragraph>
+      <div>
+        <span>본인 MBTI: {value}</span>
+      </div>
+
     </div>
                 
 
 
-    <button class="w-btn w-btn-green" type="submit">
+    <button class="w-btn w-btn-green" type="submit" style={{marginTop:20, marginBottom:20}}>
         회원가입
     </button>
 

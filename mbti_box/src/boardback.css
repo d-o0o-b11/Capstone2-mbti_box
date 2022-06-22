@@ -30,6 +30,7 @@
 .abcc{
     display: inline-block;
     width: 20%;
+    height: 800px;
     border-width: 3px;
 }
 
@@ -52,5 +53,18 @@
 .title{
     font-size: 100px;
     color: white;
+    margin-bottom: 100px;
+}
+
+.stitle{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    /* margin-bottom: 100px; */
+}
+
+/*설명*/
+.explanation{
+    font-size: 25px;
+    color: rgb(161, 161, 161);
     margin-bottom: 100px;
 }

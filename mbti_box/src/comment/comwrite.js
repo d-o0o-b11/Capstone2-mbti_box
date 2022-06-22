@@ -22,19 +22,18 @@ const Comwrite = (props) =>{
 
         Axios({
             method: 'post',
-            url: `/api/comment/post/${props.id}/comment`,
+            url: "/api/comment",
             data: {
               content: comment,
               nickname: NICKNAME,
               mbti: MBTI,
+              boardId: props.id
             },
           })
           .then((Response)=>{
             console.log(Response.data);
             console.log(comment);
             window.location.reload();
-              // alert("댓글 성공");
-            //   history.replace("/");
   
           })
           .catch((error)=>{

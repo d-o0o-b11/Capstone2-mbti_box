@@ -43,7 +43,7 @@ function UPDATEMBTI({ location }) {
 
     useEffect(() => {
         if (query.id) {
-            fetchUrl("/api/board/boards-id/", query.id)
+            fetchUrl("/api/board/", query.id)
         } else {
             // setData(null);        
             inputRef.current.map(item => 
@@ -66,7 +66,7 @@ function UPDATEMBTI({ location }) {
     const test =(e)=>{
         e.preventDefault();
 
-        axios.put(`api/board/update/${query.id}`,{
+        axios.put(`/api/board/${query.id}/update`,{
             title: title,
             content: content,
         })
@@ -79,6 +79,7 @@ function UPDATEMBTI({ location }) {
             console.log(data.title);
             console.log(data.content);
             console.log(error);
+            alert("게시글 '수정'에 오류가 발생했습니다.");
         })
     }
 

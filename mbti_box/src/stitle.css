@@ -24,7 +24,6 @@ img {
 
 .textpo {
   text-align: center;
-  
 }
 
 .sss{
@@ -133,8 +132,8 @@ img {
 }
 figure {
   margin: 0 auto;
-  width: 100%; 
-  height: auto;
+  /* width: 100%; 
+  height: auto; */
   padding: 0;
   background: #fff;
   overflow: hidden;

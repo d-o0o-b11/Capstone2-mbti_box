@@ -8,12 +8,30 @@ import Chatmain from "./chat/chatmain.js"
 import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
+
 import INTJ from "./board/INTJ.js"
 import INTP from "./board/INTP.js"
+import ENTJ from "./board/ENTJ.js"
+import ENTP from "./board/ENTP.js"
+
+import INFJ from "./board/INFJ.js"
+import INFP from "./board/INFP.js"
+import ENFJ from "./board/ENFJ.js"
+import ENFP from "./board/ENFP.js"
+
+import ISTJ from "./board/ISTJ.js"
+import ISFJ from "./board/ISFJ.js"
+import ESTJ from "./board/ESTJ.js"
+import ESFJ from "./board/ESFJ.js"
+
+import ISTP from "./board/ISTP.js"
+import ISFP from "./board/ISFP.js"
+import ESTP from "./board/ESTP.js"
+import ESFP from "./board/ESFP.js"
 
 import MbtiNotice from "./board/MbtiNotice.js";
 import PWfind from "./login/PWfind.js";
-import Singup from "./login/Singup";
+import Signup from "./login/Signup";
 import WRITEMBTI from "./write/writeMBTI.js"
 import UPDATEMBTI from "./write/updateMBTI.js"
 import Notice from "./Noticeboard/Notice.js";
@@ -86,9 +104,15 @@ const App = () => {
                 }
             </Route>
 
+            {/* 분석형 */}
+
             <Route path="/INTJ" component={MbtiNotice}/>
 
             <Route path="/INTP" component={MbtiNotice}/>
+
+            <Route path="/ENTJ" component={MbtiNotice}/>
+
+            <Route path="/ENTP" component={MbtiNotice}/>
 
             <Route path="/INTJboard">
               <INTJ></INTJ>
@@ -97,6 +121,95 @@ const App = () => {
             <Route path="/INTPboard">
               <INTP></INTP>
             </Route>
+
+            <Route path="/ENTJboard">
+              <ENTJ></ENTJ>
+            </Route>
+
+            <Route path="/ENTPboard">
+              <ENTP></ENTP>
+            </Route>
+
+
+            {/* 외교형 */}
+
+            <Route path="/INFJ" component={MbtiNotice}/>
+
+            <Route path="/INFP" component={MbtiNotice}/>
+
+            <Route path="/ENFJ" component={MbtiNotice}/>
+
+            <Route path="/ENFP" component={MbtiNotice}/>
+
+            <Route path="/INFJboard">
+              <INFJ></INFJ>
+            </Route>
+
+            <Route path="/INFPboard">
+              <INFP></INFP>
+            </Route>
+
+            <Route path="/ENFJboard">
+              <ENFJ></ENFJ>
+            </Route>
+
+            <Route path="/ENFPboard">
+              <ENFP></ENFP>
+            </Route>
+
+
+            {/* 관리자형 */}
+
+            <Route path="/ISTJ" component={MbtiNotice}/>
+
+            <Route path="/ISFJ" component={MbtiNotice}/>
+
+            <Route path="/ESTJ" component={MbtiNotice}/>
+
+            <Route path="/ESFJ" component={MbtiNotice}/>
+
+            <Route path="/ISTJboard">
+              <ISTJ></ISTJ>
+            </Route>
+
+            <Route path="/ISFJboard">
+              <ISFJ></ISFJ>
+            </Route>
+
+            <Route path="/ESTJboard">
+              <ESTJ></ESTJ>
+            </Route>
+
+            <Route path="/ESFJboard">
+              <ESFJ></ESFJ>
+            </Route>
+
+            {/* 탐험가형 */}
+
+            <Route path="/ISTP" component={MbtiNotice}/>
+
+            <Route path="/ISFP" component={MbtiNotice}/>
+
+            <Route path="/ESTP" component={MbtiNotice}/>
+
+            <Route path="/ESFP" component={MbtiNotice}/>
+
+            <Route path="/ISTPboard">
+              <ISTP></ISTP>
+            </Route>
+
+            <Route path="/ISFPboard">
+              <ISFP></ISFP>
+            </Route>
+
+            <Route path="/ESTPboard">
+              <ESTP></ESTP>
+            </Route>
+
+            <Route path="/ESFPboard">
+              <ESFP></ESFP>
+            </Route>
+            
 
             <Route path="/writeMBTI">
               <WRITEMBTI></WRITEMBTI>
@@ -111,8 +224,8 @@ const App = () => {
               <PWfind></PWfind>
             </Route>
 
-            <Route path="/Singup">
-              <Singup></Singup>
+            <Route path="/Signup">
+              <Signup></Signup>
             </Route>
 
             <Route path="/Annwrite">

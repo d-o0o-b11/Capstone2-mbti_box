@@ -31,7 +31,7 @@ function List() {
     query: "(max-width:767px)"
   });
 
-  const data = useFetch("/api/announcement/announcements");
+  const data = useFetch("/api/boards");
 
  
   const ADMINROLE = localStorage.getItem("adminrole");

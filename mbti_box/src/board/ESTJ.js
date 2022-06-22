@@ -5,7 +5,7 @@ import "../stitle.css";
 import "./board.css";
 import {Container,Row, Col } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
-import BoardListItem from './BoardListItem';
+import BoardListItem10 from './BoardListItem10';
 import axios from "axios";
 
 import Pagination from "./Pagination";
@@ -21,7 +21,7 @@ import Pagination from "./Pagination";
     function fetchUrl() {
           axios.get(`${url}`).then(response => {
             setData(response.data);
-            console.log("확인함INTJ");
+            console.log("확인함ESTJ");
             console.log(response.data[0].fileName);
         });
     }
@@ -31,8 +31,8 @@ import Pagination from "./Pagination";
     return data;
   }
 
- 
-function INTJ (){
+
+function ESTJ (){
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
       });
@@ -43,7 +43,7 @@ function INTJ (){
 
    
     const MBTI = localStorage.getItem("mbti");
-    const data = useFetch2("/api/boards/INTJ");
+    const data = useFetch2("/api/boards/ESTJ");
 
     console.log(data)
 
@@ -53,13 +53,13 @@ function INTJ (){
             <>
             <Container className="footerup"> 
                 <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>INTJ</span>
+                    <span data-v-42081291>ESTJ</span>
                 </h4>
 
                 <Row>
                 { 
                     {
-                        INTJ :
+                        ESTJ :
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>
                             <Link to="/writeMBTI"><FormOutlined style={{ fontSize: '30px', marginLeft:'10px'}}></FormOutlined></Link>
                             <span>글작성</span>
@@ -75,7 +75,7 @@ function INTJ (){
                             {data.slice(offset,offset+limit).map(
                                 (item, index) => (
                                         <>
-                                            <BoardListItem
+                                            <BoardListItem10
                                                 id={item.id}
                                                 title={item.title}
                                                 nickname={item.nickname}
@@ -105,13 +105,13 @@ function INTJ (){
             <Container className="footerup1">
                 
                 <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>INTJ</span>
+                    <span data-v-42081291>ESTJ</span>
                 </h4>
 
                 <Row>
                 {
                     {
-                        INTJ :
+                        ESTJ :
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>
                             <Link to="/writeMBTI"><FormOutlined style={{ fontSize: '30px', marginRight:'10px'}}></FormOutlined></Link>
                             <span>글작성</span>
@@ -122,14 +122,28 @@ function INTJ (){
                 </Row>
                 
                 <div style={{marginLeft:"8%"}}>
-                        
+                        {/* <section>
+                            {data.map(
+                                ({id, title, nickname, createdTime, fileName}) => (
+                                    <BoardListItem10
+                                        id={id}
+                                        title={title}
+                                        nickname={nickname}
+                                        createdTime={createdTime}
+                                        fileName={fileName}
+                                        key={id}
+                                    />
+                                )
+                            )}
+                            
+                        </section> */}
 
                         <section>
                             {/* data.map */}
                             {data.slice(offset,offset+limit).map(
                                 (item, index) => (
                                         <>
-                                            <BoardListItem
+                                            <BoardListItem10
                                                 id={item.id}
                                                 title={item.title}
                                                 nickname={item.nickname}
@@ -163,4 +177,4 @@ function INTJ (){
 }
 
 
-export default INTJ
+export default ESTJ

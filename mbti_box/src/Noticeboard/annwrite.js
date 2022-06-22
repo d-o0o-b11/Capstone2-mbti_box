@@ -33,11 +33,12 @@ const Annwrite=()=>{
      
         Axios({
               method: 'post',
-              url: '/api/announcement/create',
+              url: '/api/board', 
               data: {
                 title: title,
                 content: content,
                 nickname:NICKNAME,
+                boardType: "NOTICE"
               }, 
             })
             .then((Response)=>{

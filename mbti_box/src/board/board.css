@@ -35,7 +35,7 @@
 
 /* 모바일 css */
   .column1 {
-    margin: 15px 15px 0;
+    margin: 15px;
     padding: 0;
   }
   .column1:last-child {
@@ -124,6 +124,38 @@
     text-align: center;
   }
 
+  .boardframe img{
+    /* height: 100%;
+    object-fit: fill; */
+    width: 100%;
+   height: 100%;
+   object-fit: cover;
+  }
+
+  .boardframe1 img{
+    height: 250px;
+  }
+
+
+.profile
+{
+  margin-left: 20px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.profile img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
   .inboardframe{
     /* border: 3px solid red; */
     display: inline-block;
@@ -182,3 +214,25 @@
   height: 100%;
   object-fit: cover;
 }
+
+.profile22
+{
+  margin-left: 20px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.profile22 img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+

@@ -31,7 +31,7 @@ const PWfind =()=>{
           
       Axios({
         method: 'post',
-        url: `api/user/id/${Email}`, //수정하기
+        url: `/api/idFind/${Email}`, //수정하기 
         data: {
           email: Email,
         },

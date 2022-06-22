@@ -11,7 +11,7 @@ const ComList=(props)=> {
 
     useEffect(()=>{
 
-        Axios.get(`/api/comment/get/${props.id}/comment`).then(response=>{
+        Axios.get(`/api/comment/${props.id}`).then(response=>{
             setData(response.data);
             console.log(response.data);
         }).catch(error=>{
@@ -36,7 +36,7 @@ const ComList=(props)=> {
                               content={content}
                               board_id={props.id}
                               //createdAt={createdAt}
-                                createdAt={createdAt.substr(0,10)}
+                              createdAt={createdAt.substr(0,10)}
                               key={nickname}
                           />
                       )

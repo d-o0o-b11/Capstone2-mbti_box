@@ -9,12 +9,14 @@ import { useHistory } from 'react-router-dom';
 import Comwrite from "../comment/comwrite.js";
 import Comview from "../comment/comview.js"
 import Boardmap from './Boardmap';
+import BoardImgListItem from './BoarImgListItem';
+import ComListItem from '../comment/comListItem.js';
 
 
 
 function useFetch(url, id) {
   const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [imgarr, setImgArr] = useState([]);
   
     
 
@@ -23,7 +25,9 @@ function useFetch(url, id) {
           setData(response.data);
           console.log("확인함");
           console.log(response.data);
+          console.log(response.data.fileNames);
           console.log("글쓴사람닉네임:"+response.data.nickname);
+          setImgArr(response.data.fileNames);
 
           const Currentnickname = localStorage.getItem("currentnickname");
           localStorage.setItem("currentnickname",response.data.nickname)
@@ -31,7 +35,7 @@ function useFetch(url, id) {
           console.log("글쓴사람닉네임변수:"+Currentnickname);
 
       });
-      setLoading(false);
+      
   }
   useEffect(() => {
       if (id) {
@@ -39,11 +43,10 @@ function useFetch(url, id) {
           console.log("gd");
       } else {
           setData(null);
-          setLoading(false);
           console.log("no");
       }
   }, []);
-  return [data, loading];
+  return [data, imgarr];
 }
 
 
@@ -62,23 +65,22 @@ const MbtiNotice = ({ location, history }) => {
       ignoreQueryPrefix: true
   });
 
+
   console.log(query.id);
   console.log("현재닉네임2: "+NICKNAME);
   console.log("글쓴사람닉네임: "+Currentnickname);
 
-  const [data, loading] = useFetch("/api/board/boards-id/", query.id);
+  const [data, imgarr] = useFetch("/api/board/", query.id);
 
 
   
   const removeView=(e)=> {
     if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
       
-        axios(`api/board/delete/${query.id}`, {
-            method : 'delete',
-            data : {
-                id : query.id
-                }
-        })
+        axios.delete(`/api/board/${query.id}/delete`)
+        .then(
+            alert('성공')
+        )
 
         alert('게시물이 삭제되었습니다.')
         return backhistory.replace("/");
@@ -88,12 +90,6 @@ const MbtiNotice = ({ location, history }) => {
 
 
 
-
-  if (loading) {
-      return (
-          <div>loading</div>
-      )
-  } else {
 
       return (
           <>
@@ -110,10 +106,22 @@ const MbtiNotice = ({ location, history }) => {
 
                 <hr></hr>
 
-                <Boardmap
+
+                {/* <Boardmap
                     id={query.id}
                     key={query.id}
-                />
+                /> */}
+                {imgarr.map(
+                        (item, index)=>{
+                            // return <p>{item.fileName}</p>
+                            return(
+                                <BoardImgListItem
+                                    fileName={item.fileName}
+                                />
+                            )
+                        }
+                    )}
+
                 
                 <hr></hr>
                 <div style={{padding:"30px"}}>
@@ -151,12 +159,28 @@ const MbtiNotice = ({ location, history }) => {
                     {/* 댓글보이기 */}
                     <Comview id={query.id}/>
 
-                        
+                    {/* <Container style={{marginTop:"60px"}}>     
+
+                        <section>
+                            {data.map(
+                                ({ content, nickname, mbti, createdAt}) => (
+                                    <ComListItem
+                                        mbti={mbti}
+                                        nickname={nickname}
+                                        content={content}
+                                        //createdAt={createdAt}
+                                        createdAt={createdAt.substr(0,10)}
+                                        key={nickname}
+                                    />
+                                )
+                            )}
+                        </section>
+                    </Container>    */}
 
             </Container>
           </>
         
       )
-  }
+  
 }
 export default MbtiNotice;

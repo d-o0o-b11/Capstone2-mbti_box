@@ -11,12 +11,14 @@ function useFetch2(url, id) {
     
     
     function fetchUrl() {
-          axios.get(`${url}`).then(response => {
+          axios.get(`${url}${id}`).then(response => {
             
             console.log("확인함");
             console.log(response.data);
-            console.log(response.data[0].filename);
-            setData(response.data);
+            console.log(response.data.fileNames);
+
+
+            setData(response.data.fileNames);
         });
         setLoading(false);
     }
@@ -32,11 +34,12 @@ function Boardmap({id}) { //start_date -> date
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
       });
+      
 
-
-    const imgdata = useFetch2(`/api/get/${id}/filename`,`${id}`);
+    const imgdata = useFetch2("/api/board/",`${id}`);
 
       console.log(imgdata);
+ 
 
     return (
     <>
@@ -45,11 +48,11 @@ function Boardmap({id}) { //start_date -> date
         {/* 모바일 */} 
                
                     {imgdata.map(
-                        ({id, filename})=>(
+                        ({id, fileNames})=>(
                             <BoardImgListItem
                                 id={id}
                                 key={id}
-                                filename={filename}
+                                fileName={fileNames.fileName}
                             />
                         )
                     )}
@@ -58,15 +61,24 @@ function Boardmap({id}) { //start_date -> date
             :
         <>
         {/* 컴퓨터 */}
-                    {imgdata.map(
-                        ({id, filename})=>(
+                    {/* {imgdata.map(
+                        (item, index)=>(
                             <BoardImgListItem
-                                id={id}
-                                key={id}
-                                filename={filename}
+                                id={item.id}
+                                key={item.id}
+                                fileName={item.fileNames}
                             />
                         )
+                    )} */}
+
+                    {imgdata.map(
+                        (item, index)=>{
+                            return(
+                                <p>{item.fileName}</p>
+                            )
+                            }
                     )}
+                    
         
         </>
     }

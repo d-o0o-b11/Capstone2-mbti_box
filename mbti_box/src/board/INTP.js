@@ -1,44 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import { FormOutlined } from '@ant-design/icons';
-import img2 from "../images/blue.png"
-import {HeartOutlined, HeartFilled} from '@ant-design/icons';
 import "../stitle.css";
 import "./board.css";
 import {Container,Row, Col } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
 import BoardListItem1 from './BoardListItem1';
-import BoardImgListItem from './BoarImgListItem.js';
-import Boardmap from './Boardmap';
 import axios from "axios";
 
 import Pagination from "./Pagination";
  
 
-function useFetch(url) {
 
+
+  function useFetch2(url) {
     const [data, setData] = useState([]);
-    
-    async function fetchUrl() {
-        const response = await fetch(url);
-        const json = await response.json();
-        
-        setData(json);
-        
-    }
-    
-    useEffect(() => {
-        fetchUrl();
-    }, []);
-    return data;
-  }
-
-  
-
-
-  function useFetch2(url, id) {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
     
     
     function fetchUrl() {
@@ -46,8 +22,8 @@ function useFetch(url) {
             setData(response.data);
             console.log("확인함INTP");
             console.log(response.data);
+            
         });
-        setLoading(false);
     }
     useEffect(() => {
       fetchUrl();
@@ -67,7 +43,7 @@ function INTP (){
 
    
     const MBTI = localStorage.getItem("mbti");
-    const data = useFetch("/api/board/boards-mbti/INTP");
+    const data = useFetch2("/api/boards/INTP");
 
     console.log(data)
 
@@ -94,17 +70,18 @@ function INTP (){
                 </Row>
 
                        
-                        <section>
+                <section>
                         {/* data.map */}
                             {data.slice(offset,offset+limit).map(
-                                ({id, title, nickname, createdAt}) => (
+                                (item, index) => (
                                         <>
                                             <BoardListItem1
-                                                id={id}
-                                                title={title}
-                                                nickname={nickname}
-                                                createdAt={createdAt.substr(0,10)}
-                                                key={id}
+                                                id={item.id}
+                                                title={item.title}
+                                                nickname={item.nickname}
+                                                createdTime={item.createdTime}
+                                                fileName={item.fileName}
+                                                key={item.id}
                                             />
                                         </>
                                 )
@@ -146,18 +123,21 @@ function INTP (){
                 
                 
                         <section>
-                            {data.map(
-                                ({id, title, nickname, createdAt}) => (
-                                    <BoardListItem1
-                                        id={id}
-                                        title={title}
-                                        nickname={nickname}
-                                        createdAt={createdAt.substr(0,10)}
-                                        key={id}
-                                    />
+                            {/* data.map */}
+                            {data.slice(offset,offset+limit).map(
+                                (item, index) => (
+                                        <>
+                                            <BoardListItem1
+                                                id={item.id}
+                                                title={item.title}
+                                                nickname={item.nickname}
+                                                createdTime={item.createdTime}
+                                                fileName={item.fileName}
+                                                key={item.id}
+                                            />
+                                        </>
                                 )
                             )}
-                            
                         </section>
                 
 

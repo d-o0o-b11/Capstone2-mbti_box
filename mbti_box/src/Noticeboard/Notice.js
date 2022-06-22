@@ -52,16 +52,13 @@ const Notice = ({ location, history }) => {
 
   console.log(query);
 
-  const [data, loading] = useFetch("/api/announcement/announcement/", query.id);
+  const [data, loading] = useFetch("/board/", query.id);
   
   const removeView=(e)=> {
     if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
       
-        axios(`api/announcement/delete/${query.id}`, {
+        axios(`api/board/${query.id}/delete`, {
             method : 'delete', 
-            data : {
-                id : query.id
-                }
         })
 
         alert('게시물이 삭제되었습니다.')

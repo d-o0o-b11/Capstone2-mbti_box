@@ -1,14 +1,9 @@
 // import * as React from 'react';
 import React, {useEffect, useState} from 'react';
 import { useHistory } from "react-router-dom";
-
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
+import {Link} from "react-router-dom";
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import PropTypes from 'prop-types';
 import SelectUnstyled, { selectUnstyledClasses } from '@mui/base/SelectUnstyled';
@@ -21,7 +16,6 @@ import "./login.css";
 
 
 import img1 from '../images/sign.png'
-import { Api } from '@mui/icons-material';
 
 
 
@@ -142,14 +136,6 @@ const StyledPopper = styled(PopperUnstyled)`
   z-index: 1;
 `;
 
-const Paragraph = styled('p')(
-  ({ theme }) => `
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 0.875rem;
-  margin: 10px 0;
-  color: ${theme.palette.mode === 'dark' ? grey[400] : grey[700]};
-  `,
-);
 
 
 
@@ -178,7 +164,7 @@ CustomSelect.propTypes = {
 
 
 
-const Singup = () => {
+const Signup = () => {
   const [value, SetValue] = useState("");  //mbti
   const [Id, SetId] = useState("");  //Id
   const [Pw, SetPw] = useState("");  //pw
@@ -238,58 +224,30 @@ const Singup = () => {
     }
     else{
     
-          
-      Axios({
-        method: 'post',
-        url: 'api/user/check/nickname',
-        data: {nickname: Nickname},
-      })    
-      .then((Response)=>{
-        console.log("닉네임:"+Response.data.nickname);
-        alert("닉네임 중복 입니다.")
-      })  
-      .catch((error)=>{
           Axios({
             method: 'post',
-            url: 'api/user/check/username',
-            data: {username: Id},
+            url: '/api/user/signup',
+            data: {
+                email: Email,
+                password: Pw,
+                mbti:value,
+                nickname:Nickname,
+                username: Id,
+            },
           })
-          .then((Response) => {
-            //console.log(Response.data);
-            alert("아이디 중복 입니다.")
+          .then((Response)=>{
+              alert("환영합니다");
+              history.replace("/login");    
           })
           .catch((error)=>{
-              Axios({
-                method: 'post',
-                url: 'api/user/signup',
-                data: {
-                    email: Email,
-                    password: Pw,
-                    mbti:value,
-                    nickname:Nickname,
-                    username: Id,
-                    role:"ROLE_USER"
-                },
-              })
-              .then((Response)=>{
-                  alert("회원가입 성공");
-                  //console.log(Response.data)
-                  history.replace("/login");
-                  
-                  
-              })
-              .catch((error)=>{
-                  alert("회원가입 실패");
-                  console.log(Id);
-                  console.log(error);
-                  
-              });
-          })
-      })
-      
-      
+              alert("회원가입 실패");
+              console.log(Id);
+              console.log(error);
+              
+          });
+ 
 
-  }
+   }
   };
 
 
@@ -312,19 +270,9 @@ const Singup = () => {
             alignItems: 'center',
           }}
         >
-          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            <h3>회원가입</h3>
-          </Typography> */}
+
 
           <img src={img1} style={{width:200}}/>
-
-
-
-          {/* 입력값 */}
-
 
 
           <Box component="form" onSubmit={submitHandler}>
@@ -385,14 +333,22 @@ const Singup = () => {
 
       </CustomSelect>
 
-      <Paragraph>본인 MBTI: {value}</Paragraph>
+    <div>
+      <span>본인 MBTI: {value}</span>
+    </div>
     </div>
                 
 
 
-    <button class="w-btn w-btn-green" type="submit">
+    <button class="w-btn w-btn-green" type="submit" style={{marginTop:20, marginBottom:20}}>
         회원가입
     </button>
+
+    <div>
+        <Link to="/AdminSignup2019">
+          <span>관리자회원가입</span>
+        </Link>
+    </div>
 
             
             
@@ -411,4 +367,4 @@ const Singup = () => {
 
   );
 };
-export default Singup
+export default Signup

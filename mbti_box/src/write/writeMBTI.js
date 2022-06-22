@@ -90,7 +90,7 @@ const WRITEINTJ = () => {
     else{
       Axios({
             method: 'post',
-            url: `/api/board/create/${MBTI}`,
+            url: `/api/board`,
             data: {
               title: title,
               content: desc,
@@ -104,7 +104,7 @@ const WRITEINTJ = () => {
             console.log(desc);
             console.log("데이터확인")
             console.log(Response.data);
-              alert("글 성공");
+            alert("글 성공");
             
             localStorage.setItem("filelength",files.length);
             const filecount = localStorage.getItem("filelength");
@@ -117,16 +117,16 @@ const WRITEINTJ = () => {
 
                 Axios({
                   method:'post',
-                  url: `/api/${Response.data}/file`, 
-                  mode: "cors",
+                  url: `/api/board/${Response.data}`, 
                   headers: {
                     "Content-Type": "multipart/form-data",
                   },
-                  data: data,
+                  data: data, 
                 })
                   .then(response => {
                       console.log(response.data);
                       console.log("이미지 성공");
+                      window.location.reload();
                       
                   })
                   .catch(error => {

@@ -5,13 +5,11 @@ import "../stitle.css";
 import "./board.css";
 import {Container,Row, Col } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
-import BoardListItem from './BoardListItem';
+import BoardListItem2 from './BoardListItem2';
 import axios from "axios";
 
 import Pagination from "./Pagination";
  
-
-
 
 
   function useFetch2(url) {
@@ -21,8 +19,9 @@ import Pagination from "./Pagination";
     function fetchUrl() {
           axios.get(`${url}`).then(response => {
             setData(response.data);
-            console.log("확인함INTJ");
-            console.log(response.data[0].fileName);
+            console.log("확인함ENTJ");
+            console.log(response.data);
+            
         });
     }
     useEffect(() => {
@@ -30,9 +29,9 @@ import Pagination from "./Pagination";
   }, []);
     return data;
   }
-
  
-function INTJ (){
+
+function ENTJ (){
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
       });
@@ -43,7 +42,7 @@ function INTJ (){
 
    
     const MBTI = localStorage.getItem("mbti");
-    const data = useFetch2("/api/boards/INTJ");
+    const data = useFetch2("/api/boards/ENTJ");
 
     console.log(data)
 
@@ -53,13 +52,13 @@ function INTJ (){
             <>
             <Container className="footerup"> 
                 <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>INTJ</span>
+                    <span data-v-42081291>ENTJ</span>
                 </h4>
 
                 <Row>
                 { 
                     {
-                        INTJ :
+                        ENTJ :
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>
                             <Link to="/writeMBTI"><FormOutlined style={{ fontSize: '30px', marginLeft:'10px'}}></FormOutlined></Link>
                             <span>글작성</span>
@@ -70,12 +69,12 @@ function INTJ (){
                 </Row>
 
                        
-                        <section>
+                <section>
                         {/* data.map */}
                             {data.slice(offset,offset+limit).map(
                                 (item, index) => (
                                         <>
-                                            <BoardListItem
+                                            <BoardListItem2
                                                 id={item.id}
                                                 title={item.title}
                                                 nickname={item.nickname}
@@ -102,16 +101,16 @@ function INTJ (){
             </>
             :
             <>
-            <Container className="footerup1">
+            <Container className="footerup">
                 
                 <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>INTJ</span>
+                    <span data-v-42081291>ENTJ</span>
                 </h4>
 
                 <Row>
                 {
                     {
-                        INTJ :
+                        ENTJ :
                         <div style={{marginRight:'0px', marginBottom:'10px'}}>
                             <Link to="/writeMBTI"><FormOutlined style={{ fontSize: '30px', marginRight:'10px'}}></FormOutlined></Link>
                             <span>글작성</span>
@@ -121,15 +120,13 @@ function INTJ (){
                     
                 </Row>
                 
-                <div style={{marginLeft:"8%"}}>
-                        
-
+                
                         <section>
                             {/* data.map */}
                             {data.slice(offset,offset+limit).map(
                                 (item, index) => (
                                         <>
-                                            <BoardListItem
+                                            <BoardListItem2
                                                 id={item.id}
                                                 title={item.title}
                                                 nickname={item.nickname}
@@ -141,8 +138,8 @@ function INTJ (){
                                 )
                             )}
                         </section>
+                
 
-                </div>
                 </Container>
 
                 <div className="footerpage">
@@ -163,4 +160,4 @@ function INTJ (){
 }
 
 
-export default INTJ
+export default ENTJ
