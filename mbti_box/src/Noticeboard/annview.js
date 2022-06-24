@@ -17,13 +17,14 @@ function useFetch(url) {
       const json = await response.json();
       
       setData(json);
+      console.log(json);
   }
   
   useEffect(() => {
       fetchUrl();
   }, []);
   return data;
-}
+} 
 
 
 function List() {
@@ -31,7 +32,7 @@ function List() {
     query: "(max-width:767px)"
   });
 
-  const data = useFetch("/api/boards");
+  const data = useFetch("/api/post/posts/category/NOTICE");
 
  
   const ADMINROLE = localStorage.getItem("adminrole");
@@ -40,7 +41,7 @@ function List() {
     <>
 
     {
-      (ADMINROLE==="ADMIN")?
+      (ADMINROLE==="ROLE_ADMIN")?
         <Link to="/Annwrite"><FormOutlined style={{ fontSize: '30px', right:'25%', position:'absolute'}}></FormOutlined></Link>
       :
       <></>
@@ -60,12 +61,14 @@ function List() {
  
 
             <section className="list-wrapper">
-                {data.map(
-                    ({id, title, content, createdAt}) => (
+              {data.map(
+                    ({post_id, title, createdDate, writer}) => (
                         <ListItem
-                            id={id}
+                            id={post_id}
                             title={title}
-                            key={id}
+                            //content={content}
+                            createdDate={createdDate}
+                            key={post_id}
                         />
                     )
                 )}
@@ -85,13 +88,13 @@ function List() {
 
             <section className="list-wrapper">
                 {data.map(
-                    ({id, title, content, createdAt}) => (
+                    ({post_id, title, createdDate, writer}) => (
                         <ListItem
-                            id={id}
+                            id={post_id}
                             title={title}
                             //content={content}
-                            createdAt={createdAt.substr(0,10)}
-                            key={id}
+                            createdDate={createdDate}
+                            key={post_id}
                         />
                     )
                 )}

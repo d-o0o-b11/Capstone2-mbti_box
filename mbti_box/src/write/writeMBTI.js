@@ -12,6 +12,7 @@ const WRITEINTJ = () => {
 
   const MBTI = localStorage.getItem("mbti");
   const NICKNAME = localStorage.getItem("nickname");
+  const TOKEN = localStorage.getItem("token");
 
   const history = useHistory();
 
@@ -90,12 +91,15 @@ const WRITEINTJ = () => {
     else{
       Axios({
             method: 'post',
-            url: `/api/board`,
+            url: `/api/post/save`,
+            headers:{
+              "X-AUTH-TOKEN":TOKEN,
+            },
             data: {
               title: title,
               content: desc,
               nickname: NICKNAME,
-              mbti: MBTI,
+              category: "NORMAL",
             },
           })
           .then((Response)=>{
@@ -111,15 +115,16 @@ const WRITEINTJ = () => {
 
             console.log(filecount);
 
-            history.replace(`/${MBTI}board`);
+            history.replace(`/stitle`);
 
               console.log("이미지 실행");
 
                 Axios({
                   method:'post',
-                  url: `/api/board/${Response.data}`, 
+                  url: `/api/file/save/${Response.data}`, 
                   headers: {
                     "Content-Type": "multipart/form-data",
+                    "X-AUTH-TOKEN":TOKEN,
                   },
                   data: data, 
                 })

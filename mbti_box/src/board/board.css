@@ -125,11 +125,7 @@
   }
 
   .boardframe img{
-    /* height: 100%;
-    object-fit: fill; */
-    width: 100%;
-   height: 100%;
-   object-fit: cover;
+   height: 250px;
   }
 
   .boardframe1 img{
@@ -165,7 +161,6 @@
 
 
   .txt_line {
-    /* width:20%; */
     width: 250px;
     padding:0 5px;
     overflow:hidden;

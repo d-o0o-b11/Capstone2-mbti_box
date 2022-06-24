@@ -18,6 +18,7 @@ const Message = ({ location, history }) => {
   const NICKNAME = localStorage.getItem("nickname"); //현재 로그인 된 사람 닉네임
   const ROOMID = localStorage.getItem("roomId"); //현재 방 아이디
   const MBTI = localStorage.getItem("mbti");
+  const TOKEN = localStorage.getItem("token");
 
   const client = useRef({});
   const [chatMessages, setChatMessages] = useState([]);
@@ -35,10 +36,11 @@ const Message = ({ location, history }) => {
 
   const connect = () => {
     client.current = new StompJs.Client({
-      // brokerURL: "ws://localhost:8080/ws-stomp/websocket", // 웹소켓 서버로 직접 접속
-      webSocketFactory: () => new SockJS("/ws/chat"), // proxy를 통한 접속
+
+      webSocketFactory: () => new SockJS("/ws/chat"), // proxy를 통한 접속 스탬프
       connectHeaders: {
         "auth-token": "spring-chat-auth-token",
+        "X-AUTH-TOKEN" : TOKEN
       },
       debug: function (str) {
         console.log(str);

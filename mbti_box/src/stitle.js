@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import "./stitle.css";
 import "./boardback.css";
 
@@ -20,11 +20,24 @@ import INFJimg from "./images/INFJ.png"
 import INTJimg from "./images/INTJ.png"
 import ISTPimg from "./images/ISTP.png"
 
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 
-const stitle = () => {
 
+const Stitle = () => {
+
+  const history = useHistory();
+
+
+  const mbticheck = (mbti) =>{
+    console.log(mbti);
+
+    history.push({
+      pathname: `/${mbti}board`,
+      state: {pagembti: mbti}
+    })
+
+  }
 
 
   return (
@@ -38,12 +51,15 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/INTJboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTJimg} className="analytic_imgback" /></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}>
+                <img src={process.env.PUBLIC_URL+INTJimg} className="analytic_imgback" onClick={()=>{mbticheck('INTJ');}} style={{cursor:"pointer"}}/>
+              </figure>
+            </div>  
                 <div className="textpo">
                       <p className="stitle">INTJ</p>
                       <p className="explanation">상상력이 풍부하며 철두철미한 계획을 세우는 전략가형</p>
                 </div>
-            </div>
+            
           </div>
         </div>
         
@@ -51,7 +67,10 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
               <div>
-                <figure><Link to="/INTPboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback"  /></Link></figure>
+                <figure style={{width:"70%", marginLeft:"14%" }}>
+                  <img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback" onClick={()=>{mbticheck('INTP');}} style={{cursor:"pointer"}}/>
+                </figure>
+                
                   <div className="textpo">
                     <p className="stitle">INTP</p>
                     <p className="explanation">끊임없이 새로운 지식에 목말라 하는 혁신가형</p>
@@ -63,7 +82,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
               <div>
-                <figure><Link to="/ENTJboard" style={{ textDecoration: 'none' }}><img src={process.env.PUBLIC_URL+ENTJimg} className="analytic_imgback" /></Link></figure>
+                <figure style={{width:"70%", marginLeft:"14%" }}><img src={process.env.PUBLIC_URL+ENTJimg} className="analytic_imgback" onClick={()=>{mbticheck('ENTJ');}} style={{cursor:"pointer"}}/></figure>
                   <div className="textpo">
                   <p className="stitle">ENTJ</p>
                     <p className="explanation">
@@ -78,7 +97,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ENTPboard" style={{ textDecoration: 'none' }}><img src={ENTPimg} className="analytic_imgback" /></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ENTPimg} className="analytic_imgback" onClick={()=>{mbticheck('ENTP');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ENTP</p>
                   <p className="explanation">지적인 도전을 두려워하지 않는 똑똑한 호기심형</p>
@@ -99,7 +118,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/INFJboard" style={{ textDecoration: 'none' }}><img src={INFJimg} className="diplomatic_imgback" /></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={INFJimg} className="diplomatic_imgback" onClick={()=>{mbticheck('INFJ');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">INFJ</p>
                   <p className="explanation">조용하고 신비로우며 샘솟는 영감으로 지칠줄 모르는 이상주의자</p>
@@ -112,7 +131,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/INFPboard" style={{ textDecoration: 'none' }}><img src={INFPimg} className="diplomatic_imgback" /></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={INFPimg} className="diplomatic_imgback" onClick={()=>{mbticheck('INFP');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">INFP</p>
                   <p className="explanation">상냥한 성격의 이타주의자로 건강하고 밝은 사회 건설에 앞장서는 낭만형</p>
@@ -124,7 +143,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ENFJboard" style={{ textDecoration: 'none' }}><img src={ENFJimg} className="diplomatic_imgback" /></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ENFJimg} className="diplomatic_imgback" onClick={()=>{mbticheck('ENFJ');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ENFJ</p>
                   <p className="explanation">넘치는 카리스마와 영향력으로 청중을 압도하는 리더형</p>
@@ -136,7 +155,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ENFPboard" style={{ textDecoration: 'none' }}><img src={ENFPimg} className="diplomatic_imgback" /></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ENFPimg} className="diplomatic_imgback" onClick={()=>{mbticheck('ENFP');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ENFP</p>
                   <p className="explanation">창의적이며 항상 웃을 거리를 찾아다니는 활발한 성격으로 사람들과
@@ -158,7 +177,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ISTJboard" style={{ textDecoration: 'none' }}><img src={ISTJimg} className="manager_imgback"/></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ISTJimg} className="manager_imgback" onClick={()=>{mbticheck('ISTJ');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ISTJ</p>
                   <p className="explanation">사실에 근거하여 사고하며 이들의 행동이나 결정 사항에 한 치의 의심을 사지 않는 현실 주의자형</p>
@@ -171,7 +190,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ISFJboard" style={{ textDecoration: 'none' }}><img src={ISFJimg} className="manager_imgback"/></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ISFJimg} className="manager_imgback" onClick={()=>{mbticheck('ISFJ');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ISFJ</p>
                   <p className="explanation">소중한 이들을 수호하는 데 심혈을 기울이는 헌신적이며 성실한 방어자형</p>
@@ -183,7 +202,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ESTJboard" style={{ textDecoration: 'none' }}><img src={ESTJimg} className="manager_imgback"/></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ESTJimg} className="manager_imgback" onClick={()=>{mbticheck('ESTJ');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ESTJ</p>
                   <p className="explanation">사물이나 사람을 관리하는 데 타의 추종을 불허하는 뛰어난 실력을 갖춘 관리자형</p>
@@ -195,7 +214,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ESFJboard" style={{ textDecoration: 'none' }}><img src={ESFJimg} className="manager_imgback"/></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ESFJimg} className="manager_imgback" onClick={()=>{mbticheck('ESFJ');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ESFJ</p>
                   <p className="explanation">타인을 향한 세심한 관심과 사교적인 성향으로 사람들 내에서 인기가 많으며, 타인을 돕는데 열성적인 세심형</p>
@@ -213,7 +232,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ISTPboard" style={{ textDecoration: 'none' }}><img src={ISTPimg} className="explorer_imgback" /></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ISTPimg} className="explorer_imgback" onClick={()=>{mbticheck('ISTP');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ISTP</p>
                   <p className="explanation">대담하고 현실적인 성향으로 다양한 도구 사용에 능숙한 탐험형</p>
@@ -225,7 +244,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ISFPboard" style={{ textDecoration: 'none' }}><img src={ISFPimg} className="explorer_imgback"/></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ISFPimg} className="explorer_imgback" onClick={()=>{mbticheck('ISFP');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ISFP</p>
                   <p className="explanation">항시 새로운 것을 찾아 시도라거나 도전할 준비가 되어 있는 융통성 있는 성격의 매력 넘치는 예술가형</p>
@@ -237,7 +256,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ESTPboard" style={{ textDecoration: 'none' }}><img src={ESTPimg} className="explorer_imgback"/></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ESTPimg} className="explorer_imgback" onClick={()=>{mbticheck('ESTP');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ESTP</p>
                   <p className="explanation">벼랑 끝의 아슬아슬한 삶을 진정으로 즐길 줄 아는 이들로 명석한 두뇌와 에너지, 그리고 뛰어난 직관력을 가지고 있는 유형</p>
@@ -249,7 +268,7 @@ const stitle = () => {
         <div className="abcc">
           <div className="hover13 column">
             <div>
-              <figure><Link to="/ESFPboard" style={{ textDecoration: 'none' }}><img src={ESFPimg} className="explorer_imgback"/></Link></figure>
+              <figure style={{width:"70%", marginLeft:"14%" }}><img src={ESFPimg} className="explorer_imgback" onClick={()=>{mbticheck('ESFP');}} style={{cursor:"pointer"}}/></figure>
                 <div className="textpo">
                   <p className="stitle">ESFP</p>
                   <p className="explanation">주위에 있으면 인생이 지루할 새가 없을 정도로 즉흥적이며 열정과 에너지가 넘치는 연예인형</p>
@@ -268,4 +287,4 @@ const stitle = () => {
   );
 };
 
-export default stitle;
+export default Stitle;

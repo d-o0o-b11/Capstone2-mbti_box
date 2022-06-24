@@ -1,28 +1,28 @@
 .analytic{
     background-color: rgb(231, 223, 234);
     height: 100%;
-    padding: 200px 0 200px 0;
+    padding: 100px 0 10px 0;
     text-align: center;
 }
 
 .diplomatic{
     background-color: rgb(214,236,227);
     height: 100%;
-    padding: 200px 0 200px 0;
+    padding: 100px 0 10px 0;
     text-align: center;
 }
 
 .manager{
     background-color: rgb(217, 234, 240);
     height: 100%;
-    padding: 200px 0 200px 0;
+    padding: 100px 0 10px 0;
     text-align: center;
 }
 
 .explorer{
     background-color: rgb(255, 234, 187);
     height: 100%;
-    padding: 200px 0 200px 0;
+    padding: 100px 0 10px 0;
     text-align: center;
 }
 

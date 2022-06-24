@@ -45,20 +45,27 @@ const Notice = ({ location, history }) => {
     let Currentnickname = localStorage.getItem("currentnickname"); //글쓴 사람
 
     const ADMINROLE = localStorage.getItem("adminrole");
+    const TOKEN = localStorage.getItem("token");
     
-  const query = qs.parse(location.search, {
-      ignoreQueryPrefix: true
-  });
+    const query = qs.parse(location.search, {
+        ignoreQueryPrefix: true
+    });
 
   console.log(query);
 
-  const [data, loading] = useFetch("/board/", query.id);
+  const [data, loading] = useFetch("/api/post/", query.id);
   
   const removeView=(e)=> {
     if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
       
-        axios(`api/board/${query.id}/delete`, {
+        axios(`/api/post/delete/${query.id}`, { 
             method : 'delete', 
+            headers:{
+                "X-AUTH-TOKEN" : TOKEN
+            },
+            data:{
+                nickname: data.writer
+            }
         })
 
         alert('게시물이 삭제되었습니다.')
@@ -106,7 +113,7 @@ const Notice = ({ location, history }) => {
 
                 
                 {               //조건 걸기
-                        (ADMINROLE==="ADMIN") ?    
+                        (ADMINROLE==="ROLE_ADMIN") ?    
                             <>
                                 <button className='btn1' onClick={()=>removeView()}>삭제</button>
                             </>

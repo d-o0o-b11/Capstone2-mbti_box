@@ -32,6 +32,8 @@ function useFetch(url) {
 const Chatmain = () => {
 
     const [modalOpen, SetmodalOpen] = useState(false);
+    const NICKNAME = localStorage.getItem("nickname");
+    const TOKEN = localStorage.getItem("token");
 
     const isMobile = useMediaQuery({
         query : "(max-width:767px)"
@@ -68,20 +70,26 @@ const Chatmain = () => {
         else{
             Axios({
                 method:'post',
-                url: `/chat/room?name=${roomname}`
+                url: `/chat/room?name=${roomname}`,
+                headers:{
+                    "X-AUTH-TOKEN": TOKEN,
+                },
             })
             .then((Response)=>{
                 console.log("채팅방이름 잘 전달됨");
                 console.log(roomname);
-                localStorage.setItem("roomId",Response.data.roomId);
+                localStorage.setItem("roomId",Response.data.id);
                 window.location.reload();
                 Setroomname("");
                 SetmodalOpen(false); 
             })
             .catch((error)=>{
+                alert("채팅방 생성 실패");
                 console.log("채팅방 오류남");
                 console.log(`/chat?name=${roomname}`);
+                console.log(TOKEN)
                 console.log(error);
+                
 
             })
         }
@@ -126,11 +134,13 @@ const Chatmain = () => {
                             <div className="in3">
                                 <section className="list-wrapper">
                                     {data.map(
-                                        ({ roomName, roomId }) => (
+                                        (item, index) => (
                                             <ListItemchat
-                                                roomName={roomName}
-                                                roomId={roomId}
-                                                key={roomName}
+                                                roomName={item.roomName}
+                                                roomId={item.roomId}
+                                                // creator={item.creator}
+                                                // createDate={item.createDate}
+                                                key={item.roomName}
                                             />
                                         )
                                     )}
@@ -149,13 +159,15 @@ const Chatmain = () => {
                 <div className="banner">
                     <img src={img5} height="150" />
                 </div>
-            <Row>
-                <Col className="sickbang">
+            <div className="chatcontainer">
+                <div className="sickbang">
                     <div className="back">
                         <h1 className="test11" src={img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
 
                         <div className="mbticontent">
                             <Modal open={modalOpen} close={closeModal} header="개인채팅 매칭" submit={submitHandler}>
+                                <h3>소켓 통신 오류로 인해 채팅 기능은 미완성입니다</h3>
+                                <br></br>
                                 <h5>개설할 방 이름을 적어주세요!</h5>
                                 <input 
                                     type="text" 
@@ -172,20 +184,22 @@ const Chatmain = () => {
                             <div className="in2">
                                 <section className="list-wrapper">
                                     {data.map(
-                                        ({ roomName, roomId }) => (
+                                        (item, index) => (
                                             <ListItemchat
-                                                roomName={roomName}
-                                                roomId={roomId}
-                                                key={roomName}
+                                                roomName={item.roomName}
+                                                roomId={item.roomId}
+                                                // creator={item.creator}
+                                                // createDate={item.createDate}
+                                                key={item.roomName}
                                             />
                                         )
                                     )}
                                 </section>
                             </div>
                     </div>
-                </Col>
+                </div>
 
-            </Row>
+            </div>
             </div>
         </Container>
     }

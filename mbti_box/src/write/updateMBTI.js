@@ -11,6 +11,7 @@ function UPDATEMBTI({ location }) {
 
     const MBTI = localStorage.getItem("mbti");
     const NICKNAME = localStorage.getItem("nickname");
+    const TOKEN = localStorage.getItem("token");
 
     const [Title, SetTitle] = useState("");  //Id
 
@@ -43,7 +44,7 @@ function UPDATEMBTI({ location }) {
 
     useEffect(() => {
         if (query.id) {
-            fetchUrl("/api/board/", query.id)
+            fetchUrl("/api/post/", query.id)
         } else {
             // setData(null);        
             inputRef.current.map(item => 
@@ -66,15 +67,25 @@ function UPDATEMBTI({ location }) {
     const test =(e)=>{
         e.preventDefault();
 
-        axios.put(`/api/board/${query.id}/update`,{
-            title: title,
-            content: content,
+        
+
+        axios({
+            method:'put',
+            url:`/api/post/update/${query.id}`,
+            headers:{
+                "X-AUTH-TOKEN" : TOKEN,
+            },
+            data:{
+                title: title,
+                content: content
+            }
         })
         .then((Response)=>{
             console.log(Response.data);
             history.replace(`/${MBTI}?id=${query.id}`); //게시글이 수정됐는지 확인
         }).catch((error)=>{
             console.log(query.id);
+            console.log(TOKEN)
             console.log("데이터"+data);
             console.log(data.title);
             console.log(data.content);

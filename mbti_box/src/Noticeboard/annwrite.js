@@ -5,10 +5,12 @@ import Axios from 'axios';
 import { useHistory } from "react-router-dom";
 import "../write/writes.css"
 
-
+ 
 const { TextArea } = Input
 
 const Annwrite=()=>{
+
+  const TOKEN = localStorage.getItem("token");
 
     const [post,setPost] = useState({
         title:'',
@@ -33,12 +35,15 @@ const Annwrite=()=>{
      
         Axios({
               method: 'post',
-              url: '/api/board', 
+              url: '/api/post/save', 
+              headers:{
+                "X-AUTH-TOKEN" : TOKEN
+              },
               data: {
                 title: title,
                 content: content,
                 nickname:NICKNAME,
-                boardType: "NOTICE"
+                category: "NOTICE"
               }, 
             })
             .then((Response)=>{

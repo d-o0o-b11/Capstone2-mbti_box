@@ -116,20 +116,19 @@ const isTablet = useMediaQuery({
 
                 <div className="line">
                   <div className="intr">
-                    {/* <a style={{marginLeft:10}}>백앤드</a> */}
                     <span style={{marginLeft:10, fontSize:15, marginBottom:25}}>spring으로 봄을 만들자</span>
                   </div> 
                 </div>
+                <span>Instagram @cloudwiiii</span>
 
                 
 
                   <div className="line" style={{marginTop:15}}>
                     <div className="intr">
-                      {/* <a style={{marginLeft:10}}>백앤드</a> */}
-                      {/* 편하다 편하다 편하다 UI에 빠져든다 얍 */}
                       <span style={{marginLeft:10, fontSize:15, marginBottom:25}}>이것은 개발자인가 디자이너인가</span>
                     </div> 
                   </div>
+                  <span>Instagram @ccha___a</span>
 
                 
 
@@ -138,34 +137,39 @@ const isTablet = useMediaQuery({
                       <span style={{marginLeft:10, fontSize:15, marginBottom:25}}>유니짜장 유니버스 유니콘 유니버셜 유니티</span>
                     </div> 
                   </div>
+                  <span>Instagram @yu_jeong_1219</span>
 
               </div>
               :
               <div style={{marginLeft:30}}>
 
+              
               <div className="line">
                 <div className="intr">
                   {/* <a style={{marginLeft:10}}>백앤드</a> */}
                   <span style={{marginLeft:10, fontSize:20, marginBottom:20}}>spring으로 봄을 만들자</span>
                 </div> 
               </div>
+              <span>Instagram @cloudwiiii</span>
 
               
-
+                
                 <div className="line" style={{marginTop:15}}>
                   <div className="intr">
                     {/* <a style={{marginLeft:10}}>백앤드</a> */}
                     <span style={{marginLeft:10, fontSize:20, marginBottom:20}}>이것은 개발자인가 디자이너인가</span>
                   </div> 
                 </div>
+                <span>Instagram @ccha___a</span>
 
               
-
+                
                 <div className="line" style={{marginTop:15}}>
                   <div className="intr">
                     <span style={{marginLeft:10, fontSize:20, marginBottom:20}}>유니짜장 유니버스 유니콘 유니버셜 유니티</span>
                   </div> 
                 </div>
+                <span>Instagram @yu_jeong_1219</span>
 
             </div>
             }

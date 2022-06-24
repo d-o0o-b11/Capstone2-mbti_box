@@ -13,7 +13,7 @@
     border-radius: 20px;
     /* position: absolute; */
     right:10px;
-  }
+  } 
 
 .comsend{
     padding: 10px 20px;
@@ -31,4 +31,23 @@
 
 .commentdate{
     font-weight: small;
+}
+
+.commentdetail{
+    width: 50px;
+    border-radius: 10px;
+    padding: 2px;
+    text-align: center;
+    border: solid 1px #AAAAAA;
+    float: right;
+    margin: 0 2px;
+}
+
+
+
+.updatecomment{
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    border: solid 1px #AAAAAA;
 }

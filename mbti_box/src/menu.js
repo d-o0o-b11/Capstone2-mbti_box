@@ -7,11 +7,7 @@ import {Grid, Text} from "./elements"
 import lo from "./images/mm.png"
 import { useHistory } from 'react-router-dom';
 
-const Menu = (props) => {
-  // const is_login = useSelector((store)=> store.user.is_login);
-  // const user = useSelector((store)=> store.user.user)
-  // const dispatch = useDispatch();
-  // const cookie = getCookie("is_login")
+const Menu = () => {
   let nickname = localStorage.getItem("nickname")
   let mbti = localStorage.getItem("mbti");
   let token = localStorage.getItem("token")
@@ -19,10 +15,8 @@ const Menu = (props) => {
   let [retoken, ReToken] = useState(token);
 
   const history = useHistory();
-  const NICKNAME = localStorage.getItem("nickname");
 
 const removeToken=()=>{
-  //ReToken(0);
   
   localStorage.clear(); 
   console.log(token)

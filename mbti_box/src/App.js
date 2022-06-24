@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Stitle from "./stitle"
 import Mostitle from "./mostitle"
 import MAIN1 from "./main1.js"
@@ -9,25 +9,7 @@ import "./Step.css"
 import "./menu.css"
 import Login from "./login/login.js"
 
-import INTJ from "./board/INTJ.js"
-import INTP from "./board/INTP.js"
-import ENTJ from "./board/ENTJ.js"
-import ENTP from "./board/ENTP.js"
-
-import INFJ from "./board/INFJ.js"
-import INFP from "./board/INFP.js"
-import ENFJ from "./board/ENFJ.js"
-import ENFP from "./board/ENFP.js"
-
-import ISTJ from "./board/ISTJ.js"
-import ISFJ from "./board/ISFJ.js"
-import ESTJ from "./board/ESTJ.js"
-import ESFJ from "./board/ESFJ.js"
-
-import ISTP from "./board/ISTP.js"
-import ISFP from "./board/ISFP.js"
-import ESTP from "./board/ESTP.js"
-import ESFP from "./board/ESFP.js"
+import MbtiBoard from "./board/MbtiBoard.js"
 
 import MbtiNotice from "./board/MbtiNotice.js";
 import PWfind from "./login/PWfind.js";
@@ -115,19 +97,19 @@ const App = () => {
             <Route path="/ENTP" component={MbtiNotice}/>
 
             <Route path="/INTJboard">
-              <INTJ></INTJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/INTPboard">
-              <INTP></INTP>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ENTJboard">
-              <ENTJ></ENTJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ENTPboard">
-              <ENTP></ENTP>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
 
@@ -142,19 +124,19 @@ const App = () => {
             <Route path="/ENFP" component={MbtiNotice}/>
 
             <Route path="/INFJboard">
-              <INFJ></INFJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/INFPboard">
-              <INFP></INFP>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ENFJboard">
-              <ENFJ></ENFJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ENFPboard">
-              <ENFP></ENFP>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
 
@@ -169,19 +151,19 @@ const App = () => {
             <Route path="/ESFJ" component={MbtiNotice}/>
 
             <Route path="/ISTJboard">
-              <ISTJ></ISTJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ISFJboard">
-              <ISFJ></ISFJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ESTJboard">
-              <ESTJ></ESTJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ESFJboard">
-              <ESFJ></ESFJ>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             {/* 탐험가형 */}
@@ -195,19 +177,19 @@ const App = () => {
             <Route path="/ESFP" component={MbtiNotice}/>
 
             <Route path="/ISTPboard">
-              <ISTP></ISTP>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ISFPboard">
-              <ISFP></ISFP>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ESTPboard">
-              <ESTP></ESTP>
+              <MbtiBoard></MbtiBoard>
             </Route>
 
             <Route path="/ESFPboard">
-              <ESFP></ESFP>
+              <MbtiBoard></MbtiBoard>
             </Route>
             
 

@@ -1,6 +1,7 @@
 import {React} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import gameimg from"../images/gamebackground.png";
+import gameimg1 from"../images/gameimg1.png";
 import gameplay from"../images/playbutton.png";
 import char1 from"../images/forb.png";
 import char2 from"../images/nero.png";
@@ -18,7 +19,7 @@ const Game =()=>{
     return(
         <>  
 
-            <img src={gameimg} style={{width:"100%"}}/>
+            <img src={gameimg1} style={{width:"100%"}}/>
 
             <Container>
                 <div style={{marginTop:"50px"}}>

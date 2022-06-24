@@ -12,8 +12,7 @@ function BoardImgListItem({fileName}) { //start_date -> date
         query: "(max-width:767px)"
       });
 
-      const name = `${fileName}`;
-      const imgbasic = "https://mbtibox-storage.s3.ap-northeast-2.amazonaws.com/"+name;  
+      const imgbasic = `${fileName}`; 
       
       console.log(imgbasic);
     return (
@@ -24,8 +23,6 @@ function BoardImgListItem({fileName}) { //start_date -> date
         
             <img src={imgbasic}/>
             
-        
-
         </>
             :
         <>

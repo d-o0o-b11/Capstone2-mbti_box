@@ -115,3 +115,15 @@
   background-color: rgb(226,160,110);
   color: #ffffff;
 }
+
+
+.selectmbti{
+  width: 270px;
+  height: 40px;
+  border-radius: 7px;
+  border-color: rgb(198, 198, 198);
+}
+
+.selectmbti option{
+  text-align: center;
+}

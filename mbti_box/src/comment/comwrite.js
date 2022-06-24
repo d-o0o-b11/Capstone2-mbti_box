@@ -7,8 +7,9 @@ import "./comment.css"
 
 const Comwrite = (props) =>{
     
-    const MBTI = localStorage.getItem("mbti");
+    
     const NICKNAME = localStorage.getItem("nickname");
+    const TOKEN = localStorage.getItem("token");
 
     const [comment, SetComment] = useState("");
 
@@ -22,12 +23,14 @@ const Comwrite = (props) =>{
 
         Axios({
             method: 'post',
-            url: "/api/comment",
+            url: "/api/comment/save",
+            headers:{
+                "X-AUTH-TOKEN" : TOKEN,
+            },
             data: {
               content: comment,
               nickname: NICKNAME,
-              mbti: MBTI,
-              boardId: props.id
+              post_id: props.id
             },
           })
           .then((Response)=>{
@@ -38,14 +41,14 @@ const Comwrite = (props) =>{
           })
           .catch((error)=>{
               alert("실패");
-              console.log(props.id);
+              console.log(error);
           });
     }
 
 
     return(
         <>
-            <div>
+            <div >
                 <textarea type="text" placeholder="comment" value={comment} maxLength={100} rows={2} className="comment" onChange={ComHandler}/>
                 <button className="comsend" onClick={submitHandler}>보내기</button>
             </div>

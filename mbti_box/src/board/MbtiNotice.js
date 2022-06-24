@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col} from "react-bootstrap";
 import "../Noticeboard/ann.css"
-import { FormOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 import qs from 'qs';
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
 import Comwrite from "../comment/comwrite.js";
-import Comview from "../comment/comview.js"
-import Boardmap from './Boardmap';
 import BoardImgListItem from './BoarImgListItem';
 import ComListItem from '../comment/comListItem.js';
 
@@ -17,7 +14,7 @@ import ComListItem from '../comment/comListItem.js';
 function useFetch(url, id) {
   const [data, setData] = useState({});
   const [imgarr, setImgArr] = useState([]);
-  
+  const [comment, setComment] = useState([]);
     
 
   function fetchUrl() {
@@ -26,13 +23,17 @@ function useFetch(url, id) {
           console.log("확인함");
           console.log(response.data);
           console.log(response.data.fileNames);
-          console.log("글쓴사람닉네임:"+response.data.nickname);
+          console.log("글쓴사람닉네임:"+response.data.writer);
           setImgArr(response.data.fileNames);
+          setComment(response.data.comments);
+          console.log(response.data.comments)
 
           const Currentnickname = localStorage.getItem("currentnickname");
-          localStorage.setItem("currentnickname",response.data.nickname)
+          localStorage.setItem("currentnickname",response.data.writer)
 
           console.log("글쓴사람닉네임변수:"+Currentnickname);
+
+          console.log("이미지url: "+response.data.fileNames)
 
       });
       
@@ -46,7 +47,7 @@ function useFetch(url, id) {
           console.log("no");
       }
   }, []);
-  return [data, imgarr];
+  return [data, imgarr, comment];
 }
 
 
@@ -56,6 +57,7 @@ const MbtiNotice = ({ location, history }) => {
   const backhistory = useHistory();
   const MBTI = localStorage.getItem("mbti");
   const NICKNAME = localStorage.getItem("nickname"); //로그인된 사람
+  const TOKEN = localStorage.getItem("token");
 
   let Currentnickname = localStorage.getItem("currentnickname"); //글쓴 사람
 
@@ -70,21 +72,31 @@ const MbtiNotice = ({ location, history }) => {
   console.log("현재닉네임2: "+NICKNAME);
   console.log("글쓴사람닉네임: "+Currentnickname);
 
-  const [data, imgarr] = useFetch("/api/board/", query.id);
+  const [data, imgarr, comment] = useFetch("/api/post/", query.id);
 
 
   
   const removeView=(e)=> {
     if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
-      
-        axios.delete(`/api/board/${query.id}/delete`)
-        .then(
-            alert('성공')
-        )
+       
+        axios({
+            method:'delete',
+            url:`/api/post/delete/${query.id}`,
+            headers:{
+                "X-AUTH-TOKEN" : TOKEN
+            },
+            data:{
+                nickname : NICKNAME
+            }
+        }).then((Response)=>{
+            alert('게시물이 삭제되었습니다.')
+            backhistory.push("/");
+            }
+        ).catch((error)=>{
+            alert("게시물 삭제에 실패하였습니다.")
+        })
 
-        alert('게시물이 삭제되었습니다.')
-        return backhistory.replace("/");
-
+    
     }
   }
 
@@ -102,21 +114,17 @@ const MbtiNotice = ({ location, history }) => {
                 <div style={{margin:"auto 0 auto 40px"}}>
                     <h5>{data.title}</h5>
                     <span className="datesize">[MBTI]</span>
+                    <span>조회수: {data.count}</span>
                 </div>
 
                 <hr></hr>
 
 
-                {/* <Boardmap
-                    id={query.id}
-                    key={query.id}
-                /> */}
                 {imgarr.map(
                         (item, index)=>{
-                            // return <p>{item.fileName}</p>
                             return(
                                 <BoardImgListItem
-                                    fileName={item.fileName}
+                                    fileName={item.url}
                                 />
                             )
                         }
@@ -135,7 +143,7 @@ const MbtiNotice = ({ location, history }) => {
                 
                 
                     {   
-                        ((Currentnickname===NICKNAME && NICKNAME)|| ADMINROLE==="ADMIN") ?    
+                        ((Currentnickname===NICKNAME && NICKNAME)|| ADMINROLE==="ROLE_ADMIN") ?    
                             <>
                                 <Link to={{
                                         pathname:"/updateMBTI",
@@ -157,25 +165,24 @@ const MbtiNotice = ({ location, history }) => {
                     </div>
 
                     {/* 댓글보이기 */}
-                    <Comview id={query.id}/>
 
-                    {/* <Container style={{marginTop:"60px"}}>     
+                    <Container style={{marginTop:"60px"}}>     
 
                         <section>
-                            {data.map(
-                                ({ content, nickname, mbti, createdAt}) => (
+                            {comment.map(
+                                (item, index) => (
                                     <ComListItem
-                                        mbti={mbti}
-                                        nickname={nickname}
-                                        content={content}
-                                        //createdAt={createdAt}
-                                        createdAt={createdAt.substr(0,10)}
-                                        key={nickname}
+                                        mbti={item.mbti}
+                                        nickname={item.writer}
+                                        content={item.content}
+                                        createdAt={item.createdDate.substr(0,10)}
+                                        id={item.comment_id}
+                                        key={item.id}
                                     />
                                 )
                             )}
                         </section>
-                    </Container>    */}
+                    </Container>   
 
             </Container>
           </>

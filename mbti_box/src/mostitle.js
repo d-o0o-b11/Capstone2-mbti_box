@@ -1,6 +1,6 @@
 import React from "react";
 import "./stitle.css";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import "./boardbackmo.css";
 
 import ENFPimg from "./images/ENFP.png"
@@ -21,9 +21,20 @@ import INFJimg from "./images/INFJ.png"
 import INTJimg from "./images/INTJ.png"
 import ISTPimg from "./images/ISTP.png"
 
-const mostitle = () => { 
+const Mostitle = () => { 
+
+  const history = useHistory();
 
 
+  const mbticheck = (mbti) =>{
+    console.log(mbti);
+
+    history.push({
+      pathname: `/${mbti}board`,
+      state: {pagembti: mbti}
+    })
+
+  }
 
   return (
     <>
@@ -37,9 +48,7 @@ const mostitle = () => {
               
                 <div style={{width:"70%", marginLeft:"14%"}}>
                   <figure>
-                    <Link to="/INTJboard" style={{ textDecoration: 'none' }}>
-                      <img src={process.env.PUBLIC_URL+INTJimg} className="analytic_imgback1"/>
-                    </Link>
+                      <img src={process.env.PUBLIC_URL+INTJimg} className="analytic_imgback1" onClick={()=>{mbticheck('INTJ');}} style={{cursor:"pointer"}}/>
                   </figure>
                 </div>
               
@@ -57,9 +66,7 @@ const mostitle = () => {
               <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/INTPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+INTPimg} className="analytic_imgback1" onClick={()=>{mbticheck('INTP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div> 
 
@@ -76,9 +83,7 @@ const mostitle = () => {
               <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ENTJboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ENTJimg} className="analytic_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ENTJimg} className="analytic_imgback1" onClick={()=>{mbticheck('ENTJ');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div> 
                   
@@ -98,9 +103,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ENTPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ENTPimg} className="analytic_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ENTPimg} className="analytic_imgback1" onClick={()=>{mbticheck('ENTP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div> 
 
@@ -126,9 +129,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/INFJboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+INFJimg} className="diplomatic_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+INFJimg} className="diplomatic_imgback1" onClick={()=>{mbticheck('INFJ');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div> 
                 
@@ -146,9 +147,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/INFPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+INFPimg} className="diplomatic_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+INFPimg} className="diplomatic_imgback1" onClick={()=>{mbticheck('INFP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>   
                 <div className="textpo">
@@ -164,9 +163,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ENFJboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ENFJimg} className="diplomatic_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ENFJimg} className="diplomatic_imgback1" onClick={()=>{mbticheck('ENFJ');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div> 
                 <div className="textpo">
@@ -182,9 +179,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ENFPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ENFPimg} className="diplomatic_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ENFPimg} className="diplomatic_imgback1" onClick={()=>{mbticheck('ENFP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>  
                 <div className="textpo">
@@ -210,9 +205,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ISTJboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ISTJimg} className="manager_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ISTJimg} className="manager_imgback1" onClick={()=>{mbticheck('ISTJ');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>  
                 <div className="textpo">
@@ -229,9 +222,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ISFJboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ISFJimg} className="manager_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ISFJimg} className="manager_imgback1" onClick={()=>{mbticheck('ISFJ');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>  
                 <div className="textpo">
@@ -247,9 +238,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ESTJboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ESTJimg} className="manager_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ESTJimg} className="manager_imgback1" onClick={()=>{mbticheck('ESTJ');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>   
                 <div className="textpo">
@@ -265,9 +254,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ESFJboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ESFJimg} className="manager_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ESFJimg} className="manager_imgback1" onClick={()=>{mbticheck('ESFJ');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>   
                 <div className="textpo">
@@ -289,9 +276,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ISTPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ISTPimg} className="explorer_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ISTPimg} className="explorer_imgback1" onClick={()=>{mbticheck('ISTP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>    
                 <div className="textpo">
@@ -307,9 +292,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ISFPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ISFPimg} className="explorer_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ISFPimg} className="explorer_imgback1" onClick={()=>{mbticheck('ISFP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div>   
                 <div className="textpo">
@@ -325,9 +308,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ESTPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ESTPimg} className="explorer_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ESTPimg} className="explorer_imgback1" onClick={()=>{mbticheck('ESTP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div> 
 
@@ -344,9 +325,7 @@ const mostitle = () => {
             <div>
                     <div style={{width:"70%", marginLeft:"15%"}}>
                       <figure>
-                        <Link to="/ESFPboard" style={{ textDecoration: 'none' }}>
-                          <img src={process.env.PUBLIC_URL+ESFPimg} className="explorer_imgback1"/>
-                        </Link>
+                          <img src={process.env.PUBLIC_URL+ESFPimg} className="explorer_imgback1" onClick={()=>{mbticheck('ESFP');}} style={{cursor:"pointer"}}/>
                       </figure>
                     </div> 
                 <div className="textpo">
@@ -364,4 +343,4 @@ const mostitle = () => {
   );
 };
 
-export default mostitle;
+export default Mostitle;

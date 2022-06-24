@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ann.css'
-import { Container, Row, Col} from "react-bootstrap";
-import { FormOutlined } from '@ant-design/icons';
-import qs from 'qs';
-import axios from "axios";
 import { useMediaQuery } from "react-responsive";
 
-function ListItem({ id, title,  createdAt}) { //start_date -> date
+function ListItem({ id, title,  createdDate}) { //start_date -> date
 
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
       });
- 
+
+    
+
     return (
     <>
     {isMobile?
@@ -44,7 +42,7 @@ function ListItem({ id, title,  createdAt}) { //start_date -> date
                     <td>{id}</td>
                     <td>{title}</td>
                     <td>관리자</td>
-                    <td>{createdAt}</td>
+                    <td>{createdDate.substr(0,10)}</td>
                 </tr>
             </table>
 .
