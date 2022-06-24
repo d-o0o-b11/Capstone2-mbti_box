@@ -35,7 +35,7 @@ const Annwrite=()=>{
      
         Axios({
               method: 'post',
-              url: '/api/post/save', 
+              url: process.env.REACT_APP_DB_HOST + '/api/post/save', 
               headers:{
                 "X-AUTH-TOKEN" : TOKEN
               },
@@ -48,8 +48,8 @@ const Annwrite=()=>{
             })
             .then((Response)=>{
     
-              console.log(title);
-              console.log(content);
+              // console.log(title);
+              // console.log(content);
                 alert("글 성공");
                 history.replace("/Annview");
     

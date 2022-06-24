@@ -70,14 +70,14 @@ const Chatmain = () => {
         else{
             Axios({
                 method:'post',
-                url: `/chat/room?name=${roomname}`,
+                url: process.env.REACT_APP_DB_HOST + `/chat/room?name=${roomname}`,
                 headers:{
                     "X-AUTH-TOKEN": TOKEN,
                 },
             })
             .then((Response)=>{
-                console.log("채팅방이름 잘 전달됨");
-                console.log(roomname);
+                // console.log("채팅방이름 잘 전달됨");
+                // console.log(roomname);
                 localStorage.setItem("roomId",Response.data.id);
                 window.location.reload();
                 Setroomname("");
@@ -85,10 +85,10 @@ const Chatmain = () => {
             })
             .catch((error)=>{
                 alert("채팅방 생성 실패");
-                console.log("채팅방 오류남");
-                console.log(`/chat?name=${roomname}`);
-                console.log(TOKEN)
-                console.log(error);
+                // console.log("채팅방 오류남");
+                // console.log(`/chat?name=${roomname}`);
+                // console.log(TOKEN)
+                // console.log(error);
                 
 
             })
@@ -108,13 +108,13 @@ const Chatmain = () => {
         <Container>
             <div className="chatting backin">
                 <div className="banner">
-                    <img src={img5} height="150" />
+                    <img src={process.env.PUBLIC_URL+img5} height="150" />
                 </div>
 
                 <Row>
                 <Col className="sickbang2">
                     <div className="back2">
-                        <h1 className="test11" src={img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
+                        <h1 className="test11" src={process.env.PUBLIC_URL+img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
 
                         <div className="mbticontent">
                             <Modal open={modalOpen} close={closeModal} header="개인채팅 매칭" submit={submitHandler}>
@@ -157,12 +157,12 @@ const Chatmain = () => {
         <Container>
             <div className="chatting backin">
                 <div className="banner">
-                    <img src={img5} height="150" />
+                    <img src={process.env.PUBLIC_URL+img5} height="150" />
                 </div>
             <div className="chatcontainer">
                 <div className="sickbang">
                     <div className="back">
-                        <h1 className="test11" src={img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
+                        <h1 className="test11" src={process.env.PUBLIC_URL+img5} height="30" width="30">단체 채팅<AddBoxIcon onClick={openModal} style={{marginLeft:"70px"}}/><span>방 생성</span></h1>
 
                         <div className="mbticontent">
                             <Modal open={modalOpen} close={closeModal} header="개인채팅 매칭" submit={submitHandler}>

@@ -19,7 +19,7 @@ const Menu = () => {
 const removeToken=()=>{
   
   localStorage.clear(); 
-  console.log(token)
+  // console.log(token)
   history.replace("/");
   window.location.reload();
 }
@@ -40,7 +40,7 @@ const loginChat = () =>{
         <div style={{marginLeft:'10%'}} className="menucolor">
 
           {/* span */}
-         <Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link>
+         <Link to="/"><img src={process.env.PUBLIC_URL+lo} style={{width:'13vw', display:"inline"}}/></Link>
 
          <span style={{marginLeft:'10%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
 
@@ -62,7 +62,7 @@ const loginChat = () =>{
       <>
           <div style={{marginLeft:'10%'}} className="menucolor">
   
-            <Link to="/"><img src={lo} style={{width:'13vw', display:"inline"}}/></Link>
+            <Link to="/"><img src={process.env.PUBLIC_URL+lo} style={{width:'13vw', display:"inline"}}/></Link>
   
             <span style={{marginLeft:'15%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
   

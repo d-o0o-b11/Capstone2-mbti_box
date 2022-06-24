@@ -20,20 +20,20 @@ function useFetch(url, id) {
   function fetchUrl() {
         axios.get(`${url}${id}`).then(response => {
           setData(response.data);
-          console.log("확인함");
-          console.log(response.data);
-          console.log(response.data.fileNames);
-          console.log("글쓴사람닉네임:"+response.data.writer);
+        //   console.log("확인함");
+        //   console.log(response.data);
+        //   console.log(response.data.fileNames);
+        //   console.log("글쓴사람닉네임:"+response.data.writer);
           setImgArr(response.data.fileNames);
           setComment(response.data.comments);
-          console.log(response.data.comments)
+        //   console.log(response.data.comments)
 
           const Currentnickname = localStorage.getItem("currentnickname");
           localStorage.setItem("currentnickname",response.data.writer)
 
-          console.log("글쓴사람닉네임변수:"+Currentnickname);
+        //   console.log("글쓴사람닉네임변수:"+Currentnickname);
 
-          console.log("이미지url: "+response.data.fileNames)
+        //   console.log("이미지url: "+response.data.fileNames)
 
       });
       
@@ -41,10 +41,8 @@ function useFetch(url, id) {
   useEffect(() => {
       if (id) {
           fetchUrl();
-          console.log("gd");
       } else {
           setData(null);
-          console.log("no");
       }
   }, []);
   return [data, imgarr, comment];
@@ -68,11 +66,11 @@ const MbtiNotice = ({ location, history }) => {
   });
 
 
-  console.log(query.id);
-  console.log("현재닉네임2: "+NICKNAME);
-  console.log("글쓴사람닉네임: "+Currentnickname);
+//   console.log(query.id);
+//   console.log("현재닉네임2: "+NICKNAME);
+//   console.log("글쓴사람닉네임: "+Currentnickname);
 
-  const [data, imgarr, comment] = useFetch("/api/post/", query.id);
+  const [data, imgarr, comment] = useFetch(process.env.REACT_APP_DB_HOST + "/api/post/", query.id);
 
 
   
@@ -81,7 +79,7 @@ const MbtiNotice = ({ location, history }) => {
        
         axios({
             method:'delete',
-            url:`/api/post/delete/${query.id}`,
+            url: process.env.REACT_APP_DB_HOST + `/api/post/delete/${query.id}`,
             headers:{
                 "X-AUTH-TOKEN" : TOKEN
             },

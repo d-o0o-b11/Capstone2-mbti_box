@@ -22,8 +22,6 @@ import { useLocation } from "react-router-dom";
     function fetchUrl() {
           axios.get(`${url}`).then(response => {
             setData(response.data);
-            console.log("확인함INTJ");
-            console.log(response.data[0]);
         });
 
        
@@ -42,7 +40,6 @@ function MbtiBoard (){
 
     const location = useLocation();
     const mbtiitem = location.state.pagembti;
-    console.log(mbtiitem);
 
     const [limit, setLimit] = useState(9);
     const [page, setPage] = useState(1);
@@ -50,9 +47,8 @@ function MbtiBoard (){
 
    
     const MBTI = localStorage.getItem("mbti");
-    const data = useFetch2(`/api/post/posts/${mbtiitem}`);
+    const data = useFetch2(process.env.REACT_APP_DB_HOST + `/api/post/posts/${mbtiitem}`);
 
-    console.log(data)
 
     return(
         <>

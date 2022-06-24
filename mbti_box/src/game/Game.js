@@ -19,22 +19,22 @@ const Game =()=>{
     return(
         <>  
 
-            <img src={gameimg1} style={{width:"100%"}}/>
+            <img src={process.env.PUBLIC_URL+gameimg1} style={{width:"100%"}}/>
 
             <Container>
                 <div style={{marginTop:"50px"}}>
-                    <img src={char1}/>
+                    <img src={process.env.PUBLIC_URL+char1}/>
                 </div>
                 <div style={{marginTop:"50px"}}>
-                    <img src={char2}/>
+                    <img src={process.env.PUBLIC_URL+char2}/>
                 </div>
                 <div style={{marginTop:"50px"}}>
-                    <img src={char3}/>
+                    <img src={process.env.PUBLIC_URL+char3}/>
                 </div>
             </Container>
 
             <div style={{marginTop:"50px", marginBottom:"30px"}} className="a">
-                <img src={gameplay} style={{width:"35%"}} className="imgcenter" onClick={pagemove}/>
+                <img src={process.env.PUBLIC_URL+gameplay} style={{width:"35%"}} className="imgcenter" onClick={pagemove}/>
             </div>
         
             

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col} from "react-bootstrap";
 import "./ann.css"
 import ListItem from './ListItem.js';
-import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FormOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
@@ -17,7 +16,7 @@ function useFetch(url) {
       const json = await response.json();
       
       setData(json);
-      console.log(json);
+      // console.log(json);
   }
   
   useEffect(() => {

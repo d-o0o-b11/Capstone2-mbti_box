@@ -83,7 +83,7 @@ const Signup = () => {
     
           Axios({
             method: 'post',
-            url: '/api/user/signup',
+            url: process.env.REACT_APP_DB_HOST + '/api/user/signup',
             data: {
                 email: Email,
                 password: Pw,
@@ -99,8 +99,8 @@ const Signup = () => {
           })
           .catch((error)=>{
               alert("회원가입 실패");
-              console.log(Id);
-              console.log(error);
+              // console.log(Id);
+              // console.log(error);
               
           });
  
@@ -130,7 +130,7 @@ const Signup = () => {
         >
 
 
-          <img src={img1} style={{width:200}}/>
+          <img src={process.env.PUBLIC_URL+img1} style={{width:200}}/>
 
 
           <Box component="form" onSubmit={submitHandler}>

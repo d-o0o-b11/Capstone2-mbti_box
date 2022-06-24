@@ -14,7 +14,7 @@ function BoardImgListItem({fileName}) { //start_date -> date
 
       const imgbasic = `${fileName}`; 
       
-      console.log(imgbasic);
+      
     return (
     <>
     {(isMobile)?

@@ -27,7 +27,7 @@ const Mostitle = () => {
 
 
   const mbticheck = (mbti) =>{
-    console.log(mbti);
+    // console.log(mbti);
 
     history.push({
       pathname: `/${mbti}board`,

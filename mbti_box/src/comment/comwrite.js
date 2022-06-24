@@ -23,7 +23,7 @@ const Comwrite = (props) =>{
 
         Axios({
             method: 'post',
-            url: "/api/comment/save",
+            url: process.env.REACT_APP_DB_HOST + "/api/comment/save",
             headers:{
                 "X-AUTH-TOKEN" : TOKEN,
             },
@@ -34,14 +34,14 @@ const Comwrite = (props) =>{
             },
           })
           .then((Response)=>{
-            console.log(Response.data);
-            console.log(comment);
+            // console.log(Response.data);
+            // console.log(comment);
             window.location.reload();
   
           })
           .catch((error)=>{
               alert("실패");
-              console.log(error);
+            //   console.log(error);
           });
     }
 

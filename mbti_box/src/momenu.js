@@ -30,7 +30,7 @@ const Momenu = (props) => {
   const removeToken=()=>{
     //ReToken(0);
     localStorage.clear(); 
-    console.log(token)
+    // console.log(token)
     history.replace("/");
     window.location.reload();
   }
@@ -58,7 +58,7 @@ const Momenu = (props) => {
   return (
     <>
         
-        <img src={img2} onClick={toggleChange} style={{ width:80, height:50, marginTop:10}}/>
+        <img src={process.env.PUBLIC_URL+img2} onClick={toggleChange} style={{ width:80, height:50, marginTop:10}}/>
         
         { toggleMenu &&
         <>
@@ -68,7 +68,7 @@ const Momenu = (props) => {
               <div className="label sidebar" >
                 <Row>
                   <Col xs={3}>
-                      <img src={img3} onClick={toggleChange} style={{ marginTop: 20, marginLeft:10, width:30, height:30}}/>
+                      <img src={process.env.PUBLIC_URL+img3} onClick={toggleChange} style={{ marginTop: 20, marginLeft:10, width:30, height:30}}/>
                   </Col>
       
                   <Col xs={9}style={{ marginTop: 10, marginBottom:10 }}>
@@ -81,7 +81,7 @@ const Momenu = (props) => {
               <div className="menuborder">  
                 <div style={{textAlign: "center", padding:"10px 10px 50px 10px"}} >
                     <div className="profile" style={{margin: "0 auto"}}>
-                        <img src={img5}/>
+                        <img src={process.env.PUBLIC_URL+img5}/>
                     </div>
 
                   <Row style={{marginTop:20}}>
@@ -129,7 +129,7 @@ const Momenu = (props) => {
         return (
           <>
               
-              <img src={img2} onClick={toggleChange} style={{ width:80, height:50, marginTop:10}}/>
+              <img src={process.env.PUBLIC_URL+img2} onClick={toggleChange} style={{ width:80, height:50, marginTop:10}}/>
               
               { toggleMenu &&
               <>
@@ -139,11 +139,11 @@ const Momenu = (props) => {
                     <div className="label sidebar" >
                       <Row>
                         <Col xs={3}>
-                          <img src={img3} onClick={toggleChange} style={{ marginTop: 20, marginLeft:10, width:30, height:30}}/>
+                          <img src={process.env.PUBLIC_URL+img3} onClick={toggleChange} style={{ marginTop: 20, marginLeft:10, width:30, height:30}}/>
                         </Col>
       
                         <Col xs={9}style={{ marginTop: 10, marginBottom:10 }}>
-                          <img src={menulogo} style={{width:"150px", height:"50px", marginLeft:"15px"}}/>
+                          <img src={process.env.PUBLIC_URL+menulogo} style={{width:"150px", height:"50px", marginLeft:"15px"}}/>
                       </Col>
                       </Row> 
                       
@@ -151,7 +151,7 @@ const Momenu = (props) => {
 
                         <div style={{textAlign: "center", padding:"10px 10px 50px 10px"}}>
                           <div className="profile" style={{margin: "30px auto"}}>
-                              <img src={img5}/>
+                              <img src={process.env.PUBLIC_URL+img5}/>
                           </div>
         
                           <Row style={{marginTop:20}}>

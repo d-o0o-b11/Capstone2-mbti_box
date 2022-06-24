@@ -42,18 +42,18 @@ function ComListItem({ content, nickname, mbti, createdAt, id}) { //start_date -
   const [upcomment, Setupcomment] = useState();
 
   const updateCom=(e)=> {
-    console.log("여기까지")
+    // console.log("여기까지")
     Setupcomment(content)
     Setcheck(1); //댓글 수정 버튼 클릭
-    console.log(check);
-    console.log(content);
+    // console.log(check);
+    // console.log(content);
 
   }
 
   const updateAxiosCom=(e)=>{
     axios({
         method: "put",
-        url:`/api/comment/update/${id}`,
+        url: process.env.REACT_APP_DB_HOST + `/api/comment/update/${id}`,
         headers:{
             "X-AUTH-TOKEN": TOKEN
         },
@@ -62,12 +62,12 @@ function ComListItem({ content, nickname, mbti, createdAt, id}) { //start_date -
         }
     })
     .then((Response)=>{
-        console.log("댓글 수정 완료");
+        // console.log("댓글 수정 완료");
         Setcheck(0);
         window.location.reload();
     })
     .catch((error)=>{
-        console.log("댓글 수정 실패");
+        // console.log("댓글 수정 실패");
     })
   }
 

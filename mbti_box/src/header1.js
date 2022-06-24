@@ -29,7 +29,7 @@ const isTablet = useMediaQuery({
       {(isMobile)?
         <Row>
             <Col xs={10}>
-              <Link to="/"><img src={lo} style={{width:200, marginTop:10, marginBottom:10, marginLeft:20 }}/></Link>
+              <Link to="/"><img src={process.env.PUBLIC_URL+lo} style={{width:200, marginTop:10, marginBottom:10, marginLeft:20 }}/></Link>
             </Col>
           
             

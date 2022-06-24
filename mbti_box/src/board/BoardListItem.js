@@ -9,7 +9,6 @@ import { useMediaQuery } from "react-responsive"
 function BoardListItem({id, title, nickname,  createdDate, fileName, mbti, count}) { //start_date -> date
 
 
-    console.log(nickname)
 
     const isMobile = useMediaQuery({
         query: "(max-width:767px)"
@@ -18,7 +17,7 @@ function BoardListItem({id, title, nickname,  createdDate, fileName, mbti, count
       const imgbasic = `${fileName}`;
       
 
-      console.log(imgbasic=="null");
+    //   console.log(imgbasic=="null");
     return (
     <>
     {(isMobile)?

@@ -38,18 +38,18 @@ function UPDATEMBTI({ location }) {
         
         await axios.get(`${url}${id}`).then(response => {
             setData(response.data);
-            console.log(response.data);
+            // console.log(response.data);
         });
     }
 
     useEffect(() => {
         if (query.id) {
-            fetchUrl("/api/post/", query.id)
+            fetchUrl(process.env.REACT_APP_DB_HOST + "/api/post/", query.id)
         } else {
             // setData(null);        
             inputRef.current.map(item => 
                 item.current.value = '')
-                console.log(inputRef.current);
+                // console.log(inputRef.current);
         }
         return () => {
             setData(null);
@@ -71,7 +71,7 @@ function UPDATEMBTI({ location }) {
 
         axios({
             method:'put',
-            url:`/api/post/update/${query.id}`,
+            url: process.env.REACT_APP_DB_HOST + `/api/post/update/${query.id}`,
             headers:{
                 "X-AUTH-TOKEN" : TOKEN,
             },
@@ -81,15 +81,15 @@ function UPDATEMBTI({ location }) {
             }
         })
         .then((Response)=>{
-            console.log(Response.data);
+            // console.log(Response.data);
             history.replace(`/${MBTI}?id=${query.id}`); //게시글이 수정됐는지 확인
         }).catch((error)=>{
-            console.log(query.id);
-            console.log(TOKEN)
-            console.log("데이터"+data);
-            console.log(data.title);
-            console.log(data.content);
-            console.log(error);
+            // console.log(query.id);
+            // console.log(TOKEN)
+            // console.log("데이터"+data);
+            // console.log(data.title);
+            // console.log(data.content);
+            // console.log(error);
             alert("게시글 '수정'에 오류가 발생했습니다.");
         })
     }

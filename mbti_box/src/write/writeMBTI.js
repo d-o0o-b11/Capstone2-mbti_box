@@ -78,7 +78,7 @@ const WRITEINTJ = () => {
       for(let i = 0; i < files.length; i++) {
           data.append('files', files[i]);
       }
-      console.log(files.length);
+      // console.log(files.length);
     if(title===""){
       alert("제목을 입력해주세요");
     }
@@ -91,7 +91,7 @@ const WRITEINTJ = () => {
     else{
       Axios({
             method: 'post',
-            url: `/api/post/save`,
+            url: process.env.REACT_APP_DB_HOST + `/api/post/save`,
             headers:{
               "X-AUTH-TOKEN":TOKEN,
             },
@@ -104,24 +104,24 @@ const WRITEINTJ = () => {
           })
           .then((Response)=>{
 
-            console.log(title);
-            console.log(desc);
-            console.log("데이터확인")
-            console.log(Response.data);
+            // console.log(title);
+            // console.log(desc);
+            // console.log("데이터확인")
+            // console.log(Response.data);
             alert("글 성공");
             
             localStorage.setItem("filelength",files.length);
             const filecount = localStorage.getItem("filelength");
 
-            console.log(filecount);
+            // console.log(filecount);
 
             history.replace(`/stitle`);
 
-              console.log("이미지 실행");
+              // console.log("이미지 실행");
 
                 Axios({
                   method:'post',
-                  url: `/api/file/save/${Response.data}`, 
+                  url: process.env.REACT_APP_DB_HOST + `/api/file/save/${Response.data}`, 
                   headers: {
                     "Content-Type": "multipart/form-data",
                     "X-AUTH-TOKEN":TOKEN,
@@ -129,14 +129,14 @@ const WRITEINTJ = () => {
                   data: data, 
                 })
                   .then(response => {
-                      console.log(response.data);
-                      console.log("이미지 성공");
+                      // console.log(response.data);
+                      // console.log("이미지 성공");
                       window.location.reload();
                       
                   })
                   .catch(error => {
-                      console.log(error);
-                      console.log("이미지 실패");
+                      // console.log(error);
+                      // console.log("이미지 실패");
                     
                   })
 
@@ -174,7 +174,7 @@ const WRITEINTJ = () => {
                 <div className="custom-file-preview">
                   {photos.length > 0 && photos.map((item,index)=>(
                     <div className="prev-img" key={index} data-imgindex={index}>
-                      <img src={item.src} alt={item.name}/>
+                      <img src={process.env.PUBLIC_URL+item.src} alt={item.name}/>
                     </div>
                   ))}
                     

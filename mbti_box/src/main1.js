@@ -1,7 +1,6 @@
 import React from "react"
 import Banner from "./banner.js"
 import Mobanner from "./mobanner.js"
-import Board from "./board.js" 
 import "./Step.css"
 import "./menu.css"
 import "./fonts.css"
@@ -77,9 +76,9 @@ const isTablet = useMediaQuery({
         {/* 메인 2번째 이미지 */}   
         
         {isMobile? 
-          <img src={img2} style={{width:"100%",height:"100%"}}/>
+          <img src={process.env.PUBLIC_URL+img2} style={{width:"100%",height:"100%"}}/>
           :
-          <img src={img1} style={{width:"100%",height:"100%"}}/>
+          <img src={process.env.PUBLIC_URL+img1} style={{width:"100%",height:"100%"}}/>
         }
 
         {/* 사이트 소개글 */}

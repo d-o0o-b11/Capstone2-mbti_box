@@ -16,8 +16,8 @@ function useFetch(url, id) {
   function fetchUrl() {
         axios.get(`${url}${id}`).then(response => {
           setData(response.data);
-          console.log("확인함");
-          console.log(response.data);
+        //   console.log("확인함");
+        //   console.log(response.data);
           //여기서 글쓴 사람 닉네임 받아와야함 
       });
       setLoading(false);
@@ -25,11 +25,11 @@ function useFetch(url, id) {
   useEffect(() => {
       if (id) {
           fetchUrl();
-          console.log("gd");
+        //   console.log("gd");
       } else {
           setData(null);
           setLoading(false);
-          console.log("no");
+        //   console.log("no");
       }
   }, []);
   return [data, loading];
@@ -51,14 +51,14 @@ const Notice = ({ location, history }) => {
         ignoreQueryPrefix: true
     });
 
-  console.log(query);
+//   console.log(query);
 
   const [data, loading] = useFetch("/api/post/", query.id);
   
   const removeView=(e)=> {
     if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
       
-        axios(`/api/post/delete/${query.id}`, { 
+        axios(process.env.REACT_APP_DB_HOST + `/api/post/delete/${query.id}`, { 
             method : 'delete', 
             headers:{
                 "X-AUTH-TOKEN" : TOKEN
@@ -74,8 +74,8 @@ const Notice = ({ location, history }) => {
     }
   }
 
-  console.log("글쓴사람:"+Currentnickname);
-  console.log("닉네임:"+NICKNAME);
+//   console.log("글쓴사람:"+Currentnickname);
+//   console.log("닉네임:"+NICKNAME);
 
 
 

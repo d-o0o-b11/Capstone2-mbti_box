@@ -13,9 +13,9 @@ function useFetch2(url, id) {
     function fetchUrl() {
           axios.get(`${url}`).then(response => {
             
-            console.log("확인함");
-            console.log(response.data);
-            console.log(response.data[0].filename);
+            // console.log("확인함");
+            // console.log(response.data);
+            // console.log(response.data[0].filename);
             setData(response.data);
         });
         setLoading(false);
@@ -34,9 +34,9 @@ function Boardmapmain({id}) { //start_date -> date
       });
 
 
-    const imgdata = useFetch2(`/api/board/${id}`,`${id}`);
+    const imgdata = useFetch2(process.env.REACT_APP_DB_HOST + `/api/board/${id}`,`${id}`);
 
-      console.log(imgdata);
+
 
 
     return (

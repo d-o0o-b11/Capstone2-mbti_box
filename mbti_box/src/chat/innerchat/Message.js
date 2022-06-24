@@ -43,7 +43,7 @@ const Message = ({ location, history }) => {
         "X-AUTH-TOKEN" : TOKEN
       },
       debug: function (str) {
-        console.log(str);
+        // console.log(str);
       },
       reconnectDelay: 5000,
       heartbeatIncoming: 4000,
@@ -52,7 +52,7 @@ const Message = ({ location, history }) => {
         subscribe();
       },
       onStompError: (frame) => {
-        console.error(frame);
+        // console.error(frame);
       },
     });
 
@@ -66,7 +66,7 @@ const Message = ({ location, history }) => {
   const subscribe = () => {
     client.current.subscribe(`/topic/chat/room/${ROOMID}`, ({ body }) => {
       setChatMessages((_chatMessages) => [..._chatMessages, JSON.parse(body)]);
-      console.log("body:"+ROOMID);
+      // console.log("body:"+ROOMID);
     });
   };
 
@@ -93,7 +93,7 @@ const Message = ({ location, history }) => {
         <Container>
           <div className="chatting backin">
               <div className="banner">
-                  <img src={img5} height="150" />
+                  <img src={process.env.PUBLIC_URL+img5} height="150" />
               </div>
               <Row>
                 <Col className="sickbang2">
@@ -143,7 +143,7 @@ const Message = ({ location, history }) => {
       <Container>
             <div className="chatting backin">
                 <div className="banner">
-                    <img src={img5} height="150" />
+                    <img src={process.env.PUBLIC_URL+img5} height="150" />
                 </div>
             <Row>
                 <Col className="sickbang">

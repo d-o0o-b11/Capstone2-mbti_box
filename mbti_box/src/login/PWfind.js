@@ -1,13 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Row, Col } from "react-bootstrap";
 import "./login.css";
 import Axios from "axios";
 
@@ -31,18 +24,15 @@ const PWfind =()=>{
           
       Axios({
         method: 'post',
-        url: `/api/idFind/${Email}`, //수정하기 
-        data: {
-          email: Email,
-        },
+        url: process.env.REACT_APP_DB_HOST + `/api/user/idFind/${Email}`, //수정하기 
+        
       })    
       .then((Response)=>{
         SetEmail("");
         alert("사용자의 아이디는 "+Response.data+" 입니다")
       })  
       .catch((error)=>{
-        console.log(error);
-        console.log("아이디 찾기실패");
+        
       })
     }
   }
@@ -62,7 +52,7 @@ const PWfind =()=>{
             >
               
 
-              <img src={img1} style={{width:200}}/>
+              <img src={process.env.PUBLIC_URL+img1} style={{width:200}}/>
 
 
             
