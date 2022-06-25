@@ -83,7 +83,7 @@ const Signup = () => {
     
           Axios({
             method: 'post',
-            url: '18.208.168.254:8080/api/user/signup',
+            url: '/api/user/signup',
             data: {
                 email: Email,
                 password: Pw,
