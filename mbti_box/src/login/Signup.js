@@ -83,7 +83,7 @@ const Signup = () => {
     
           Axios({
             method: 'post',
-            url: process.env.REACT_APP_DB_HOST + '/api/user/signup',
+            url: 'http://localhost:8080/api/user/signup',
             data: {
                 email: Email,
                 password: Pw,
