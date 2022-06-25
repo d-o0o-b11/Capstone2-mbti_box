@@ -46,7 +46,7 @@ const Login = (props) => {
 
     Axios({
       method: 'post',
-      url: process.env.REACT_APP_DB_HOST + '/api/user/login',
+      url: 'http://18.208.168.254:8080/api/user/login',
       data: {
           username: Id,
           password: Pw,

@@ -34,7 +34,7 @@ function Boardmapmain({id}) { //start_date -> date
       });
 
 
-    const imgdata = useFetch2(process.env.REACT_APP_DB_HOST + `/api/board/${id}`,`${id}`);
+    const imgdata = useFetch2(`http://18.208.168.254:8080/api/board/${id}`,`${id}`);
 
 
 

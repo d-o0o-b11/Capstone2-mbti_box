@@ -24,7 +24,7 @@ const PWfind =()=>{
           
       Axios({
         method: 'post',
-        url: process.env.REACT_APP_DB_HOST + `/api/user/idFind/${Email}`, //수정하기 
+        url: `http://18.208.168.254:8080/api/user/idFind/${Email}`, //수정하기 
         
       })    
       .then((Response)=>{

@@ -23,7 +23,7 @@ const Comwrite = (props) =>{
 
         Axios({
             method: 'post',
-            url: process.env.REACT_APP_DB_HOST + "/api/comment/save",
+            url: "http://18.208.168.254:8080/api/comment/save",
             headers:{
                 "X-AUTH-TOKEN" : TOKEN,
             },

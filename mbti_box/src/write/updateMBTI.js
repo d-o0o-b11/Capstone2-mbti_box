@@ -44,7 +44,7 @@ function UPDATEMBTI({ location }) {
 
     useEffect(() => {
         if (query.id) {
-            fetchUrl(process.env.REACT_APP_DB_HOST + "/api/post/", query.id)
+            fetchUrl("http://18.208.168.254:8080/api/post/", query.id)
         } else {
             // setData(null);        
             inputRef.current.map(item => 
@@ -71,7 +71,7 @@ function UPDATEMBTI({ location }) {
 
         axios({
             method:'put',
-            url: process.env.REACT_APP_DB_HOST + `/api/post/update/${query.id}`,
+            url: `http://18.208.168.254:8080/api/post/update/${query.id}`,
             headers:{
                 "X-AUTH-TOKEN" : TOKEN,
             },

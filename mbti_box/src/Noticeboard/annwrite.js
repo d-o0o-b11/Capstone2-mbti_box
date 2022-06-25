@@ -35,7 +35,7 @@ const Annwrite=()=>{
      
         Axios({
               method: 'post',
-              url: process.env.REACT_APP_DB_HOST + '/api/post/save', 
+              url: 'http://18.208.168.254:8080/api/post/save', 
               headers:{
                 "X-AUTH-TOKEN" : TOKEN
               },

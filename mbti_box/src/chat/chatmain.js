@@ -70,7 +70,7 @@ const Chatmain = () => {
         else{
             Axios({
                 method:'post',
-                url: process.env.REACT_APP_DB_HOST + `/chat/room?name=${roomname}`,
+                url: `http://18.208.168.254:8080/chat/room?name=${roomname}`,
                 headers:{
                     "X-AUTH-TOKEN": TOKEN,
                 },

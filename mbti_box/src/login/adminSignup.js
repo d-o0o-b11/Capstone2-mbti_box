@@ -96,7 +96,7 @@ const AdminSignup = () => {
           
       Axios({
         method: 'post',
-        url: process.env.REACT_APP_DB_HOST + '/api/user/signup',
+        url: 'http://18.208.168.254:8080/api/user/signup',
         data: {
             email: Email,
             password: Pw,

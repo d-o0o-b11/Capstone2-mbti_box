@@ -91,7 +91,7 @@ const WRITEINTJ = () => {
     else{
       Axios({
             method: 'post',
-            url: process.env.REACT_APP_DB_HOST + `/api/post/save`,
+            url: `http://18.208.168.254:8080/api/post/save`,
             headers:{
               "X-AUTH-TOKEN":TOKEN,
             },
@@ -121,7 +121,7 @@ const WRITEINTJ = () => {
 
                 Axios({
                   method:'post',
-                  url: process.env.REACT_APP_DB_HOST + `/api/file/save/${Response.data}`, 
+                  url: `http://18.208.168.254:8080/api/file/save/${Response.data}`, 
                   headers: {
                     "Content-Type": "multipart/form-data",
                     "X-AUTH-TOKEN":TOKEN,
