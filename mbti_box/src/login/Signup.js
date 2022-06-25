@@ -83,7 +83,7 @@ const Signup = () => {
     
           Axios({
             method: 'post',
-            url: '/api/user/signup',
+            url: process.env.REACT_APP_DB_HOST + '/api/user/signup',
             data: {
                 email: Email,
                 password: Pw,
