@@ -98,7 +98,7 @@ const Signup = () => {
               history.replace("/login");    
           })
           .catch((error)=>{
-              alert("회원가입 실패");
+              alert("닉네임, 이메일 중 중복요소가 있습니다.");
               // console.log(Id);
               // console.log(error);
               

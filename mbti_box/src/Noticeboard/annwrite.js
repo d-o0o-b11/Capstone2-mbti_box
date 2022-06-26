@@ -50,12 +50,12 @@ const Annwrite=()=>{
     
               // console.log(title);
               // console.log(content);
-                alert("글 성공");
+                alert("글이 성공적으로 올라갔습니다.");
                 history.replace("/Annview");
     
             })
             .catch((error)=>{
-                alert("실패");
+                alert("글 작성에 오류가 발생했습니다. \n 다시 실행해주시길 바랍니다.");
             });
 
       }

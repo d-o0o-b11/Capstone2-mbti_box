@@ -111,7 +111,7 @@ const AdminSignup = () => {
           history.replace("/login");    
       })
       .catch((error)=>{
-          alert("회원가입 실패");
+          alert("회원가입 오류발생");
           // console.log(Id);
           // console.log(error);
           

@@ -40,7 +40,7 @@ const Comwrite = (props) =>{
   
           })
           .catch((error)=>{
-              alert("실패");
+              alert("댓글 작성에 오류가 발생하였습니다. \n 다시 시도해주시길 바랍니다.");
             //   console.log(error);
           });
     }

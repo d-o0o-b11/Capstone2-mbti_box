@@ -108,7 +108,7 @@ const WRITEINTJ = () => {
             // console.log(desc);
             // console.log("데이터확인")
             // console.log(Response.data);
-            alert("글 성공");
+            alert("글이 성공적으로 올라갔습니다.");
             
             localStorage.setItem("filelength",files.length);
             const filecount = localStorage.getItem("filelength");
@@ -143,7 +143,7 @@ const WRITEINTJ = () => {
 
           })
           .catch((error)=>{
-              alert("실패");
+              alert("글 작성에 오류가 발생했습니다. \n 다시 실행해주시길 바랍니다.");
           });
         }
 
