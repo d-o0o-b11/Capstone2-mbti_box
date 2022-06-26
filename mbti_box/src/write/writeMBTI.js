@@ -131,7 +131,7 @@ const WRITEINTJ = () => {
                   .then(response => {
                       // console.log(response.data);
                       // console.log("이미지 성공");
-                      window.location.reload();
+                      // window.location.reload();
                       
                   })
                   .catch(error => {
