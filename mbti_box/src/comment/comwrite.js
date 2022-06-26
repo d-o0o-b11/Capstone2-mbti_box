@@ -36,7 +36,7 @@ const Comwrite = (props) =>{
           .then((Response)=>{
             // console.log(Response.data);
             // console.log(comment);
-            window.location.reload();
+            // window.location.reload();
   
           })
           .catch((error)=>{

@@ -64,7 +64,7 @@ function ComListItem({ content, nickname, mbti, createdAt, id}) { //start_date -
     .then((Response)=>{
         // console.log("댓글 수정 완료");
         Setcheck(0);
-        window.location.reload();
+        // window.location.reload();
     })
     .catch((error)=>{
         // console.log("댓글 수정 실패");

@@ -23,7 +23,7 @@ import Game from "./game/Game.js";
 import AdminSignup from "./login/adminSignup";
 import Message from "./chat/innerchat/Message.js"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
+import { BrowserRouter, Route, Switch, Link, HashRouter  } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 
 
@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <div className="App body"> {/*추가*/}
           {/* <Container>  */}
 
@@ -234,7 +234,7 @@ const App = () => {
         </div>
 
         
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
