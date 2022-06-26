@@ -4,7 +4,7 @@ import "../Noticeboard/ann.css"
 import {Link} from "react-router-dom";
 import qs from 'qs';
 import axios from "axios";
-import { useHistory } from 'react-router-dom';
+import { useHistory, useNavigate  } from 'react-router-dom';
 import Comwrite from "../comment/comwrite.js";
 import BoardImgListItem from './BoarImgListItem';
 import ComListItem from '../comment/comListItem.js';
@@ -51,6 +51,9 @@ function useFetch(url, id) {
 
 
 const MbtiNotice = ({ location, history }) => {
+
+  const navigate = useNavigate();
+
 
   const backhistory = useHistory();
   const MBTI = localStorage.getItem("mbti");
@@ -137,7 +140,7 @@ const MbtiNotice = ({ location, history }) => {
                 <hr></hr>
 
                 
-                <button className="btn2" onClick={() => {backhistory.goBack();}}>목록으로 돌아가기</button>
+                <button className="btn2" onClick={() => navigate(-1)}>목록으로 돌아가기</button>
                 
                 
                     {   
