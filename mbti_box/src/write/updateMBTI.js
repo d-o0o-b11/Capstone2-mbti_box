@@ -77,7 +77,8 @@ function UPDATEMBTI({ location }) {
             },
             data:{
                 title: title,
-                content: content
+                content: content,
+                nickname: NICKNAME,
             }
         })
         .then((Response)=>{
