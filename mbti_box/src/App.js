@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <>
-      <HashRouter>
+      <HashRouter> 
         <div className="App body"> {/*추가*/}
           {/* <Container>  */}
 
