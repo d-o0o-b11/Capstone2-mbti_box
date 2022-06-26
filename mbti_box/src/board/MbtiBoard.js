@@ -39,7 +39,8 @@ function MbtiBoard (){
       });
 
     const location = useLocation();
-    const mbtiitem = location.state.pagembti;
+    const mbtiitem = localStorage.getItem("mbtiitem");
+
 
     const [limit, setLimit] = useState(9);
     const [page, setPage] = useState(1);

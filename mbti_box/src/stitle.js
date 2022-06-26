@@ -32,6 +32,7 @@ const Stitle = () => {
   const mbticheck = (mbti) =>{
     // console.log(mbti);
 
+    localStorage.setItem("mbtiitem",mbti);
     history.push({
       pathname: `/${mbti}board`,
       state: {pagembti: mbti}
