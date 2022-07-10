@@ -6,7 +6,7 @@ import Axios from "axios";
 
 import img1 from "../images/idfind.jpg"
 
-const PWfind =()=>{
+const IDfind =()=>{
 
   const [Email, SetEmail] = useState("");
 
@@ -32,7 +32,7 @@ const PWfind =()=>{
         alert("사용자의 아이디는 "+Response.data+" 입니다")
       })  
       .catch((error)=>{
-        
+        alert("존재하지 않은 이메일 정보입니다.");
       })
     }
   }
@@ -62,7 +62,7 @@ const PWfind =()=>{
                 <label for="email">이메일</label>
               </div>
 
-              <button class="w-btn w-btn-green" type="submit" style={{marginTop:"20px"}} onClick={submitHandler}>
+              <button class="btn btn-color" type="submit" style={{marginTop:"20px"}} onClick={submitHandler}>
                 ID 찾기
               </button>
               </Box>
@@ -80,4 +80,4 @@ const PWfind =()=>{
 }
 
 
-export default PWfind
+export default IDfind

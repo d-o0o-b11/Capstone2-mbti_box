@@ -1,11 +1,10 @@
 import React from "react"
-import Menu from "./menu.js"
-import Momenu from "./momenu.js"
+import Menu from "./menu/menu.js"
+import Momenu from "./menu/momenu.js"
 import "./Step.css"
-import "./menu.css"
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Route, Switch,Link } from "react-router-dom"
-import { Container, Row, Col} from "react-bootstrap";
+import "./menu/menu.css"
+import {Link } from "react-router-dom"
+import { Row, Col} from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
 
 import lo from "./images/mm.png"

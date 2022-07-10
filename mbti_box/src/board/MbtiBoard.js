@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import { FormOutlined } from '@ant-design/icons';
-import "../stitle.css";
+import "../mbtiselect/stitle.css";
 import "./board.css";
 import {Container,Row, Col } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
@@ -26,7 +26,7 @@ import { useLocation } from "react-router-dom";
 
        
     }
-    useEffect(() => {
+    useEffect(() => { //한번만 실행
       fetchUrl();
   }, []);
     return data;
@@ -57,8 +57,8 @@ function MbtiBoard (){
             <>
             {/* <Container className="footerup">  */}
             <Container>
-                <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>{mbtiitem}</span>
+                <h4 class="mbtititle" style={{marginTop:20}}>
+                    <span >{mbtiitem}</span>
                 </h4>
 
                 <Row>
@@ -113,8 +113,8 @@ function MbtiBoard (){
             {/* <Container className="footerup1"> */}
             <Container>
                 
-                <h4 data-v-42081291 class="c-biz-tit" style={{marginTop:20}}>
-                    <span data-v-42081291>{mbtiitem}</span>
+                <h4 class="mbtititle" style={{marginTop:20}}>
+                    <span >{mbtiitem}</span>
                 </h4>
 
                 <Row>

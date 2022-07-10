@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import "./menu.css"
-import "./Step.css";
+import "../Step.css";
 import {Link} from "react-router-dom";
-import "./fonts/font.css";
-import {Grid, Text} from "./elements"
-import lo from "./images/mm.png"
+import "../fonts/font.css";
+import lo from "../images/mm.png"
 import { useHistory } from 'react-router-dom';
 
 const Menu = () => {

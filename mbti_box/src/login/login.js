@@ -11,7 +11,7 @@ import "./login.css";
 import img1 from "../images/login.png"
 
 
-const Login = (props) => {
+const Login = () => {
   const [Id, SetId] = useState("");  //Id
   const [Pw, SetPw] = useState("");  //pw
   
@@ -39,11 +39,6 @@ const Login = (props) => {
     // console.log(Id);
     // console.log(Pw);
 
-    let body = {
-          username: Id,
-          password: Pw,  
-    };
-
     Axios({
       method: 'post',
       url: 'http://18.208.168.254:8080/api/user/login',
@@ -56,18 +51,14 @@ const Login = (props) => {
 
       // console.log(Response.data);
       localStorage.setItem("token",Response.data.token)
-      const TOKEN = localStorage.getItem("token");
-
       localStorage.setItem("mbti",Response.data.mbti)
 
       const users = Response.data;
       localStorage.setItem("nickname", users.nickname);
-      const NICKNAME = localStorage.getItem("nickname");
 
       // console.log(Response.data.role);
 
       localStorage.setItem("adminrole",Response.data.role);
-      const ADMINROLE = localStorage.getItem("adminrole");
 
       // console.log("관리자체크"+ADMINROLE);
       
@@ -119,7 +110,7 @@ const Login = (props) => {
 
             </Container>
             
-            <button class="w-btn w-btn-green" type="submit" style={{marginTop:20, marginBottom:20}}>
+            <button class="btn btn-color" type="submit" style={{marginTop:20, marginBottom:20}}>
                 로그인
             </button>
             <Grid container>

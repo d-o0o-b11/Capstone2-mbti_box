@@ -215,7 +215,7 @@ const AdminSignup = () => {
                 
 
 
-    <button class="w-btn w-btn-green" type="submit" style={{marginTop:20, marginBottom:20}}>
+    <button class="btn btn-color" type="submit" style={{marginTop:20, marginBottom:20}}>
         회원가입
     </button>
 

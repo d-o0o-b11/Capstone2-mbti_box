@@ -164,7 +164,7 @@ h4 {
 
 /* 인기게시글 구분 */
 
-.divid[data-v-42081291] {
+.divid {
 
   margin: 0 0 46px;
   font-size: 19px;
@@ -174,7 +174,7 @@ h4 {
   border-bottom: 2px solid rgb(239,182,110);
 }
 
-.divid span[data-v-42081291] {
+.divid span {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -188,7 +188,7 @@ h4 {
   color: #fff;
 }
 
-.divid[data-v-42081291] {
+.divid {
   margin: 0 0 46px;
   font-size: 19px;
   font-weight: 400;
@@ -200,17 +200,17 @@ h4 {
 
 /* 소개구분 */
 
-.divid2[data-v-42081291] {
+.divid2 {
 
-  margin: 0 0 46px;
+  margin: 0 0 46px;
   font-size: 19px;
-  font-weight: 400;		
-  text-align: left;		
+  font-weight: 400;
+  text-align: left;
   line-height: 1.2;
   border-bottom: 2px solid rgb(239,182,110);
 }
 
-.divid2 span[data-v-42081291] {
+.divid2 span {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -224,7 +224,7 @@ h4 {
   color: #fff;
 }
 
-.divid2[data-v-42081291] {
+.divid2 {
   margin: 0 0 46px;
   font-size: 19px;
   font-weight: 400;
@@ -237,7 +237,7 @@ h4 {
 
 /* 개발자의 한마디 */
 
-.divid3[data-v-42081291] {
+.divid3 {
 
   margin: 0 0 46px;
   font-size: 19px;
@@ -247,7 +247,7 @@ h4 {
   border-bottom: 2px solid rgb(255,143,119);
 }
 
-.divid3 span[data-v-42081291] {
+.divid3 span {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -261,7 +261,7 @@ h4 {
   color: #fff;
 }
 
-.divid3[data-v-42081291] {
+.divid3 {
   margin: 0 0 46px;
   font-size: 19px;
   font-weight: 400;

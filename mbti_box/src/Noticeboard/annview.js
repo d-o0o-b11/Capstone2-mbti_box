@@ -5,19 +5,26 @@ import ListItem from './ListItem.js';
 import { Link } from 'react-router-dom';
 import { FormOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
+import Axios from "axios"
 
  
 function useFetch(url) {
 
   const [data, setData] = useState([]);
   
-  async function fetchUrl() {
-      const response = await fetch(url);
-      const json = await response.json();
-      
-      setData(json);
-      // console.log(json);
-  }
+  function fetchUrl() {
+    Axios({
+        method: get,
+        url: url,
+    })
+    .then((response)=>{
+        setData(response.data);
+    })
+    // const response = await fetch(url);
+    // const json = await response.json();
+    
+    // setData(json);
+}
   
   useEffect(() => {
       fetchUrl();

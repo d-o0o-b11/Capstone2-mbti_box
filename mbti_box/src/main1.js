@@ -2,8 +2,8 @@ import React from "react"
 import Banner from "./banner.js"
 import Mobanner from "./mobanner.js"
 import "./Step.css"
-import "./menu.css"
-import "./fonts.css"
+import "./menu/menu.css"
+import "./fonts/fonts.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col} from "react-bootstrap";
 import { useMediaQuery } from "react-responsive"
@@ -19,9 +19,7 @@ const isMobile = useMediaQuery({
   query : "(max-width:767px)"
 });
 
-const isTablet = useMediaQuery({
-  query : "(max-width:1100px)"
-});
+
 
   return (
     <>
@@ -44,8 +42,8 @@ const isTablet = useMediaQuery({
       <Container style={{marginBottom:60}}>
             <Row style={{ marginTop: 50}}> 
               
-                <h4 data-v-42081291 className="divid">
-                  <span data-v-42081291>MBTI_BOX</span>
+                <h4 className="divid">
+                  <span>MBTI_BOX</span>
 
                 </h4>
                 {isMobile? 
@@ -83,8 +81,8 @@ const isTablet = useMediaQuery({
 
         {/* 사이트 소개글 */}
         <Container style={{marginTop:50}}>
-          <h4 data-v-42081291 className="divid2">
-              <span data-v-42081291>소개</span>
+          <h4 className="divid2">
+              <span>소개</span>
           </h4>
 
           {isMobile? 
@@ -106,8 +104,8 @@ const isTablet = useMediaQuery({
 
           {/* 개발자 소개 */}
 
-            <h4 data-v-42081291 className="divid3" style={{marginTop:30}}>
-              <span data-v-42081291>개발자</span>
+            <h4 className="divid3" style={{marginTop:30}}>
+              <span>개발자</span>
             </h4>
 
             {isMobile? 

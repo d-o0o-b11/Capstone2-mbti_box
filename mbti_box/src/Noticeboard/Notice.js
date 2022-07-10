@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col} from "react-bootstrap";
 import "./ann.css"
-import { FormOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 import qs from 'qs';
 import axios from "axios";

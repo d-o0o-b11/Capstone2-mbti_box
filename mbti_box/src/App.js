@@ -1,18 +1,18 @@
 import React from 'react';
-import Stitle from "./stitle"
-import Mostitle from "./mostitle"
+import Stitle from "./mbtiselect/stitle"
+import Mostitle from "./mbtiselect/mostitle"
 import MAIN1 from "./main1.js"
 import Footer1 from "./footer1.js"
 import Header1 from "./header1.js"
 import Chatmain from "./chat/chatmain.js"
 import "./Step.css"
-import "./menu.css"
+import "./menu/menu.css"
 import Login from "./login/login.js"
 
 import MbtiBoard from "./board/MbtiBoard.js"
 
 import MbtiNotice from "./board/MbtiNotice.js";
-import PWfind from "./login/PWfind.js";
+import PWfind from "./login/IDfind.js";
 import Signup from "./login/Signup";
 import WRITEMBTI from "./write/writeMBTI.js"
 import UPDATEMBTI from "./write/updateMBTI.js"
@@ -34,11 +34,6 @@ const App = () => {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)"
   });
-
-  const isTablet = useMediaQuery({
-    query: "(max-width:1100px)"
-  });
-
 
 
 
@@ -68,10 +63,9 @@ const App = () => {
 
 
             <Route path="/login">
-              <Login></Login>
+              <Login></Login> 
             </Route>
 
-            {/* 이전 게시판 지워도될듯? */}
             <Route path="/detail" component={Notice} />
 
             <Route path="/chatting" component={Message}/>
@@ -193,8 +187,8 @@ const App = () => {
             </Route>
             
 
-            <Route path="/writeMBTI">
-              <WRITEMBTI></WRITEMBTI>
+            <Route path="/writeMBTI"> 
+              <WRITEMBTI></WRITEMBTI> 
             </Route>
 
             <Route path="/updateMBTI" component={UPDATEMBTI}/>

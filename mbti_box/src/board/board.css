@@ -76,7 +76,7 @@
   
   
   
-  .c-biz-tit[data-v-42081291] {
+  .mbtititle{
   
     margin: 0 0 46px;
     font-size: 19px;
@@ -86,7 +86,7 @@
     border-bottom: 2px solid rgb(239,182,110);
   }
   
-  .c-biz-tit span[data-v-42081291] {
+  .mbtititle span {
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
@@ -100,7 +100,7 @@
     color: #fff;
   }
   
-  .c-biz-tit[data-v-42081291] {
+  .mbtititle {
     margin: 0 0 10px;
     font-size: 19px;
     font-weight: 400;

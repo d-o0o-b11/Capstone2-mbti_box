@@ -10,16 +10,24 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useHistory } from "react-router-dom";
 import Axios from "axios"
 import { useMediaQuery } from "react-responsive"
+import { get } from "jquery";
 
 function useFetch(url) {
 
     const [data, setData] = useState([]);
     
-    async function fetchUrl() {
-        const response = await fetch(url);
-        const json = await response.json();
+    function fetchUrl() {
+        Axios({
+            method: get,
+            url: url,
+        })
+        .then((response)=>{
+            setData(response.data);
+        })
+        // const response = await fetch(url);
+        // const json = await response.json();
         
-        setData(json);
+        // setData(json);
     }
     
     useEffect(() => {

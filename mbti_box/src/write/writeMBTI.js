@@ -23,7 +23,6 @@ const WRITEINTJ = () => {
   });
 
 
-  const [highlight, setHighlight]= useState(false);
   const {title, desc, photos}=post;
 
   const handlechange = e =>{
@@ -108,7 +107,7 @@ const WRITEINTJ = () => {
             // console.log(desc);
             // console.log("데이터확인")
             // console.log(Response.data);
-            alert("글이 성공적으로 올라갔습니다.");
+            // alert("글이 성공적으로 올라갔습니다.");
             
             localStorage.setItem("filelength",files.length);
             const filecount = localStorage.getItem("filelength");
@@ -131,7 +130,6 @@ const WRITEINTJ = () => {
                   .then(response => {
                       // console.log(response.data);
                       // console.log("이미지 성공");
-                      // window.location.reload();
                       
                   })
                   .catch(error => {
@@ -139,7 +137,7 @@ const WRITEINTJ = () => {
                       // console.log("이미지 실패");
                     
                   })
-
+                  alert("글이 성공적으로 올라갔습니다.");
 
           })
           .catch((error)=>{

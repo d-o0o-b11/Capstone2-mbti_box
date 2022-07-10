@@ -97,7 +97,7 @@
   outline:none; 
 }
 
-.w-btn {
+.btn {
   position: relative;
   border: none;
   display: inline-block;
@@ -111,7 +111,7 @@
   transition: 0.25s;
 }
 
-.w-btn-green {
+.btn-color {
   background-color: rgb(226,160,110);
   color: #ffffff;
 }

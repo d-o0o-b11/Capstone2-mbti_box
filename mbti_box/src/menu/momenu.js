@@ -1,15 +1,14 @@
 import "./menu.css"
-import "./Step.css";
+import "../Step.css";
 import {Link} from "react-router-dom";
-import "./fonts/font.css";
+import "../fonts/font.css";
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import {  CommentOutlined, NotificationOutlined, SnippetsOutlined, CloudOutlined } from '@ant-design/icons';
 import {Row, Col} from "react-bootstrap";
-import img2 from "./images/me.png"
-import img3 from "./images/menucancel.png"
-import img5 from "./images/face.jpg"
-import menulogo from "./images/momenu.png"
+import img2 from "../images/me.png"
+import img3 from "../images/menucancel.png"
+import img5 from "../images/face.jpg"
+import menulogo from "../images/momenu.png"
 import { useHistory } from 'react-router-dom';
 
 
