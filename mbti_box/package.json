@@ -30,10 +30,10 @@
     "node-html-parser": "^5.3.3",
     "qs": "^6.10.3",
     "randomstring": "^1.2.2",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-bootstrap": "^2.2.0",
     "react-device-detect": "^2.2.2",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-html-parser": "^2.0.2",
     "react-native": "^0.68.0",
@@ -80,6 +80,4 @@
       "last 1 safari version"
     ]
   }
-
-
 }

@@ -14,7 +14,7 @@ function useFetch(url) {
   
   function fetchUrl() {
     Axios({
-        method: get,
+        method: "get",
         url: url,
     })
     .then((response)=>{
