@@ -35,7 +35,7 @@
 <br/><br/><br/>
 
 ## 데스크탑 사이즈 화면
-<img src="https://user-images.githubusercontent.com/97296843/185184759-fd73fd43-99a3-4116-9049-9095dc3b681a.gif">
+<img src="https://user-images.githubusercontent.com/97296843/185184759-fd73fd43-99a3-4116-9049-9095dc3b681a.gif" width:"100%">
 
 <br/><br/><br/>
 
