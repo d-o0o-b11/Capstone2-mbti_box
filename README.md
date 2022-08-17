@@ -37,4 +37,3 @@
 ## 스마트폰 사이즈
 <img src="https://user-images.githubusercontent.com/97296843/185094693-21f01f41-a3cc-48b7-9195-0d7ca0e6eeb7.gif">
 
-<span style="color:yellow">노란 글씨입니다.</span>
