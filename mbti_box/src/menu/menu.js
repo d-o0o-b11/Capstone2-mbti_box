@@ -26,8 +26,7 @@ const removeToken=()=>{
 
 const loginChat = () =>{
   
-    alert("로그인 후 사용가능합니다");
-    history.replace("/login");
+    alert("수정 중입니다.");
   
 }
  
@@ -44,7 +43,7 @@ const loginChat = () =>{
          <span style={{marginLeft:'10%'}}><Link to="/stitle" style={{ textDecoration: 'none', color:'black' }}className="font-big">게시판</Link></span> 
 
          <span style={{marginLeft:'3%'}}><Link to="/Game" style={{ textDecoration: 'none', color:'black' }}className="font-big">게임</Link> </span>
-         <span style={{marginLeft:'3%'}}><Link to="/chat" style={{ textDecoration: 'none', color:'black' }}className="font-big">채팅</Link></span> 
+         <span style={{marginLeft:'3%'}}><Link to="" style={{ textDecoration: 'none', color:'black' }}className="font-big" onClick={loginChat}>채팅</Link></span> 
          <span style={{marginLeft:'3%'}}><Link to="/Annview" style={{ textDecoration: 'none', color:'black' }}className="font-big">공지사항</Link></span> 
 
          <span style={{marginLeft:'5%'}} className="font-big">{nickname} 님</span>
