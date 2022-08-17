@@ -15,9 +15,7 @@
 <br/>
 
 ## 주요 기능
-> 1️⃣ 먼저 
-<span style="color: blueviolet">로그인 / 비로그인 회원자</span>
-들이 사용할 수 있는 기능을 크게 분류하였다.
+> 1️⃣ 먼저 <span style="color: blueviolet">로그인 / 비로그인 회원자</span> 들이 사용할 수 있는 기능을 크게 분류하였다.
 > > 1. 로그인 회원자
 > > - 회원가입 시 선택한 본인 mbti게시글에만 글을 작성할 수 있도록 제한
 > > (그 외의 mbti게시판에는 읽기, 댓글 작성만 가능)
@@ -38,3 +36,5 @@
 
 ## 스마트폰 사이즈
 <img src="https://user-images.githubusercontent.com/97296843/185094693-21f01f41-a3cc-48b7-9195-0d7ca0e6eeb7.gif">
+
+<span style="color:yellow">노란 글씨입니다.</span>
