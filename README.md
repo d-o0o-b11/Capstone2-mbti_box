@@ -34,6 +34,11 @@
 
 <br/><br/><br/>
 
-## 스마트폰 사이즈
+## 데스크탑 사이즈 화면
+<img src="https://user-images.githubusercontent.com/97296843/185184759-fd73fd43-99a3-4116-9049-9095dc3b681a.gif">
+
+<br/><br/><br/>
+
+## 스마트폰 사이즈 화면
 <img src="https://user-images.githubusercontent.com/97296843/185094693-21f01f41-a3cc-48b7-9195-0d7ca0e6eeb7.gif">
 
