@@ -29,6 +29,7 @@
 > > 채팅 기능은 "소켓"으로 구현하였으며 백앤드 측에서 spring boot 업그레이드로 인해 코드 변경 사항으로 수정 중이다.
 > > (업그레이드 전에는 채팅 기능을 사용할 수 있었다.)
 
+<br/><br/><br/>
 
 ## 스마트폰 사이즈
 <img src="https://user-images.githubusercontent.com/97296843/185094693-21f01f41-a3cc-48b7-9195-0d7ca0e6eeb7.gif">
