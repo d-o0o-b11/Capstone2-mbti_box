@@ -70,7 +70,7 @@ const MbtiNotice = ({ location, history }) => {
 //   console.log("현재닉네임2: "+NICKNAME);
 //   console.log("글쓴사람닉네임: "+Currentnickname);
 
-  const [data, imgarr, comment] = useFetch("http://18.208.168.254:8080/api/post/", query.id);
+  const [data, imgarr, comment] = useFetch("/api/post/", query.id);
 
 
   
@@ -79,7 +79,7 @@ const MbtiNotice = ({ location, history }) => {
        
         axios({
             method:'delete',
-            url: `http://18.208.168.254:8080/api/post/delete/${query.id}`,
+            url: `/api/post/delete/${query.id}`,
             headers:{
                 "X-AUTH-TOKEN" : TOKEN
             },

@@ -52,12 +52,12 @@ const Notice = ({ location, history }) => {
 
 //   console.log(query);
 
-  const [data, loading] = useFetch("http://18.208.168.254:8080/api/post/", query.id);
+  const [data, loading] = useFetch("/api/post/", query.id);
   
   const removeView=(e)=> {
     if(window.confirm('해당 게시물을 삭제하시겠습니까?')) {
       
-        axios(`http://18.208.168.254:8080/api/post/delete/${query.id}`, { 
+        axios(`/api/post/delete/${query.id}`, { 
             method : 'delete', 
             headers:{
                 "X-AUTH-TOKEN" : TOKEN

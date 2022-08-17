@@ -78,7 +78,7 @@ const Chatmain = () => {
         else{
             Axios({
                 method:'post',
-                url: `http://18.208.168.254:8080/chat/room?name=${roomname}`,
+                url: `/chat/room?name=${roomname}`,
                 headers:{
                     "X-AUTH-TOKEN": TOKEN,
                 },

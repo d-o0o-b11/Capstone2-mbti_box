@@ -35,7 +35,7 @@ const Annwrite=()=>{
      
         Axios({
               method: 'post',
-              url: 'http://18.208.168.254:8080/api/post/save', 
+              url: '/api/post/save', 
               headers:{
                 "X-AUTH-TOKEN" : TOKEN
               },

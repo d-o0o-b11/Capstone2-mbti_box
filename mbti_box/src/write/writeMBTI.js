@@ -90,7 +90,7 @@ const WRITEINTJ = () => {
     else{
       Axios({
             method: 'post',
-            url: `http://18.208.168.254:8080/api/post/save`,
+            url: `/api/post/save`,
             headers:{
               "X-AUTH-TOKEN":TOKEN,
             },
@@ -114,13 +114,13 @@ const WRITEINTJ = () => {
 
             // console.log(filecount);
 
-            history.replace(`/stitle`);
+            history.replace(`/${MBTI}board`);
 
               // console.log("이미지 실행");
 
                 Axios({
                   method:'post',
-                  url: `http://18.208.168.254:8080/api/file/save/${Response.data}`, 
+                  url: `/api/file/save/${Response.data}`, 
                   headers: {
                     "Content-Type": "multipart/form-data",
                     "X-AUTH-TOKEN":TOKEN,

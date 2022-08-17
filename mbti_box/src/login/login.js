@@ -41,7 +41,7 @@ const Login = () => {
 
     Axios({
       method: 'post',
-      url: 'http://18.208.168.254:8080/api/user/login',
+      url: '/api/user/login',
       data: {
           username: Id,
           password: Pw,

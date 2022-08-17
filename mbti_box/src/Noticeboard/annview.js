@@ -38,7 +38,7 @@ function List() {
     query: "(max-width:767px)"
   });
 
-  const data = useFetch("http://18.208.168.254:8080/api/post/posts/category/NOTICE");
+  const data = useFetch("/api/post/posts/category/NOTICE");
 
  
   const ADMINROLE = localStorage.getItem("adminrole");

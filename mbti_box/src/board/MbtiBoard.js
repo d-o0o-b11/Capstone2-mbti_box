@@ -48,7 +48,7 @@ function MbtiBoard (){
 
    
     const MBTI = localStorage.getItem("mbti");
-    const data = useFetch2(`http://18.208.168.254:8080/api/post/posts/${mbtiitem}`);
+    const data = useFetch2(`/api/post/posts/${mbtiitem}`);
 
 
     return(

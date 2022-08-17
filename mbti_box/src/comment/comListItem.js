@@ -20,7 +20,7 @@ function ComListItem({ content, nickname, mbti, createdAt, id}) { //start_date -
        
         axios({
             method:'delete',
-            url:`http://18.208.168.254:8080/api/comment/delete/${id}`,
+            url:`/api/comment/delete/${id}`,
             headers:{
                 "X-AUTH-TOKEN" : TOKEN
             },
@@ -53,7 +53,7 @@ function ComListItem({ content, nickname, mbti, createdAt, id}) { //start_date -
   const updateAxiosCom=(e)=>{
     axios({
         method: "put",
-        url: `http://18.208.168.254:8080/api/comment/update/${id}`,
+        url: `/api/comment/update/${id}`,
         headers:{
             "X-AUTH-TOKEN": TOKEN
         },
